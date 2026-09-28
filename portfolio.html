@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Portfolio | Kay Tozawa</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================================================
+       COLOURS
+    ========================================================= */
+
+    :root {
+
+      --white: #ffffff;
+      --soft-white: #f8fbfb;
+
+      --text: #1f2828;
+      --muted: #687474;
+
+      --turquoise: #66b9b7;
+      --turquoise-dark: #478f8d;
+
+      --pale-blue: #e9f4f4;
+      --line: #dfe7e7;
+
+    }
+
+
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      font-family: "DM Sans", sans-serif;
+
+      background: var(--white);
+      color: var(--text);
+
+      line-height: 1.7;
+
+      overflow-x: hidden;
+
+    }
+
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    .section-label {
+
+      margin-bottom: 18px;
+
+      font-size: 10px;
+      font-weight: 500;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+
+      color: var(--turquoise-dark);
+
+    }
+
+
+    .section-heading {
+
+      font-size: clamp(42px, 5vw, 76px);
+
+      font-weight: 300;
+
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+
+    }
+
+
+    .body-copy {
+
+      font-size: 15px;
+
+      line-height: 1.9;
+
+      color: var(--muted);
+
+    }
+
+
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    nav {
+
+      height: 82px;
+
+      padding: 0 6vw;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      border-bottom: 1px solid var(--line);
+
+      background: rgba(255,255,255,0.97);
+
+      position: relative;
+      z-index: 50;
+
+    }
+
+
+    .nav-logo {
+
+      font-family: "Allura", cursive;
+
+      font-size: 38px;
+
+      line-height: 1;
+
+    }
+
+
+    .nav-links {
+
+      list-style: none;
+
+      display: flex;
+      align-items: center;
+
+      gap: 34px;
+
+    }
+
+
+    .nav-links a {
+
+      font-size: 11px;
+      font-weight: 500;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      transition: color 0.25s ease;
+
+    }
+
+
+    .nav-links a:hover {
+      color: var(--turquoise-dark);
+    }
+
+
+    .active-link {
+
+      padding-bottom: 4px;
+
+      border-bottom: 1px solid var(--turquoise);
+
+    }
+
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+
+      padding: 120px 7vw 150px;
+
+      min-height: 850px;
+
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+
+      gap: 7vw;
+
+      align-items: center;
+
+    }
+
+
+    .hero-copy {
+
+      max-width: 540px;
+
+    }
+
+
+    .hero-title {
+
+      font-size: clamp(65px, 9vw, 130px);
+
+      font-weight: 300;
+
+      line-height: 0.92;
+      letter-spacing: -0.055em;
+
+    }
+
+
+    .hero-title em {
+
+      display: block;
+
+      font-family: "Allura", cursive;
+
+      font-size: 1.15em;
+      font-weight: 400;
+      font-style: normal;
+
+      color: var(--turquoise-dark);
+
+    }
+
+
+    .hero-copy p {
+
+      max-width: 440px;
+
+      margin-top: 35px;
+
+      font-size: 15px;
+
+      line-height: 1.9;
+
+      color: var(--muted);
+
+    }
+
+
+
+    /* HERO IMAGE COMPOSITION */
+
+    .hero-images {
+
+      height: 680px;
+
+      display: grid;
+
+      grid-template-columns: 1.3fr 0.7fr;
+      grid-template-rows: 1fr 1fr;
+
+      gap: 18px;
+
+    }
+
+
+    .hero-image {
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          #edf7f7,
+          #d5eaea
+        );
+
+    }
+
+
+    .hero-image-large {
+
+      grid-row: 1 / 3;
+
+    }
+
+
+    .photo-placeholder {
+
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 10px;
+      font-weight: 500;
+
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+
+      color: #708d8c;
+
+    }
+
+
+    .photo-placeholder span {
+
+      padding-bottom: 7px;
+
+      border-bottom: 1px solid rgba(73,116,114,0.3);
+
+    }
+
+
+
+    /* =========================================================
+       INTRO STRIP
+    ========================================================= */
+
+    .portfolio-intro {
+
+      padding: 110px 7vw;
+
+      background: var(--soft-white);
+
+    }
+
+
+    .portfolio-intro-inner {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+
+      gap: 7vw;
+
+      align-items: start;
+
+    }
+
+
+    .portfolio-intro-text {
+
+      font-size: clamp(28px, 3vw, 44px);
+
+      font-weight: 300;
+
+      line-height: 1.3;
+      letter-spacing: -0.025em;
+
+    }
+
+
+
+    /* =========================================================
+       FEATURED WORKS
+    ========================================================= */
+
+    .featured {
+
+      padding: 160px 7vw;
+
+    }
+
+
+    .featured-header {
+
+      max-width: 1350px;
+
+      margin: 0 auto 100px;
+
+    }
+
+
+    .project {
+
+      max-width: 1350px;
+
+      margin: 0 auto;
+
+      padding: 110px 0;
+
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+
+      gap: 8vw;
+
+      align-items: center;
+
+      border-top: 1px solid var(--line);
+
+    }
+
+
+    .project:last-child {
+
+      border-bottom: 1px solid var(--line);
+
+    }
+
+
+    .project.reverse {
+
+      grid-template-columns: 0.85fr 1.15fr;
+
+    }
+
+
+    .project.reverse .project-image {
+
+      order: 2;
+
+    }
+
+
+    .project.reverse .project-copy {
+
+      order: 1;
+
+    }
+
+
+
+    /* PROJECT IMAGE */
+
+    .project-image {
+
+      position: relative;
+
+      overflow: hidden;
+
+      background: var(--pale-blue);
+
+    }
+
+
+    .project-image img {
+
+      aspect-ratio: 16 / 10;
+
+      object-fit: cover;
+
+      transition:
+        transform 1s cubic-bezier(.2,.7,.2,1),
+        filter 0.6s ease;
+
+    }
+
+
+    .project-image:hover img {
+
+      transform: scale(1.035);
+
+    }
+
+
+    .project-number {
+
+      position: absolute;
+
+      top: 20px;
+      left: 20px;
+
+      width: 44px;
+      height: 44px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(255,255,255,0.92);
+
+      font-size: 10px;
+      font-weight: 500;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+
+    /* PROJECT TEXT */
+
+    .project-copy {
+
+      max-width: 520px;
+
+    }
+
+
+    .project-copy h3 {
+
+      font-size: clamp(36px, 4vw, 60px);
+
+      font-weight: 300;
+
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+
+    }
+
+
+    .project-meta {
+
+      margin-top: 18px;
+
+      font-size: 11px;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+
+      color: var(--turquoise-dark);
+
+    }
+
+
+    .project-copy p {
+
+      margin-top: 26px;
+
+      font-size: 15px;
+
+      line-height: 1.9;
+
+      color: var(--muted);
+
+    }
+
+
+    .project-link {
+
+      display: inline-flex;
+
+      align-items: center;
+      gap: 12px;
+
+      margin-top: 30px;
+
+      padding-bottom: 6px;
+
+      border-bottom: 1px solid var(--turquoise);
+
+      font-size: 11px;
+      font-weight: 500;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+
+    }
+
+
+    .project-link::after {
+
+      content: "↗";
+
+      font-size: 15px;
+
+      transition: transform 0.2s ease;
+
+    }
+
+
+    .project-link:hover::after {
+
+      transform: translate(3px, -3px);
+
+    }
+
+
+
+    /* =========================================================
+       PHOTO GALLERY
+    ========================================================= */
+
+    .gallery {
+
+      padding: 150px 7vw;
+
+      background: var(--soft-white);
+
+    }
+
+
+    .gallery-header {
+
+      max-width: 1350px;
+
+      margin: 0 auto 70px;
+
+      display: flex;
+
+      align-items: end;
+      justify-content: space-between;
+
+      gap: 40px;
+
+    }
+
+
+    .gallery-header p {
+
+      max-width: 430px;
+
+      font-size: 14px;
+
+      line-height: 1.8;
+
+      color: var(--muted);
+
+    }
+
+
+    .gallery-grid {
+
+      max-width: 1350px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns: repeat(12, 1fr);
+
+      grid-auto-rows: 100px;
+
+      gap: 16px;
+
+    }
+
+
+    .gallery-item {
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          #edf7f7,
+          #d4e9e9
+        );
+
+    }
+
+
+    .gallery-item:nth-child(1) {
+
+      grid-column: span 7;
+      grid-row: span 5;
+
+    }
+
+
+    .gallery-item:nth-child(2) {
+
+      grid-column: span 5;
+      grid-row: span 4;
+
+    }
+
+
+    .gallery-item:nth-child(3) {
+
+      grid-column: span 5;
+      grid-row: span 5;
+
+    }
+
+
+    .gallery-item:nth-child(4) {
+
+      grid-column: span 7;
+      grid-row: span 6;
+
+    }
+
+
+    .gallery-item:nth-child(5) {
+
+      grid-column: span 4;
+      grid-row: span 4;
+
+    }
+
+
+    .gallery-item:nth-child(6) {
+
+      grid-column: span 4;
+      grid-row: span 4;
+
+    }
+
+
+    .gallery-item:nth-child(7) {
+
+      grid-column: span 4;
+      grid-row: span 4;
+
+    }
+
+
+    .gallery-item:nth-child(8) {
+
+      grid-column: span 8;
+      grid-row: span 5;
+
+    }
+
+
+    .gallery-item:nth-child(9) {
+
+      grid-column: span 4;
+      grid-row: span 5;
+
+    }
+
+
+
+    /* GALLERY HOVER */
+
+    .gallery-overlay {
+
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      padding: 25px;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(21,31,31,0.62),
+          rgba(21,31,31,0) 55%
+        );
+
+      opacity: 0;
+
+      transition: opacity 0.4s ease;
+
+    }
+
+
+    .gallery-item:hover .gallery-overlay {
+
+      opacity: 1;
+
+    }
+
+
+    .gallery-overlay span {
+
+      color: white;
+
+      font-size: 11px;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+
+      transform: translateY(8px);
+
+      transition: transform 0.4s ease;
+
+    }
+
+
+    .gallery-item:hover .gallery-overlay span {
+
+      transform: translateY(0);
+
+    }
+
+
+
+    /* =========================================================
+       ARTIST NOTE
+    ========================================================= */
+
+    .artist-note {
+
+      padding: 160px 7vw;
+
+    }
+
+
+    .artist-note-inner {
+
+      max-width: 1000px;
+
+      margin: 0 auto;
+
+      text-align: center;
+
+    }
+
+
+    .artist-note p {
+
+      margin-top: 30px;
+
+      font-size: clamp(22px, 2.4vw, 34px);
+
+      font-weight: 300;
+
+      line-height: 1.55;
+
+      letter-spacing: -0.02em;
+
+      color: var(--muted);
+
+    }
+
+
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .portfolio-cta {
+
+      padding: 150px 7vw;
+
+      text-align: center;
+
+      background: var(--text);
+      color: white;
+
+    }
+
+
+    .portfolio-cta .section-label {
+
+      color: #87cbc8;
+
+    }
+
+
+    .portfolio-cta h2 {
+
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      font-size: clamp(48px, 7vw, 92px);
+
+      font-weight: 300;
+
+      line-height: 1;
+
+      letter-spacing: -0.045em;
+
+    }
+
+
+    .portfolio-cta h2 em {
+
+      font-family: "Allura", cursive;
+
+      font-size: 1.2em;
+
+      font-style: normal;
+
+    }
+
+
+    .portfolio-cta p {
+
+      max-width: 520px;
+
+      margin: 30px auto 0;
+
+      font-size: 14px;
+
+      line-height: 1.9;
+
+      color: #b7c3c3;
+
+    }
+
+
+    .cta-links {
+
+      margin-top: 42px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 16px;
+
+      flex-wrap: wrap;
+
+    }
+
+
+    .cta-primary,
+    .cta-secondary {
+
+      padding: 15px 29px;
+
+      font-size: 11px;
+      font-weight: 500;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border 0.25s ease;
+
+    }
+
+
+    .cta-primary {
+
+      border: 1px solid #83c9c6;
+
+    }
+
+
+    .cta-primary:hover {
+
+      background: #83c9c6;
+
+      color: var(--text);
+
+    }
+
+
+    .cta-secondary {
+
+      border: 1px solid rgba(255,255,255,0.3);
+
+    }
+
+
+    .cta-secondary:hover {
+
+      border-color: white;
+
+    }
+
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+
+      padding: 28px 6vw;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      background: var(--text);
+
+      border-top: 1px solid rgba(255,255,255,0.12);
+
+      color: #9ca9a9;
+
+      font-size: 11px;
+
+    }
+
+
+    .social-links {
+
+      display: flex;
+
+      gap: 25px;
+
+    }
+
+
+    .social-links a:hover {
+
+      color: white;
+
+    }
+
+
+
+    /* =========================================================
+       SCROLL REVEAL ANIMATION
+    ========================================================= */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform: translateY(45px);
+
+      transition:
+        opacity 0.9s cubic-bezier(.2,.7,.2,1),
+        transform 0.9s cubic-bezier(.2,.7,.2,1);
+
+    }
+
+
+    .reveal-left {
+
+      opacity: 0;
+
+      transform: translateX(-45px);
+
+      transition:
+        opacity 0.9s cubic-bezier(.2,.7,.2,1),
+        transform 0.9s cubic-bezier(.2,.7,.2,1);
+
+    }
+
+
+    .reveal-right {
+
+      opacity: 0;
+
+      transform: translateX(45px);
+
+      transition:
+        opacity 0.9s cubic-bezier(.2,.7,.2,1),
+        transform 0.9s cubic-bezier(.2,.7,.2,1);
+
+    }
+
+
+    .reveal.visible,
+    .reveal-left.visible,
+    .reveal-right.visible {
+
+      opacity: 1;
+
+      transform: translate(0,0);
+
+    }
+
+
+
+    /* DELAYS */
+
+    .delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .delay-3 {
+      transition-delay: 0.3s;
+    }
+
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 950px) {
+
+      .nav-links {
+        gap: 20px;
+      }
+
+
+      .hero {
+
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding-top: 100px;
+
+      }
+
+
+      .hero-copy {
+
+        max-width: 700px;
+
+      }
+
+
+      .hero-images {
+
+        height: 650px;
+
+      }
+
+
+      .portfolio-intro-inner {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .project,
+      .project.reverse {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+      }
+
+
+      .project.reverse .project-image,
+      .project.reverse .project-copy {
+
+        order: initial;
+
+      }
+
+
+      .gallery-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        grid-auto-rows: 330px;
+
+      }
+
+
+      .gallery-item:nth-child(n) {
+
+        grid-column: span 1;
+        grid-row: span 1;
+
+      }
+
+
+      .gallery-item:nth-child(1),
+      .gallery-item:nth-child(4),
+      .gallery-item:nth-child(8) {
+
+        grid-column: span 2;
+
+      }
+
+    }
+
+
+
+    @media (max-width: 650px) {
+
+      nav {
+
+        padding: 0 5vw;
+
+      }
+
+
+      .nav-logo {
+
+        font-size: 34px;
+
+      }
+
+
+      .nav-links li:nth-child(1),
+      .nav-links li:nth-child(4) {
+
+        display: none;
+
+      }
+
+
+      .hero {
+
+        padding: 90px 6vw 100px;
+
+      }
+
+
+      .hero-images {
+
+        height: auto;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 420px 240px;
+
+      }
+
+
+      .hero-image-large {
+
+        grid-column: 1 / 3;
+        grid-row: 1;
+
+      }
+
+
+      .portfolio-intro,
+      .featured,
+      .gallery,
+      .artist-note,
+      .portfolio-cta {
+
+        padding-left: 6vw;
+        padding-right: 6vw;
+
+      }
+
+
+      .project {
+
+        padding: 80px 0;
+
+      }
+
+
+      .gallery-header {
+
+        display: block;
+
+      }
+
+
+      .gallery-header p {
+
+        margin-top: 25px;
+
+      }
+
+
+      .gallery-grid {
+
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 420px;
+
+      }
+
+
+      .gallery-item:nth-child(n) {
+
+        grid-column: 1;
+        grid-row: span 1;
+
+      }
+
+
+      footer {
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        text-align: center;
+
+      }
+
+    }
+
+
+
+    /* =========================================================
+       ACCESSIBILITY:
+       REDUCED MOTION
+    ========================================================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+
+      .reveal,
+      .reveal-left,
+      .reveal-right {
+
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+
+      }
+
+
+      .project-image img {
+
+        transition: none;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================== -->
+
+  <nav>
+
+    <a href="index.html" class="nav-logo">
+      Kay Tozawa
+    </a>
+
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="index.html">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="portfolio.html" class="active-link">
+          Portfolio
+        </a>
+      </li>
+
+      <li>
+        <a href="booking.html">
+          Book
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html">
+          Contact
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+
+  <main>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <section class="hero">
+
+
+      <div class="hero-copy reveal-left">
+
+        <div class="section-label">
+          Selected work
+        </div>
+
+        <h1 class="hero-title">
+          Portfolio
+          <em>in performance</em>
+        </h1>
+
+        <p>
+          Selected performances, repertoire, rehearsals,
+          and moments from Kay Tozawa’s work as a classical
+          violinist.
+        </p>
+
+      </div>
+
+
+
+      <div class="hero-images">
+
+
+        <!-- PHOTO_PORTFOLIO_HERO_01 -->
+
+        <div class="hero-image hero-image-large reveal delay-1">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_PORTFOLIO_HERO_01</span>
+          </div>
+
+        </div>
+
+
+
+        <!-- PHOTO_PORTFOLIO_HERO_02 -->
+
+        <div class="hero-image reveal delay-2">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_PORTFOLIO_HERO_02</span>
+          </div>
+
+        </div>
+
+
+
+        <!-- PHOTO_PORTFOLIO_HERO_03 -->
+
+        <div class="hero-image reveal delay-3">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_PORTFOLIO_HERO_03</span>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         INTRO
+    ========================================================== -->
+
+    <section class="portfolio-intro">
+
+      <div class="portfolio-intro-inner reveal">
+
+
+        <div>
+
+          <div class="section-label">
+            The work
+          </div>
+
+        </div>
+
+
+        <div class="portfolio-intro-text">
+
+          This portfolio brings together selected repertoire,
+          live performances, orchestral work, and moments
+          from Kay’s continuing development as a performer.
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FEATURED PERFORMANCES
+    ========================================================== -->
+
+    <section class="featured">
+
+
+      <div class="featured-header reveal">
+
+        <div class="section-label">
+          Featured performances
+        </div>
+
+        <h2 class="section-heading">
+          Selected Work
+        </h2>
+
+      </div>
+
+
+
+      <!-- =======================================================
+           PROJECT 01
+           DVOŘÁK
+      ======================================================== -->
+
+      <article class="project">
+
+
+        <div class="project-image reveal-left">
+
+          <img
+            src="https://static.wixstatic.com/media/c746eb_2d831196a2164fec995f7d0dc7acd4ad~mv2.webp/v1/fill/w_1200,h_750,al_c,q_90/Dvorak%20violin%20concerto%201st%20movement.webp"
+            alt="Kay Tozawa performing Dvorak Violin Concerto"
+          >
+
+          <div class="project-number">
+            01
+          </div>
+
+        </div>
+
+
+
+        <div class="project-copy reveal-right">
+
+          <div class="section-label">
+            Concerto performance
+          </div>
+
+          <h3>
+            Dvořák Violin Concerto
+          </h3>
+
+          <div class="project-meta">
+            First Movement · February 13, 2025
+          </div>
+
+          <p>
+            A performance of the first movement of
+            Antonín Dvořák’s Violin Concerto with the
+            York University Symphony Orchestra.
+          </p>
+
+          <p>
+            The performance reflects Kay’s ongoing focus
+            on classical repertoire, orchestral collaboration,
+            and the relationship between soloist and ensemble.
+          </p>
+
+
+          <!-- YOUTUBE_LINK_DVORAK -->
+
+          <a
+            href="https://www.youtube.com/@kaynicoletozawa4642"
+            target="_blank"
+            rel="noopener"
+            class="project-link"
+          >
+            Watch Performance
+          </a>
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =======================================================
+           PROJECT 02
+           SCHULHOFF & BARTÓK
+      ======================================================== -->
+
+      <article class="project reverse">
+
+
+        <div class="project-image reveal-right">
+
+          <img
+            src="https://static.wixstatic.com/media/c746eb_63d003ac22674dad9c2bb4575dacfbe6~mv2.webp/v1/fill/w_1200,h_750,al_c,q_90/Schulhoff%20%26%20Bartok.webp"
+            alt="Kay Tozawa performing Schulhoff and Bartok"
+          >
+
+          <div class="project-number">
+            02
+          </div>
+
+        </div>
+
+
+
+        <div class="project-copy reveal-left">
+
+          <div class="section-label">
+            Recital repertoire
+          </div>
+
+          <h3>
+            Schulhoff & Bartók
+          </h3>
+
+          <div class="project-meta">
+            Sonata No. 2 · Romanian Folk Dances
+          </div>
+
+          <p>
+            A program featuring Erwin Schulhoff’s
+            Sonata No. 2 and Béla Bartók’s
+            Romanian Folk Dances.
+          </p>
+
+          <p>
+            The pairing brings together two distinctive
+            twentieth-century musical voices and contrasting
+            approaches to rhythm, colour, and character.
+          </p>
+
+
+          <!-- YOUTUBE_LINK_SCHULHOFF_BARTOK -->
+
+          <a
+            href="https://www.youtube.com/@kaynicoletozawa4642"
+            target="_blank"
+            rel="noopener"
+            class="project-link"
+          >
+            Watch Performance
+          </a>
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =======================================================
+           PROJECT 03
+           ARCT
+      ======================================================== -->
+
+      <article class="project">
+
+
+        <div class="project-image reveal-left">
+
+          <img
+            src="https://static.wixstatic.com/media/c746eb_9e2c8d5db778468894ac1505a756549a~mv2.webp/v1/fill/w_1200,h_750,al_c,q_90/ARCT%20Exam.webp"
+            alt="Kay Tozawa ARCT performance"
+          >
+
+          <div class="project-number">
+            03
+          </div>
+
+        </div>
+
+
+
+        <div class="project-copy reveal-right">
+
+          <div class="section-label">
+            Examination repertoire
+          </div>
+
+          <h3>
+            ARCT Exam
+          </h3>
+
+          <div class="project-meta">
+            Selected repertoire
+          </div>
+
+          <p>
+            Selected performance material from Kay’s
+            ARCT examination repertoire.
+          </p>
+
+          <p>
+            The program represents years of technical work,
+            repertoire study, and musical preparation.
+          </p>
+
+
+          <!-- YOUTUBE_LINK_ARCT -->
+
+          <a
+            href="https://www.youtube.com/@kaynicoletozawa4642"
+            target="_blank"
+            rel="noopener"
+            class="project-link"
+          >
+            Watch Performance
+          </a>
+
+        </div>
+
+
+      </article>
+
+
+    </section>
+
+
+
+    <!-- =========================================================
+         PERFORMANCE PHOTO GALLERY
+    ========================================================== -->
+
+    <section class="gallery">
+
+
+      <div class="gallery-header reveal">
+
+        <div>
+
+          <div class="section-label">
+            On stage & behind the scenes
+          </div>
+
+          <h2 class="section-heading">
+            Performance Gallery
+          </h2>
+
+        </div>
+
+
+        <p>
+          A collection of performance, rehearsal,
+          recital, and studio moments.
+        </p>
+
+      </div>
+
+
+
+      <div class="gallery-grid">
+
+
+        <!-- PHOTO_GALLERY_01 -->
+
+        <div class="gallery-item reveal">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_GALLERY_01</span>
+          </div>
+
+          <div class="gallery-overlay">
+            <span>Performance</span>
+          </div>
+
+        </div>
+
+
+
+        <!-- PHOTO_GALLERY_02 -->
+
+        <div class="gallery-item reveal delay-1">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_GALLERY_02</span>
+          </div>
+
+          <div class="gallery-overlay">
+            <span>On Stage</span>
+          </div>
+
+        </div>
+
+
+
+        <!-- PHOTO_GALLERY_03 -->
+
+        <div class="gallery-item reveal">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_GALLERY_03</span>
+          </div>
+
+          <div class="gallery-overlay">
+            <span>Rehearsal</span>
+          </div>
+
+        </div>
+
+
+
+        <!-- PHOTO_GALLERY_04 -->
+
+        <div class="gallery-item reveal delay-1">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_GALLERY_04</span>
+          </div>
+
+          <div class="gallery-overlay">
+            <span>Performance</span>
+          </div>
+
+        </div>
+
+
+
+        <!-- PHOTO_GALLERY_05 -->
+
+        <div class="gallery-item reveal">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_GALLERY_05</span>
+          </div>
+
+          <div class="gallery-overlay">
+            <span>Recital</span>
+          </div>
+
+        </div>
+
+
+
+        <!-- PHOTO_GALLERY_06 -->
+
+        <div class="gallery-item reveal delay-1">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_GALLERY_06</span>
+          </div>
+
+          <div class="gallery-overlay">
+            <span>Studio</span>
+          </div>
+
+        </div>
+
+
+
+        <!-- PHOTO_GALLERY_07 -->
+
+        <div class="gallery-item reveal delay-2">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_GALLERY_07</span>
+          </div>
+
+          <div class="gallery-overlay">
+            <span>Backstage</span>
+          </div>
+
+        </div>
+
+
+
+        <!-- PHOTO_GALLERY_08 -->
+
+        <div class="gallery-item reveal">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_GALLERY_08</span>
+          </div>
+
+          <div class="gallery-overlay">
+            <span>Live Performance</span>
+          </div>
+
+        </div>
+
+
+
+        <!-- PHOTO_GALLERY_09 -->
+
+        <div class="gallery-item reveal delay-1">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_GALLERY_09</span>
+          </div>
+
+          <div class="gallery-overlay">
+            <span>In Rehearsal</span>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         ARTIST NOTE
+    ========================================================== -->
+
+    <section class="artist-note">
+
+
+      <div class="artist-note-inner reveal">
+
+        <div class="section-label">
+          Continuing work
+        </div>
+
+        <h2 class="section-heading">
+          Repertoire in progress
+        </h2>
+
+        <p>
+          Kay continues to expand her repertoire through
+          performance, study, collaboration, and teaching —
+          approaching each new work with curiosity,
+          discipline, and respect for the music.
+        </p>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FINAL CTA
+    ========================================================== -->
+
+    <section class="portfolio-cta">
+
+
+      <div class="section-label">
+        Work with Kay
+      </div>
+
+      <h2>
+        Performance,
+        teaching & <em>music.</em>
+      </h2>
+
+      <p>
+        For private lessons, performance bookings,
+        collaborations, or general inquiries.
+      </p>
+
+
+      <div class="cta-links">
+
+        <a
+          href="booking.html"
+          class="cta-primary"
+        >
+          Book a Lesson
+        </a>
+
+        <a
+          href="contact.html"
+          class="cta-secondary"
+        >
+          Contact Kay
+        </a>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer>
+
+
+    <div>
+      © 2026 Kay Tozawa
+    </div>
+
+
+    <div class="social-links">
+
+      <a
+        href="https://www.youtube.com/@kaynicoletozawa4642"
+        target="_blank"
+        rel="noopener"
+      >
+        YouTube
+      </a>
+
+      <a
+        href="https://www.instagram.com/kays_violin/"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram
+      </a>
+
+      <a
+        href="https://www.facebook.com/kay.tozawa.2025"
+        target="_blank"
+        rel="noopener"
+      >
+        Facebook
+      </a>
+
+    </div>
+
+
+  </footer>
+
+
+
+  <!-- =========================================================
+       SCROLL ANIMATION
+  ========================================================== -->
+
+  <script>
+
+    const revealElements = document.querySelectorAll(
+      ".reveal, .reveal-left, .reveal-right"
+    );
+
+
+    const revealObserver = new IntersectionObserver(
+
+      (entries, observer) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.12
+      }
+
+    );
+
+
+    revealElements.forEach((element) => {
+
+      revealObserver.observe(element);
+
+    });
+
+  </script>
+
+
+</body>
+
+</html>
