@@ -1,517 +1,703 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Kay Tozawa | Violinist • Performer • Teacher</title>
+  <title>Kay Tozawa | Violinist</title>
 
-  <meta
-    name="description"
-    content="Kay Tozawa — violinist, performer, and teacher."
-  >
-
-  <!-- Google Font: Roboto -->
+  <!-- Elegant display + clean neutral body font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Parisienne&display=swap"
     rel="stylesheet"
-  >
+  />
 
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --white: #ffffff;
+      --off-white: #f8faf9;
+      --text: #202828;
+      --muted: #697474;
+      --turquoise: #62b8b5;
+      --light-blue: #eaf5f5;
+      --line: #e4e9e8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      width: 100%;
+      height: 82px;
+      padding: 0 6vw;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    .nav-logo {
+      font-family: "Parisienne", cursive;
+      font-size: 30px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 38px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--turquoise);
+    }
+
+    .nav-book {
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--turquoise);
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      padding: 82px 6vw 50px;
+
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 6vw;
+      align-items: center;
+    }
+
+    .hero-copy {
+      padding: 60px 0;
+    }
+
+    .eyebrow {
+      margin-bottom: 22px;
+
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+
+      color: var(--turquoise);
+    }
+
+    .hero-name {
+      font-family: "Parisienne", cursive;
+      font-size: clamp(76px, 9vw, 145px);
+      font-weight: 400;
+      line-height: 0.85;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-left: -7px;
+    }
+
+    .hero-title {
+      margin-top: 28px;
+
+      font-size: clamp(16px, 1.5vw, 21px);
+      font-weight: 300;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero-description {
+      max-width: 410px;
+      margin-top: 30px;
+
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+
+      margin-top: 38px;
+
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .hero-link::after {
+      content: "→";
+      color: var(--turquoise);
+      font-size: 18px;
+      transition: transform 0.2s ease;
+    }
+
+    .hero-link:hover::after {
+      transform: translateX(5px);
+    }
+
+    /* Main hero photo placeholder */
+
+    .hero-photo {
+      height: min(76vh, 760px);
+      min-height: 560px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #edf6f5 0%,
+          #dceeed 48%,
+          #c9e3e3 100%
+        );
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-placeholder {
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #72908f;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .photo-placeholder span {
+      border-bottom: 1px solid rgba(72, 115, 113, 0.4);
+      padding-bottom: 7px;
+    }
+
+
+    /* =========================
+       INTRODUCTION
+    ========================= */
+
+    .intro {
+      padding: 150px 12vw;
+      background: var(--off-white);
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--turquoise);
+      margin-bottom: 25px;
+    }
+
+    .intro-heading {
+      max-width: 850px;
+
+      font-size: clamp(38px, 5vw, 72px);
+      line-height: 1.08;
+      font-weight: 300;
+      letter-spacing: -0.035em;
+    }
+
+    .intro-heading em {
+      font-family: "Parisienne", cursive;
+      font-size: 1.15em;
+      font-style: normal;
+    }
+
+    .intro-text {
+      max-width: 560px;
+      margin-top: 38px;
+
+      font-size: 16px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+
+    /* =========================
+       FEATURE PHOTO
+    ========================= */
+
+    .feature {
+      padding: 120px 6vw;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 5vw;
+      align-items: end;
+    }
+
+    .feature-photo {
+      height: 650px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #eef7f7,
+          #d5eaea
+        );
+
+      position: relative;
+    }
+
+    .feature-copy {
+      padding-bottom: 25px;
+    }
+
+    .feature-heading {
+      font-size: clamp(36px, 4vw, 60px);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .feature-copy p {
+      max-width: 360px;
+      margin-top: 28px;
+
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+
+    /* =========================
+       SIMPLE IMAGE STRIP
+    ========================= */
+
+    .gallery {
+      padding: 40px 6vw 150px;
+    }
+
+    .gallery-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+
+      margin-bottom: 28px;
+    }
+
+    .gallery-heading h2 {
+      font-size: clamp(30px, 4vw, 52px);
+      font-weight: 300;
+      letter-spacing: -0.03em;
+    }
+
+    .gallery-heading span {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+    }
+
+    .gallery-photo {
+      height: 430px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #f0f7f7,
+          #dceeee
+        );
+
+      position: relative;
+    }
+
+    .gallery-photo:nth-child(2) {
+      margin-top: 55px;
+    }
+
+    .gallery-photo:nth-child(3) {
+      margin-top: 110px;
+    }
+
+
+    /* =========================
+       FINAL CTA
+    ========================= */
+
+    .cta {
+      padding: 150px 8vw;
+
+      background: var(--text);
+      color: white;
+
+      text-align: center;
+    }
+
+    .cta-label {
+      color: #82cbc8;
+
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .cta h2 {
+      margin-top: 22px;
+
+      font-size: clamp(44px, 6vw, 85px);
+      line-height: 1;
+      font-weight: 300;
+      letter-spacing: -0.045em;
+    }
+
+    .cta h2 span {
+      font-family: "Parisienne", cursive;
+      font-size: 1.15em;
+    }
+
+    .cta p {
+      max-width: 500px;
+      margin: 30px auto 0;
+
+      color: #b9c5c5;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .cta-button {
+      display: inline-block;
+
+      margin-top: 42px;
+      padding: 15px 30px;
+
+      border: 1px solid #82cbc8;
+
+      color: white;
+
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: #82cbc8;
+      color: var(--text);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 28px 6vw;
+
+      background: var(--text);
+      border-top: 1px solid rgba(255,255,255,0.12);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: #9eaaaa;
+      font-size: 11px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 25px;
+    }
+
+    .socials a:hover {
+      color: white;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      nav {
+        padding: 0 6vw;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .nav-links li:nth-child(1),
+      .nav-links li:nth-child(2),
+      .nav-links li:nth-child(3) {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 120px;
+      }
+
+      .hero-copy {
+        padding: 30px 0 0;
+      }
+
+      .hero-name {
+        font-size: clamp(72px, 19vw, 125px);
+      }
+
+      .hero-photo {
+        min-height: 500px;
+        height: 70vh;
+      }
+
+      .intro {
+        padding: 100px 8vw;
+      }
+
+      .feature {
+        padding: 90px 6vw;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .feature-photo {
+        height: 500px;
+      }
+
+      .gallery {
+        padding-bottom: 100px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-photo,
+      .gallery-photo:nth-child(2),
+      .gallery-photo:nth-child(3) {
+        margin-top: 0;
+        height: 480px;
+      }
+
+      .gallery-heading {
+        display: block;
+      }
+
+      .gallery-heading span {
+        display: block;
+        margin-top: 8px;
+      }
+
+      .cta {
+        padding: 110px 8vw;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
+
 
 <body>
 
   <!-- =========================
        NAVIGATION
-  ========================== -->
+  ========================= -->
 
-  <header class="site-header">
+  <nav>
 
-    <a href="#top" class="brand">
-      <img
-        src="assets/kay-tozawa-logo.png"
-        alt="Kay Tozawa"
-      >
+    <a href="#" class="nav-logo">
+      Kay Tozawa
     </a>
 
-    <button
-      class="menu-toggle"
-      aria-label="Open navigation"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#perform">Perform</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact" class="nav-book">Book</a></li>
+    </ul>
 
-    <nav class="nav">
-
-      <a href="#about">About</a>
-
-      <a href="#portfolio">Portfolio</a>
-
-      <a href="#lessons">Lessons</a>
-
-      <a href="#book">Book</a>
-
-      <a href="#contact">Contact</a>
-
-    </nav>
-
-  </header>
+  </nav>
 
 
-  <main id="top">
+  <!-- =========================
+       HERO / COVER PAGE
+  ========================= -->
 
-    <!-- =========================
-         HERO
-    ========================== -->
+  <main>
 
     <section class="hero">
 
-      <div class="hero-shape hero-shape-one"></div>
-      <div class="hero-shape hero-shape-two"></div>
-
       <div class="hero-copy">
 
-        <p class="eyebrow">
-          VIOLINIST • PERFORMER • TEACHER
-        </p>
+        <div class="eyebrow">
+          Violinist · Performer · Teacher
+        </div>
 
-        <h1>
-          Music that feels
-          <span>alive.</span>
+        <h1 class="hero-name">
+          Kay<br>
+          Tozawa
         </h1>
 
-        <p class="hero-text">
-          Welcome to the world of Kay Tozawa — a space for
-          performance, teaching, collaboration, and a lifelong
-          love of music.
+        <div class="hero-title">
+          Music with intention.
+        </div>
+
+        <p class="hero-description">
+          Violin performance and private instruction
+          for meaningful moments, celebrations, and
+          everyday musicianship.
         </p>
 
-        <div class="hero-actions">
-
-          <a
-            href="#portfolio"
-            class="button button-dark"
-          >
-            Explore My Work
-          </a>
-
-          <a
-            href="#book"
-            class="button button-outline"
-          >
-            Book Kay
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- HERO PHOTOS -->
-
-      <div class="hero-gallery">
-
-        <!-- Replace these with your photos later -->
-
-        <div class="photo photo-large">
-          <span>YOUR PHOTO</span>
-        </div>
-
-        <div class="photo photo-small photo-small-one">
-          <span>PHOTO</span>
-        </div>
-
-        <div class="photo photo-small photo-small-two">
-          <span>PHOTO</span>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         QUICK INTRO STRIP
-    ========================== -->
-
-    <section class="intro-strip">
-
-      <p>Performance</p>
-
-      <span>✦</span>
-
-      <p>Teaching</p>
-
-      <span>✦</span>
-
-      <p>Events</p>
-
-      <span>✦</span>
-
-      <p>Music</p>
-
-    </section>
-
-
-    <!-- =========================
-         ABOUT
-    ========================== -->
-
-    <section
-      class="section about"
-      id="about"
-    >
-
-      <div class="section-heading">
-
-        <p class="eyebrow">
-          ABOUT
-        </p>
-
-        <h2>
-          A violinist with
-          <span>a passion for connection.</span>
-        </h2>
-
-      </div>
-
-
-      <div class="about-content">
-
-        <div class="about-photo photo">
-
-          <!-- YOUR PORTRAIT GOES HERE -->
-
-          <span>YOUR PORTRAIT</span>
-
-        </div>
-
-
-        <div class="about-copy">
-
-          <p class="lead">
-            Music has the power to turn a moment into a memory.
-            Kay brings that idea into every performance and every lesson.
-          </p>
-
-          <p>
-            Kay Tozawa is a violinist, performer, and teacher
-            dedicated to creating meaningful musical experiences.
-            From intimate events to the classroom, every musical
-            experience is approached with creativity, expression,
-            and connection.
-          </p>
-
-          <p>
-            Add more of your personal biography here. You can talk
-            about your musical background, education, performances,
-            collaborations, and what inspires you.
-          </p>
-
-          <a
-            href="#contact"
-            class="text-link"
-          >
-            Get in touch
-            <span>→</span>
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         PORTFOLIO
-    ========================== -->
-
-    <section
-      class="section portfolio"
-      id="portfolio"
-    >
-
-      <div class="section-heading centered">
-
-        <p class="eyebrow">
-          PORTFOLIO
-        </p>
-
-        <h2>
-          A visual collection of
-          <span>music in motion.</span>
-        </h2>
-
-        <p class="section-intro">
-          A collection of performances, concerts, portraits,
-          teaching moments, and life behind the music.
-        </p>
-
-      </div>
-
-
-      <!-- PHOTO GRID -->
-
-      <div class="masonry">
-
-        <div class="gallery-card tall">
-          <span>PHOTO 01</span>
-        </div>
-
-        <div class="gallery-card">
-          <span>PHOTO 02</span>
-        </div>
-
-        <div class="gallery-card wide">
-          <span>PHOTO 03</span>
-        </div>
-
-        <div class="gallery-card">
-          <span>PHOTO 04</span>
-        </div>
-
-        <div class="gallery-card tall">
-          <span>PHOTO 05</span>
-        </div>
-
-        <div class="gallery-card">
-          <span>PHOTO 06</span>
-        </div>
-
-        <div class="gallery-card wide">
-          <span>PHOTO 07</span>
-        </div>
-
-        <div class="gallery-card">
-          <span>PHOTO 08</span>
-        </div>
-
-        <div class="gallery-card">
-          <span>PHOTO 09</span>
-        </div>
-
-        <div class="gallery-card tall">
-          <span>PHOTO 10</span>
-        </div>
-
-        <div class="gallery-card">
-          <span>PHOTO 11</span>
-        </div>
-
-        <div class="gallery-card wide">
-          <span>PHOTO 12</span>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         FEATURED PERFORMANCE
-    ========================== -->
-
-    <section class="feature-section">
-
-      <div class="feature-image photo">
-
-        <!-- FEATURE PHOTO -->
-
-        <span>
-          FEATURE PHOTO
-        </span>
-
-      </div>
-
-
-      <div class="feature-copy">
-
-        <p class="eyebrow">
-          THE ART OF PERFORMANCE
-        </p>
-
-        <h2>
-          Let the music
-          <span>tell the story.</span>
-        </h2>
-
-        <p>
-          Every performance is an opportunity to create a moment
-          people remember. Use this section for a featured concert,
-          special event, collaboration, or upcoming appearance.
-        </p>
-
-        <a
-          href="#book"
-          class="button button-dark"
-        >
-          Work With Kay
+        <a href="#contact" class="hero-link">
+          Explore
         </a>
 
       </div>
 
-    </section>
 
+      <!-- PHOTO_HERO -->
+      <div class="hero-photo">
 
-    <!-- =========================
-         LESSONS
-    ========================== -->
-
-    <section
-      class="section lessons"
-      id="lessons"
-    >
-
-      <div class="section-heading centered">
-
-        <p class="eyebrow">
-          LESSONS
-        </p>
-
-        <h2>
-          Learn. Play.
-          <span>Make it yours.</span>
-        </h2>
-
-        <p class="section-intro">
-          Private violin lessons designed to help students
-          build confidence, musicality, technique, and a
-          genuine connection with their instrument.
-        </p>
+        <div class="photo-placeholder">
+          <span>PHOTO_HERO</span>
+        </div>
 
       </div>
 
-
-      <div class="lesson-grid">
-
-
-        <!-- LESSON -->
-
-        <article class="lesson-card">
-
-          <span class="number">
-            01
-          </span>
-
-          <h3>
-            Private Lessons
-          </h3>
-
-          <p>
-            Personalized violin instruction shaped around
-            each student's goals, experience, and musical interests.
-          </p>
-
-          <strong>
-            $60
-            <small>/ lesson</small>
-          </strong>
-
-        </article>
+    </section>
 
 
-        <!-- PERFORMANCE -->
 
-        <article class="lesson-card featured">
+    <!-- =========================
+         INTRO
+    ========================= -->
 
-          <span class="number">
-            02
-          </span>
+    <section class="intro" id="about">
 
-          <h3>
+      <div class="section-label">
+        About
+      </div>
+
+      <h2 class="intro-heading">
+        A violinist bringing
+        <em>elegance</em> and
+        expression to every performance.
+      </h2>
+
+      <p class="intro-text">
+        Kay Tozawa is a violinist and teacher dedicated to
+        creating beautiful musical experiences. From
+        intimate gatherings to special celebrations,
+        every performance is approached with care,
+        artistry, and attention to detail.
+      </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         FEATURE / PERFORMANCE
+    ========================= -->
+
+    <section class="feature" id="perform">
+
+      <div class="feature-grid">
+
+        <!-- PHOTO_PERFORMANCE -->
+        <div class="feature-photo">
+
+          <div class="photo-placeholder">
+            <span>PHOTO_PERFORMANCE</span>
+          </div>
+
+        </div>
+
+
+        <div class="feature-copy">
+
+          <div class="section-label">
             Performance
-          </h3>
+          </div>
+
+          <h2 class="feature-heading">
+            Let the music
+            set the atmosphere.
+          </h2>
 
           <p>
-            Bring live violin music to your wedding, event,
-            celebration, or special occasion.
+            Live violin for weddings, celebrations,
+            private events, concerts, and other
+            meaningful occasions.
           </p>
 
-          <strong>
-            $300
-            <small>/ performance</small>
-          </strong>
-
-        </article>
-
-
-        <!-- MUSICAL DEVELOPMENT -->
-
-        <article class="lesson-card">
-
-          <span class="number">
-            03
-          </span>
-
-          <h3>
-            Musical Growth
-          </h3>
-
-          <p>
-            Develop technique, expression, confidence,
-            musicality, and stage presence in a supportive
-            environment.
-          </p>
-
-          <a
-            href="#contact"
-            class="text-link"
-          >
-            Ask about lessons
-            <span>→</span>
-          </a>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         MOMENTS IN MUSIC
-    ========================== -->
-
-    <section class="section moments">
-
-      <div class="section-heading">
-
-        <p class="eyebrow">
-          MOMENTS IN MUSIC
-        </p>
-
-        <h2>
-          More than a
-          <span>single stage.</span>
-        </h2>
-
-      </div>
-
-
-      <div class="moments-grid">
-
-        <div class="moment-photo photo">
-          <span>PHOTO</span>
-        </div>
-
-        <div class="moment-photo photo">
-          <span>PHOTO</span>
-        </div>
-
-        <div class="moment-photo photo">
-          <span>PHOTO</span>
-        </div>
-
-        <div class="moment-photo photo">
-          <span>PHOTO</span>
         </div>
 
       </div>
@@ -519,61 +705,43 @@
     </section>
 
 
+
     <!-- =========================
-         SOCIALS
-    ========================== -->
+         GALLERY
+    ========================= -->
 
-    <section class="social-section">
+    <section class="gallery" id="gallery">
 
-      <div class="social-inner">
+      <div class="gallery-heading">
 
-        <p class="eyebrow">
-          FOLLOW ALONG
-        </p>
+        <h2>Selected moments</h2>
 
-        <h2>
-          Come behind
-          <span>the music.</span>
-        </h2>
+        <span>Kay Tozawa</span>
+
+      </div>
 
 
-        <div class="social-links">
+      <div class="gallery-grid">
 
-          <!-- INSTAGRAM -->
+        <!-- PHOTO_GALLERY_01 -->
+        <div class="gallery-photo">
+          <div class="photo-placeholder">
+            <span>PHOTO_GALLERY_01</span>
+          </div>
+        </div>
 
-          <a
-            href="https://www.instagram.com/kays_violin/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-            <span>↗</span>
-          </a>
+        <!-- PHOTO_GALLERY_02 -->
+        <div class="gallery-photo">
+          <div class="photo-placeholder">
+            <span>PHOTO_GALLERY_02</span>
+          </div>
+        </div>
 
-
-          <!-- YOUTUBE -->
-
-          <a
-            href="https://www.youtube.com/@kaynicoletozawa4642"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            YouTube
-            <span>↗</span>
-          </a>
-
-
-          <!-- FACEBOOK -->
-
-          <a
-            href="https://www.facebook.com/kay.tozawa.2025"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Facebook
-            <span>↗</span>
-          </a>
-
+        <!-- PHOTO_GALLERY_03 -->
+        <div class="gallery-photo">
+          <div class="photo-placeholder">
+            <span>PHOTO_GALLERY_03</span>
+          </div>
         </div>
 
       </div>
@@ -581,127 +749,79 @@
     </section>
 
 
+
     <!-- =========================
-         BOOK / CONTACT
-    ========================== -->
+         CONTACT / CTA
+    ========================= -->
 
-    <section
-      class="book-section"
-      id="book"
-    >
+    <section class="cta" id="contact">
 
-      <div class="book-copy">
-
-        <p class="eyebrow">
-          BOOK / CONTACT
-        </p>
-
-        <h2>
-          Let's make
-          <span>something beautiful.</span>
-        </h2>
-
-        <p>
-          Whether you're looking for a performer, a teacher,
-          or a musical collaborator, get in touch and let's
-          talk about your next project.
-        </p>
-
-
-        <!-- EMAIL BUTTON -->
-
-        <a
-          href="mailto:kaytozawa@gmail.com"
-          class="button button-light"
-        >
-          Email Kay
-        </a>
-
+      <div class="cta-label">
+        Inquiries & bookings
       </div>
 
+      <h2>
+        Bring <span>music</span><br>
+        to your moment.
+      </h2>
 
-      <div class="book-photo photo">
+      <p>
+        For performances, events, and private violin
+        lessons, get in touch to discuss your plans.
+      </p>
 
-        <span>
-          YOUR PHOTO
-        </span>
-
-      </div>
+      <a
+        href="mailto:kaytozawa@gmail.com"
+        class="cta-button"
+      >
+        Contact Kay
+      </a>
 
     </section>
 
   </main>
 
 
+
   <!-- =========================
        FOOTER
-  ========================== -->
+  ========================= -->
 
-  <footer
-    class="footer"
-    id="contact"
-  >
+  <footer>
 
-    <div class="footer-brand">
-
-      <img
-        src="assets/kay-tozawa-logo.png"
-        alt="Kay Tozawa"
-      >
-
-      <p>
-        Violinist • Performer • Teacher
-      </p>
-
+    <div>
+      © 2026 Kay Tozawa
     </div>
 
-
-    <div class="footer-links">
-
-      <a href="#top">
-        Back to top ↑
-      </a>
-
-      <a
-        href="https://www.instagram.com/kays_violin/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Instagram
-      </a>
+    <div class="socials">
 
       <a
         href="https://www.youtube.com/@kaynicoletozawa4642"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener"
       >
         YouTube
       </a>
 
       <a
+        href="https://www.instagram.com/kays_violin/"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram
+      </a>
+
+      <a
         href="https://www.facebook.com/kay.tozawa.2025"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener"
       >
         Facebook
       </a>
 
-      <a href="mailto:kaytozawa@gmail.com">
-        Email
-      </a>
-
     </div>
 
-
-    <p class="copyright">
-      © 2026 Kay Tozawa. All rights reserved.
-    </p>
-
   </footer>
-
-
-  <!-- Your JavaScript -->
-  <script src="script.js"></script>
 
 </body>
 </html>
