@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Book with Kay | Kay Tozawa</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --white: #ffffff;
+      --soft-white: #f8fbfb;
+
+      --text: #1f2828;
+      --muted: #687474;
+
+      --turquoise: #66b9b7;
+      --turquoise-dark: #478f8d;
+
+      --line: #dfe7e7;
+      --pale-blue: #eaf5f5;
+    }
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      font-family: "DM Sans", sans-serif;
+
+      background: var(--white);
+      color: var(--text);
+
+      line-height: 1.7;
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* =========================================
+       NAVIGATION
+    ========================================= */
+
+    nav {
+      height: 82px;
+
+      padding: 0 6vw;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      border-bottom: 1px solid var(--line);
+
+      background: rgba(255,255,255,0.97);
+    }
+
+
+    .nav-logo {
+      font-family: "Allura", cursive;
+
+      font-size: 38px;
+      line-height: 1;
+    }
+
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+
+      list-style: none;
+    }
+
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 500;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      transition: color 0.2s ease;
+    }
+
+
+    .nav-links a:hover {
+      color: var(--turquoise-dark);
+    }
+
+
+    .active-link {
+      padding-bottom: 4px;
+
+      border-bottom: 1px solid var(--turquoise);
+    }
+
+
+
+    /* =========================================
+       GLOBAL TYPOGRAPHY
+    ========================================= */
+
+    .section-label {
+      margin-bottom: 17px;
+
+      font-size: 10px;
+      font-weight: 500;
+
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+
+      color: var(--turquoise-dark);
+    }
+
+
+    .section-heading {
+      font-size: clamp(42px, 5vw, 72px);
+
+      font-weight: 300;
+
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+
+    .body-copy {
+      font-size: 15px;
+
+      line-height: 1.9;
+
+      color: var(--muted);
+    }
+
+
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .booking-hero {
+      padding: 145px 7vw 130px;
+
+      text-align: center;
+
+      background: var(--white);
+    }
+
+
+    .booking-hero-inner {
+      max-width: 900px;
+
+      margin: 0 auto;
+    }
+
+
+    .booking-hero h1 {
+      font-size: clamp(56px, 8vw, 105px);
+
+      font-weight: 300;
+
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+
+    .booking-hero h1 em {
+      font-family: "Allura", cursive;
+
+      font-size: 1.25em;
+      font-style: normal;
+      font-weight: 400;
+    }
+
+
+    .booking-hero p {
+      max-width: 540px;
+
+      margin: 30px auto 0;
+
+      font-size: 16px;
+
+      line-height: 1.9;
+
+      color: var(--muted);
+    }
+
+
+
+    /* =========================================
+       LESSON OPTIONS
+    ========================================= */
+
+    .lessons {
+      padding: 130px 7vw;
+
+      background: var(--soft-white);
+    }
+
+
+    .lessons-inner {
+      max-width: 1200px;
+
+      margin: 0 auto;
+    }
+
+
+    .lessons-header {
+      max-width: 650px;
+
+      margin-bottom: 65px;
+    }
+
+
+    .lesson-list {
+      border-top: 1px solid var(--line);
+    }
+
+
+    .lesson-row {
+      padding: 33px 0;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 30px;
+
+      align-items: center;
+
+      border-bottom: 1px solid var(--line);
+    }
+
+
+    .lesson-name {
+      font-size: clamp(24px, 2.6vw, 36px);
+
+      font-weight: 300;
+
+      letter-spacing: -0.03em;
+    }
+
+
+    .lesson-details {
+      font-size: 14px;
+
+      color: var(--muted);
+    }
+
+
+    .lesson-price {
+      min-width: 120px;
+
+      text-align: right;
+
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+
+
+    /* =========================================
+       CALENDAR
+    ========================================= */
+
+    .calendar-section {
+      padding: 150px 7vw;
+    }
+
+
+    .calendar-inner {
+      max-width: 1200px;
+
+      margin: 0 auto;
+    }
+
+
+    .calendar-header {
+      max-width: 700px;
+
+      margin-bottom: 60px;
+    }
+
+
+    .calendar-header .body-copy {
+      margin-top: 25px;
+    }
+
+
+    /*
+    ==========================================================
+    GOOGLE CALENDAR PLACEHOLDER
+
+    Later, replace the contents of .calendar-box
+    with the embed code Google Calendar gives you.
+
+    Search:
+    GOOGLE_CALENDAR_EMBED
+    ==========================================================
+    */
+
+
+    .calendar-box {
+      min-height: 620px;
+
+      padding: 70px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      background: var(--pale-blue);
+    }
+
+
+    .calendar-box h3 {
+      font-size: clamp(28px, 3vw, 42px);
+
+      font-weight: 300;
+
+      letter-spacing: -0.03em;
+    }
+
+
+    .calendar-box p {
+      max-width: 470px;
+
+      margin-top: 20px;
+
+      font-size: 14px;
+
+      line-height: 1.9;
+
+      color: var(--muted);
+    }
+
+
+    .calendar-button {
+      display: inline-block;
+
+      margin-top: 32px;
+
+      padding: 15px 28px;
+
+      border: 1px solid var(--text);
+
+      font-size: 11px;
+      font-weight: 500;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+
+    .calendar-button:hover {
+      background: var(--text);
+      color: var(--white);
+    }
+
+
+
+    /* =========================================
+       BOOKING NOTES
+    ========================================= */
+
+    .booking-notes {
+      padding: 0 7vw 150px;
+    }
+
+
+    .notes-inner {
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      border-top: 1px solid var(--line);
+    }
+
+
+    .note {
+      padding: 45px 40px 20px 0;
+    }
+
+
+    .note + .note {
+      padding-left: 40px;
+
+      border-left: 1px solid var(--line);
+    }
+
+
+    .note-number {
+      margin-bottom: 15px;
+
+      font-size: 10px;
+
+      letter-spacing: 0.18em;
+
+      color: var(--turquoise-dark);
+    }
+
+
+    .note h3 {
+      font-size: 20px;
+
+      font-weight: 400;
+
+      margin-bottom: 10px;
+    }
+
+
+    .note p {
+      font-size: 13px;
+
+      line-height: 1.8;
+
+      color: var(--muted);
+    }
+
+
+
+    /* =========================================
+       PERFORMANCE SECTION
+    ========================================= */
+
+    .performance-booking {
+      padding: 150px 7vw;
+
+      background: var(--soft-white);
+    }
+
+
+    .performance-inner {
+      max-width: 1150px;
+
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 9vw;
+
+      align-items: center;
+    }
+
+
+    .performance-price {
+      margin-top: 30px;
+
+      font-size: 14px;
+
+      letter-spacing: 0.06em;
+
+      color: var(--text);
+    }
+
+
+    .performance-price strong {
+      font-size: 28px;
+
+      font-weight: 300;
+    }
+
+
+    .performance-copy .body-copy {
+      margin-top: 30px;
+    }
+
+
+    .performance-button {
+      display: inline-block;
+
+      margin-top: 35px;
+
+      padding-bottom: 7px;
+
+      border-bottom: 1px solid var(--turquoise);
+
+      font-size: 11px;
+      font-weight: 500;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+
+
+    /* =========================================
+       FINAL CTA
+    ========================================= */
+
+    .final-cta {
+      padding: 140px 7vw;
+
+      text-align: center;
+
+      background: var(--text);
+
+      color: var(--white);
+    }
+
+
+    .final-cta h2 {
+      max-width: 850px;
+
+      margin: 0 auto;
+
+      font-size: clamp(48px, 7vw, 90px);
+
+      font-weight: 300;
+
+      line-height: 1;
+
+      letter-spacing: -0.045em;
+    }
+
+
+    .final-cta h2 em {
+      font-family: "Allura", cursive;
+
+      font-size: 1.25em;
+
+      font-style: normal;
+    }
+
+
+    .final-cta p {
+      max-width: 500px;
+
+      margin: 28px auto 0;
+
+      font-size: 14px;
+
+      line-height: 1.9;
+
+      color: #b7c3c3;
+    }
+
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+      padding: 28px 6vw;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      background: var(--text);
+
+      border-top: 1px solid rgba(255,255,255,0.12);
+
+      color: #9ca9a9;
+
+      font-size: 11px;
+    }
+
+
+    .social-links {
+      display: flex;
+
+      gap: 25px;
+    }
+
+
+    .social-links a:hover {
+      color: white;
+    }
+
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        gap: 18px;
+      }
+
+
+      .nav-links li:nth-child(1),
+      .nav-links li:nth-child(2),
+      .nav-links li:nth-child(3) {
+        display: none;
+      }
+
+
+      .booking-hero {
+        padding: 110px 7vw 100px;
+      }
+
+
+      .lesson-row {
+        grid-template-columns: 1fr auto;
+      }
+
+
+      .lesson-details {
+        grid-column: 1;
+      }
+
+
+      .lesson-price {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+
+      .calendar-box {
+        min-height: 500px;
+
+        padding: 50px 25px;
+      }
+
+
+      .notes-inner {
+        grid-template-columns: 1fr;
+      }
+
+
+      .note {
+        padding: 35px 0;
+      }
+
+
+      .note + .note {
+        padding-left: 0;
+
+        border-left: none;
+        border-top: 1px solid var(--line);
+      }
+
+
+      .performance-inner {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+      }
+
+
+      footer {
+        flex-direction: column;
+
+        gap: 18px;
+
+        text-align: center;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      nav {
+        padding: 0 5vw;
+      }
+
+
+      .nav-logo {
+        font-size: 34px;
+      }
+
+
+      .lessons,
+      .calendar-section,
+      .performance-booking {
+        padding: 100px 6vw;
+      }
+
+
+      .booking-notes {
+        padding: 0 6vw 100px;
+      }
+
+
+      .lesson-row {
+        display: block;
+      }
+
+
+      .lesson-details {
+        margin-top: 7px;
+      }
+
+
+      .lesson-price {
+        margin-top: 12px;
+
+        text-align: left;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       NAVIGATION
+  ========================================== -->
+
+  <nav>
+
+    <a href="index.html" class="nav-logo">
+      Kay Tozawa
+    </a>
+
+    <ul class="nav-links">
+
+      <li>
+        <a href="index.html#about">
+          About
+        </a>
+      </li>
+
+      <li>
+        <a href="index.html#portfolio">
+          Portfolio
+        </a>
+      </li>
+
+      <li>
+        <a href="index.html#services">
+          Services
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html">
+          Contact
+        </a>
+      </li>
+
+      <li>
+        <a href="booking.html" class="active-link">
+          Book
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+
+
+  <main>
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="booking-hero">
+
+      <div class="booking-hero-inner">
+
+        <div class="section-label">
+          Private instruction
+        </div>
+
+        <h1>
+          Book with <em>Kay</em>
+        </h1>
+
+        <p>
+          Choose your instrument and reserve an available
+          time for a private one-hour lesson.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         LESSON OPTIONS
+    ========================================== -->
+
+    <section class="lessons">
+
+      <div class="lessons-inner">
+
+
+        <div class="lessons-header">
+
+          <div class="section-label">
+            Lesson options
+          </div>
+
+          <h2 class="section-heading">
+            Private Lessons
+          </h2>
+
+        </div>
+
+
+
+        <div class="lesson-list">
+
+
+          <div class="lesson-row">
+
+            <div class="lesson-name">
+              Violin
+            </div>
+
+            <div class="lesson-details">
+              Private one-on-one instruction · 60 minutes
+            </div>
+
+            <div class="lesson-price">
+              $60
+            </div>
+
+          </div>
+
+
+
+          <div class="lesson-row">
+
+            <div class="lesson-name">
+              Viola
+            </div>
+
+            <div class="lesson-details">
+              Private one-on-one instruction · 60 minutes
+            </div>
+
+            <div class="lesson-price">
+              $60
+            </div>
+
+          </div>
+
+
+
+          <div class="lesson-row">
+
+            <div class="lesson-name">
+              Cello
+            </div>
+
+            <div class="lesson-details">
+              Private one-on-one instruction · 60 minutes
+            </div>
+
+            <div class="lesson-price">
+              $60
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CALENDAR
+    ========================================== -->
+
+    <section class="calendar-section">
+
+      <div class="calendar-inner">
+
+
+        <div class="calendar-header">
+
+          <div class="section-label">
+            Availability
+          </div>
+
+          <h2 class="section-heading">
+            Select a Time
+          </h2>
+
+          <p class="body-copy">
+            Choose an available appointment time from the
+            booking calendar. Availability is updated regularly
+            through Kay’s calendar.
+          </p>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             GOOGLE_CALENDAR_EMBED
+
+             WHEN YOU CREATE YOUR GOOGLE APPOINTMENT SCHEDULE:
+
+             Google will give you either:
+             1. a booking link
+             OR
+             2. website embed code.
+
+             You will replace this placeholder later.
+
+             Search this file for:
+             GOOGLE_CALENDAR_EMBED
+        =================================================== -->
+
+
+        <div class="calendar-box">
+
+          <h3>
+            Booking Calendar
+          </h3>
+
+          <p>
+            Kay’s available lesson times will appear here.
+            Select a time that works for you to reserve
+            your lesson.
+          </p>
+
+
+          <!-- ==================================================
+               GOOGLE_BOOKING_LINK
+
+               Replace YOUR_GOOGLE_BOOKING_LINK_HERE
+               with the link Google gives you.
+          =================================================== -->
+
+          <a
+            href="YOUR_GOOGLE_BOOKING_LINK_HERE"
+            target="_blank"
+            class="calendar-button"
+          >
+            Open Booking Calendar
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         BOOKING INFORMATION
+    ========================================== -->
+
+    <section class="booking-notes">
+
+      <div class="notes-inner">
+
+
+        <div class="note">
+
+          <div class="note-number">
+            01
+          </div>
+
+          <h3>
+            Lesson Length
+          </h3>
+
+          <p>
+            Private lessons are scheduled for
+            60 minutes.
+          </p>
+
+        </div>
+
+
+
+        <div class="note">
+
+          <div class="note-number">
+            02
+          </div>
+
+          <h3>
+            Advance Booking
+          </h3>
+
+          <p>
+            Please book lessons at least
+            24 hours in advance.
+          </p>
+
+        </div>
+
+
+
+        <div class="note">
+
+          <div class="note-number">
+            03
+          </div>
+
+          <h3>
+            Rescheduling
+          </h3>
+
+          <p>
+            If you need to change your appointment,
+            use the rescheduling option included with
+            your booking confirmation.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PERFORMANCES
+    ========================================== -->
+
+    <section class="performance-booking">
+
+      <div class="performance-inner">
+
+
+        <div>
+
+          <div class="section-label">
+            Events & performances
+          </div>
+
+          <h2 class="section-heading">
+            Looking to book
+            a performance?
+          </h2>
+
+        </div>
+
+
+
+        <div class="performance-copy">
+
+          <p class="body-copy">
+            Kay is available for weddings, private events,
+            parties, celebrations, and other special occasions.
+            Performance bookings are arranged individually based
+            on the date, venue, location, and length of the event.
+          </p>
+
+
+          <div class="performance-price">
+            Performances from
+            <strong>$300</strong>
+          </div>
+
+
+          <a
+            href="contact.html"
+            class="performance-button"
+          >
+            Request Performance Availability
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FINAL SECTION
+    ========================================== -->
+
+    <section class="final-cta">
+
+      <h2>
+        Make time for
+        <em>music.</em>
+      </h2>
+
+      <p>
+        Select an available lesson time and begin
+        building technique, confidence, and musicianship.
+      </p>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer>
+
+    <div>
+      © 2026 Kay Tozawa
+    </div>
+
+
+    <div class="social-links">
+
+      <a
+        href="https://www.youtube.com/@kaynicoletozawa4642"
+        target="_blank"
+        rel="noopener"
+      >
+        YouTube
+      </a>
+
+      <a
+        href="https://www.instagram.com/kays_violin/"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram
+      </a>
+
+      <a
+        href="https://www.facebook.com/kay.tozawa.2025"
+        target="_blank"
+        rel="noopener"
+      >
+        Facebook
+      </a>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
