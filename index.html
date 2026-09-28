@@ -780,6 +780,124 @@
 
     }
 
+    /* =========================================
+   MOBILE HAMBURGER MENU - FINAL OVERRIDE
+========================================= */
+
+.menu-toggle {
+  display: none;
+  width: 30px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 30px;
+  height: 1.5px;
+  background: #1f2828;
+  transition: 0.3s ease;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+  nav {
+    position: relative;
+    height: 82px;
+    padding: 0 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible;
+  }
+
+
+  .menu-toggle {
+    display: flex !important;
+  }
+
+
+  .nav-links {
+    position: absolute;
+
+    top: 82px;
+    left: 0;
+
+    width: 100%;
+
+    display: none !important;
+    flex-direction: column !important;
+
+    gap: 0 !important;
+
+    background: #ffffff;
+
+    border-top: 1px solid #dfe7e7;
+    border-bottom: 1px solid #dfe7e7;
+
+    z-index: 1000;
+  }
+
+
+  .nav-links.open {
+    display: flex !important;
+  }
+
+
+  .nav-links li,
+  .nav-links li:nth-child(1),
+  .nav-links li:nth-child(2),
+  .nav-links li:nth-child(3),
+  .nav-links li:nth-child(4),
+  .nav-links li:nth-child(5) {
+    display: block !important;
+    width: 100%;
+  }
+
+
+  .nav-links a {
+    display: block;
+
+    width: 100%;
+
+    padding: 20px 6vw;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    border-bottom: 1px solid #e5ebeb;
+  }
+
+
+  /* Hamburger turns into X */
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+}
   </style>
 </head>
 
@@ -797,7 +915,7 @@
     Kay Tozawa
   </a>
 
-  <button class="menu-toggle" aria-label="Open navigation">
+  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span>
     <span></span>
     <span></span>
@@ -1396,6 +1514,36 @@
 
   </footer>
 
+  <script>
+
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", function () {
+
+    menuToggle.classList.toggle("open");
+    navLinks.classList.toggle("open");
+
+    const isOpen = navLinks.classList.contains("open");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+  });
+
+
+  document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+    link.addEventListener("click", function () {
+
+      menuToggle.classList.remove("open");
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+
+    });
+
+  });
+
+</script>
 
 </body>
 </html>
