@@ -1,64 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<style>
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #ffffff;
-}
+  <meta charset="UTF-8">
 
-.palette {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  min-height: 100vh;
-}
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-.swatch {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 30px 10px;
-  text-align: center;
-}
+  <title>Kay Tozawa Colour Palette</title>
 
-</style>
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #243238;
+    }
+
+    .palette {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .swatch {
+      min-height: 50vh;
+      padding: 35px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .hex {
+      font-size: 15px;
+      letter-spacing: 0.08em;
+    }
+
+    .dark {
+      color: white;
+    }
+
+    @media (max-width: 800px) {
+
+      .palette {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .swatch {
+        min-height: 33vh;
+      }
+
+    }
+
+    @media (max-width: 500px) {
+
+      .palette {
+        grid-template-columns: 1fr;
+      }
+
+      .swatch {
+        min-height: 28vh;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-<div class="palette">
+  <div class="palette">
 
-  <div class="swatch" style="background:#F3F7F7;">
-    Pearl<br>#F3F7F7
+    <div
+      class="swatch"
+      style="background:#F7FCFF;"
+    >
+      <div class="name">
+        Sky White
+      </div>
+
+      <div class="hex">
+        #F7FCFF
+      </div>
+    </div>
+
+
+    <div
+      class="swatch"
+      style="background:#EAF6FF;"
+    >
+      <div class="name">
+        Soft Sky Blue
+      </div>
+
+      <div class="hex">
+        #EAF6FF
+      </div>
+    </div>
+
+
+    <div
+      class="swatch"
+      style="background:#DFF6F2;"
+    >
+      <div class="name">
+        Soft Aqua
+      </div>
+
+      <div class="hex">
+        #DFF6F2
+      </div>
+    </div>
+
+
+    <div
+      class="swatch"
+      style="background:#ECEEFF;"
+    >
+      <div class="name">
+        Soft Periwinkle
+      </div>
+
+      <div class="hex">
+        #ECEEFF
+      </div>
+    </div>
+
+
+    <div
+      class="swatch dark"
+      style="background:#57C3BE;"
+    >
+      <div class="name">
+        Bright Turquoise
+      </div>
+
+      <div class="hex">
+        #57C3BE
+      </div>
+    </div>
+
+
+    <div
+      class="swatch dark"
+      style="background:#347F82;"
+    >
+      <div class="name">
+        Deep Teal
+      </div>
+
+      <div class="hex">
+        #347F82
+      </div>
+    </div>
+
+
+    <div
+      class="swatch dark"
+      style="background:#243238;"
+    >
+      <div class="name">
+        Charcoal
+      </div>
+
+      <div class="hex">
+        #243238
+      </div>
+    </div>
+
+
+    <div
+      class="swatch"
+      style="background:#FFFFFF; border:1px solid #e5e5e5;"
+    >
+      <div class="name">
+        White
+      </div>
+
+      <div class="hex">
+        #FFFFFF
+      </div>
+    </div>
+
   </div>
-
-  <div class="swatch" style="background:#EAF3F3;">
-    Mist Blue<br>#EAF3F3
-  </div>
-
-  <div class="swatch" style="background:#DDECEC;">
-    Soft Aqua<br>#DDECEC
-  </div>
-
-  <div class="swatch" style="background:#FFFFFF;">
-    White<br>#FFFFFF
-  </div>
-
-  <div class="swatch" style="background:#243030; color:white;">
-    Charcoal<br>#243030
-  </div>
-
-  <div class="swatch" style="background:#5FAFAD; color:white;">
-    Turquoise<br>#5FAFAD
-  </div>
-
-  <div class="swatch" style="background:#1F2929; color:white;">
-    Deep Charcoal<br>#1F2929
-  </div>
-
-</div>
 
 </body>
+
 </html>
