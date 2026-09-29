@@ -4,18 +4,33 @@
 <head>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Contact | Kay Tozawa</title>
 
-  <!-- Fonts -->
+
+  <!-- =========================================================
+       FONTS
+  ========================================================== -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Tangerine:wght@400;700&display=swap"
     rel="stylesheet"
   >
+
+
 
   <style>
 
@@ -25,17 +40,31 @@
 
     :root {
 
-      --white: #ffffff;
-      --soft-white: #f8fbfb;
+      --sky-white: #F4FBFD;
 
-      --text: #1f2828;
-      --muted: #687474;
+      --soft-blue: #DDEFFC;
 
-      --turquoise: #66b9b7;
-      --turquoise-dark: #478f8d;
+      --soft-aqua: #CFEFEB;
 
-      --pale-blue: #e9f4f4;
-      --line: #dfe7e7;
+      --pink: #F7D6E2;
+
+      --pink-strong: #F1BFD0;
+
+      --white: #FFFFFF;
+
+      --turquoise: #34BBB3;
+
+      --turquoise-dark: #187E7B;
+
+      --deep-teal: #275F63;
+
+      --footer-teal: #226D70;
+
+      --text: #243238;
+
+      --muted: #5E6C70;
+
+      --line: #A9CED0;
 
     }
 
@@ -46,14 +75,20 @@
     ========================================================= */
 
     * {
+
       margin: 0;
+
       padding: 0;
+
       box-sizing: border-box;
+
     }
 
 
     html {
+
       scroll-behavior: smooth;
+
     }
 
 
@@ -61,7 +96,8 @@
 
       font-family: "DM Sans", sans-serif;
 
-      background: var(--white);
+      background: var(--sky-white);
+
       color: var(--text);
 
       line-height: 1.7;
@@ -72,16 +108,11 @@
 
 
     a {
+
       color: inherit;
+
       text-decoration: none;
-    }
 
-
-    button,
-    input,
-    select,
-    textarea {
-      font: inherit;
     }
 
 
@@ -92,15 +123,36 @@
 
     .section-label {
 
+      display: flex;
+
+      align-items: center;
+
+      gap: 11px;
+
       margin-bottom: 18px;
 
       font-size: 10px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.2em;
+
       text-transform: uppercase;
 
       color: var(--turquoise-dark);
+
+    }
+
+
+    .section-label::before {
+
+      content: "";
+
+      width: 28px;
+
+      height: 2px;
+
+      background: var(--turquoise);
 
     }
 
@@ -109,9 +161,10 @@
 
       font-size: clamp(42px, 5vw, 76px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 1.04;
+
       letter-spacing: -0.04em;
 
     }
@@ -133,72 +186,166 @@
        NAVIGATION
     ========================================================= */
 
-    nav {
+    .site-nav {
 
-      height: 82px;
+      width: 100%;
+
+      height: 84px;
 
       padding: 0 6vw;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
+      position: relative;
+
+      z-index: 9999;
+
+      background: rgba(244,251,253,0.97);
+
+      backdrop-filter: blur(12px);
+
+      border-top: 4px solid var(--turquoise);
 
       border-bottom: 1px solid var(--line);
 
-      background: rgba(255,255,255,0.97);
-
-      position: relative;
-      z-index: 50;
+      box-shadow:
+        0 7px 25px rgba(39,95,99,0.08);
 
     }
 
 
-    .nav-logo {
+    .site-logo {
 
-      font-family: "Allura", cursive;
+      font-family: "Tangerine", cursive;
 
-      font-size: 38px;
+      font-size: 48px;
+
+      font-weight: 700;
 
       line-height: 1;
 
+      color: var(--turquoise-dark);
+
+      white-space: nowrap;
+
     }
 
 
-    .nav-links {
 
-      list-style: none;
+    /* DESKTOP MENU */
+
+    .desktop-menu {
 
       display: flex;
+
       align-items: center;
 
-      gap: 34px;
+      gap: 30px;
 
     }
 
 
-    .nav-links a {
+    .desktop-menu a {
+
+      position: relative;
 
       font-size: 11px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.15em;
+
       text-transform: uppercase;
 
-      transition: color 0.25s ease;
+      transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
 
     }
 
 
-    .nav-links a:hover {
+    .desktop-menu a:not(.nav-book)::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: -8px;
+
+      width: 0;
+
+      height: 2px;
+
+      background: var(--turquoise);
+
+      transition: width 0.3s ease;
+
+    }
+
+
+    .desktop-menu a:hover {
+
       color: var(--turquoise-dark);
+
     }
 
 
-    .active-link {
+    .desktop-menu a:hover::after {
 
-      padding-bottom: 4px;
+      width: 100%;
 
-      border-bottom: 1px solid var(--turquoise);
+    }
+
+
+    .desktop-menu .active-nav {
+
+      color: var(--turquoise-dark);
+
+    }
+
+
+    .desktop-menu .active-nav::after {
+
+      width: 100% !important;
+
+    }
+
+
+    .nav-book {
+
+      padding: 10px 18px;
+
+      background: var(--turquoise);
+
+      color: white;
+
+      box-shadow:
+        0 5px 14px rgba(39,95,99,0.12);
+
+    }
+
+
+    .nav-book:hover {
+
+      background: var(--turquoise-dark);
+
+      color: white !important;
+
+      transform: translateY(-1px);
+
+    }
+
+
+    .mobile-menu {
+
+      display: none;
 
     }
 
@@ -215,11 +362,21 @@
       padding: 110px 7vw 130px;
 
       display: grid;
+
       grid-template-columns: 0.9fr 1.1fr;
 
       gap: 8vw;
 
       align-items: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--sky-white) 0%,
+          #E8F6F7 100%
+        );
+
+      border-bottom: 1px solid var(--line);
 
     }
 
@@ -235,9 +392,10 @@
 
       font-size: clamp(70px, 9vw, 130px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 0.95;
+
       letter-spacing: -0.055em;
 
     }
@@ -247,11 +405,15 @@
 
       display: block;
 
-      font-family: "Allura", cursive;
+      font-family: "Tangerine", cursive;
 
-      font-size: 1.18em;
+      font-size: 1.28em;
+
       font-style: normal;
-      font-weight: 400;
+
+      font-weight: 700;
+
+      line-height: 0.8;
 
       color: var(--turquoise-dark);
 
@@ -262,7 +424,11 @@
 
       max-width: 480px;
 
-      margin-top: 34px;
+      margin-top: 38px;
+
+      padding-left: 18px;
+
+      border-left: 3px solid var(--turquoise);
 
       font-size: 16px;
 
@@ -274,7 +440,39 @@
 
 
 
-    /* PHOTO_CONTACT_HERO */
+    /* =========================================================
+       HERO PHOTO
+    ========================================================= */
+
+    .hero-photo-wrap {
+
+      position: relative;
+
+    }
+
+
+    .hero-photo-wrap::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 52%;
+
+      height: 42%;
+
+      right: -28px;
+
+      top: -28px;
+
+      background: var(--pink);
+
+      border: 1px solid var(--pink-strong);
+
+      z-index: 0;
+
+    }
+
 
     .hero-photo {
 
@@ -284,12 +482,33 @@
 
       overflow: hidden;
 
-      background:
-        linear-gradient(
-          145deg,
-          #edf7f7,
-          #d6eaea
-        );
+      background: var(--soft-blue);
+
+      border: 1px solid rgba(39,95,99,0.22);
+
+      box-shadow:
+        0 22px 50px rgba(39,95,99,0.15);
+
+      z-index: 2;
+
+    }
+
+
+    .hero-photo::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 150px;
+
+      height: 12px;
+
+      left: 0;
+
+      bottom: 0;
+
+      background: var(--turquoise);
 
     }
 
@@ -297,19 +516,24 @@
     .photo-placeholder {
 
       position: absolute;
+
       inset: 0;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       font-size: 10px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.18em;
+
       text-transform: uppercase;
 
-      color: #708d8c;
+      color: var(--turquoise-dark);
 
     }
 
@@ -318,7 +542,8 @@
 
       padding-bottom: 7px;
 
-      border-bottom: 1px solid rgba(73,116,114,0.3);
+      border-bottom:
+        2px solid rgba(24,126,123,0.28);
 
     }
 
@@ -332,7 +557,9 @@
 
       padding: 150px 7vw;
 
-      background: var(--soft-white);
+      background: var(--soft-blue);
+
+      border-bottom: 1px solid var(--line);
 
     }
 
@@ -344,9 +571,10 @@
       margin: 0 auto;
 
       display: grid;
+
       grid-template-columns: 0.7fr 1.3fr;
 
-      gap: 9vw;
+      gap: 7vw;
 
       align-items: start;
 
@@ -371,9 +599,10 @@
 
       font-size: clamp(38px, 4vw, 58px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 1.08;
+
       letter-spacing: -0.035em;
 
     }
@@ -411,9 +640,11 @@
       margin-bottom: 7px;
 
       font-size: 9px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.18em;
+
       text-transform: uppercase;
 
       color: var(--turquoise-dark);
@@ -447,9 +678,10 @@
     .contact-socials {
 
       display: flex;
+
       flex-wrap: wrap;
 
-      gap: 20px;
+      gap: 18px;
 
       margin-top: 35px;
 
@@ -458,49 +690,63 @@
 
     .contact-socials a {
 
-      padding-bottom: 4px;
+      padding: 9px 13px;
 
-      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.55);
 
-      font-size: 11px;
-      font-weight: 500;
+      border: 1px solid rgba(24,126,123,0.20);
+
+      font-size: 10px;
+
+      font-weight: 600;
 
       letter-spacing: 0.12em;
+
       text-transform: uppercase;
 
       transition:
-        border-color 0.2s ease,
-        color 0.2s ease;
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 
     }
 
 
     .contact-socials a:hover {
 
-      color: var(--turquoise-dark);
+      background: var(--turquoise);
 
-      border-color: var(--turquoise);
+      color: white;
+
+      transform: translateY(-2px);
 
     }
 
 
 
     /* =========================================================
-       FORM
+       GOOGLE FORM AREA
     ========================================================= */
 
     .form-wrap {
 
-      background: var(--white);
+      background: rgba(255,255,255,0.68);
 
-      padding: 65px;
+      padding: 50px;
+
+      border: 1px solid rgba(39,95,99,0.18);
+
+      border-top: 6px solid var(--turquoise);
+
+      box-shadow:
+        0 20px 45px rgba(39,95,99,0.12);
 
     }
 
 
     .form-heading {
 
-      margin-bottom: 55px;
+      margin-bottom: 45px;
 
     }
 
@@ -509,9 +755,10 @@
 
       font-size: clamp(36px, 4vw, 58px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 1.05;
+
       letter-spacing: -0.04em;
 
     }
@@ -532,159 +779,51 @@
     }
 
 
-    form {
+
+    /* =========================================================
+       GOOGLE FORM EMBED
+    ========================================================= */
+
+    .google-form-wrap {
 
       width: 100%;
 
-    }
+      position: relative;
 
+      overflow: hidden;
 
-    .form-row {
+      background: var(--white);
 
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      border: 1px solid rgba(24,126,123,0.18);
 
-      gap: 28px;
-
-    }
-
-
-    .form-group {
-
-      margin-bottom: 34px;
+      box-shadow:
+        0 12px 30px rgba(39,95,99,0.08);
 
     }
 
 
-    .form-group label {
+    .google-form-wrap iframe {
 
       display: block;
 
-      margin-bottom: 10px;
-
-      font-size: 10px;
-      font-weight: 500;
-
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-
-      color: var(--text);
-
-    }
-
-
-    .optional {
-
-      font-weight: 400;
-
-      color: #98a3a3;
-
-      text-transform: none;
-      letter-spacing: 0;
-
-      margin-left: 5px;
-
-    }
-
-
-    input,
-    select,
-    textarea {
-
       width: 100%;
 
-      border: none;
-      border-bottom: 1px solid #ccd7d7;
+      height: 1231px;
 
-      border-radius: 0;
+      border: 0;
 
-      padding: 12px 0 14px;
-
-      background: transparent;
-
-      color: var(--text);
-
-      font-size: 14px;
-
-      outline: none;
-
-      transition: border-color 0.2s ease;
-
-    }
-
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-
-      border-bottom-color: var(--turquoise-dark);
-
-    }
-
-
-    input::placeholder,
-    textarea::placeholder {
-
-      color: #a0aaaa;
-
-    }
-
-
-    select {
-
-      cursor: pointer;
-
-    }
-
-
-    textarea {
-
-      min-height: 130px;
-
-      resize: vertical;
-
-    }
-
-
-    .submit-button {
-
-      margin-top: 15px;
-
-      padding: 16px 31px;
-
-      border: 1px solid var(--text);
-
-      background: transparent;
-
-      color: var(--text);
-
-      cursor: pointer;
-
-      font-size: 11px;
-      font-weight: 500;
-
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-
-      transition:
-        background 0.25s ease,
-        color 0.25s ease;
-
-    }
-
-
-    .submit-button:hover {
-
-      background: var(--text);
-
-      color: white;
+      background: white;
 
     }
 
 
     .form-note {
 
-      margin-top: 25px;
+      margin-top: 22px;
+
+      padding-left: 15px;
+
+      border-left: 3px solid var(--pink-strong);
 
       max-width: 550px;
 
@@ -692,7 +831,7 @@
 
       line-height: 1.7;
 
-      color: #8d9999;
+      color: var(--muted);
 
     }
 
@@ -705,6 +844,10 @@
     .performance-note {
 
       padding: 150px 7vw;
+
+      background: var(--white);
+
+      border-bottom: 1px solid var(--line);
 
     }
 
@@ -720,13 +863,21 @@
     }
 
 
+    .performance-note-inner .section-label {
+
+      justify-content: center;
+
+    }
+
+
     .performance-note h2 {
 
       font-size: clamp(44px, 6vw, 82px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 1.05;
+
       letter-spacing: -0.045em;
 
     }
@@ -734,12 +885,13 @@
 
     .performance-note h2 em {
 
-      font-family: "Allura", cursive;
+      font-family: "Tangerine", cursive;
 
       font-style: normal;
-      font-weight: 400;
 
-      font-size: 1.15em;
+      font-weight: 700;
+
+      font-size: 1.28em;
 
       color: var(--turquoise-dark);
 
@@ -751,6 +903,10 @@
       max-width: 650px;
 
       margin: 30px auto 0;
+
+      padding-top: 30px;
+
+      border-top: 2px solid var(--turquoise);
 
       font-size: 15px;
 
@@ -771,13 +927,18 @@
       padding: 135px 7vw;
 
       display: grid;
+
       grid-template-columns: 1fr auto;
 
       gap: 60px;
 
       align-items: center;
 
-      background: var(--pale-blue);
+      background: var(--pink);
+
+      border-top: 1px solid var(--pink-strong);
+
+      border-bottom: 1px solid var(--pink-strong);
 
     }
 
@@ -793,9 +954,10 @@
 
       font-size: clamp(38px, 5vw, 68px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 1.05;
+
       letter-spacing: -0.04em;
 
     }
@@ -820,28 +982,37 @@
 
       padding: 16px 29px;
 
-      border: 1px solid var(--text);
+      background: var(--turquoise);
+
+      border: 1px solid var(--turquoise);
+
+      box-shadow:
+        0 10px 25px rgba(39,95,99,0.14);
+
+      color: white;
 
       white-space: nowrap;
 
       font-size: 11px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.14em;
+
       text-transform: uppercase;
 
       transition:
         background 0.25s ease,
-        color 0.25s ease;
+        transform 0.25s ease;
 
     }
 
 
     .lesson-button:hover {
 
-      background: var(--text);
+      background: var(--turquoise-dark);
 
-      color: white;
+      transform: translateY(-3px);
 
     }
 
@@ -856,14 +1027,17 @@
       padding: 28px 6vw;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
-      background: var(--text);
+      background: #19585B;
 
-      color: #9ca9a9;
+      color: #C5DEDF;
 
-      border-top: 1px solid rgba(255,255,255,0.12);
+      border-top:
+        8px solid var(--turquoise);
 
       font-size: 11px;
 
@@ -943,15 +1117,10 @@
 
 
     /* =========================================================
-       MOBILE
+       TABLET
     ========================================================= */
 
     @media (max-width: 950px) {
-
-      .nav-links {
-        gap: 20px;
-      }
-
 
       .hero {
 
@@ -993,39 +1162,204 @@
 
 
 
-    @media (max-width: 650px) {
+    /* =========================================================
+       MOBILE NAVIGATION
+    ========================================================= */
 
-      nav {
+    @media (max-width: 850px) {
 
-        padding: 0 5vw;
+      .site-nav {
 
-      }
+        height: 78px;
 
+        padding: 0 6vw;
 
-      .nav-logo {
-
-        font-size: 34px;
-
-      }
-
-
-      .nav-links {
-
-        gap: 17px;
+        overflow: visible;
 
       }
 
 
-      .nav-links li:first-child {
+      .site-logo {
+
+        font-size: 44px;
+
+      }
+
+
+      .desktop-menu {
 
         display: none;
 
       }
 
 
+      .mobile-menu {
+
+        display: block;
+
+        position: relative;
+
+        z-index: 10000;
+
+      }
+
+
+      .mobile-menu summary {
+
+        list-style: none;
+
+      }
+
+
+      .mobile-menu summary::-webkit-details-marker {
+
+        display: none;
+
+      }
+
+
+      .hamburger {
+
+        width: 32px;
+
+        height: 24px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: space-between;
+
+        cursor: pointer;
+
+      }
+
+
+      .hamburger span {
+
+        display: block;
+
+        width: 32px;
+
+        height: 2px;
+
+        background: var(--turquoise-dark);
+
+        transform-origin: center;
+
+        transition:
+          transform 0.25s ease,
+          opacity 0.25s ease;
+
+      }
+
+
+      .mobile-menu[open]
+      .hamburger span:nth-child(1) {
+
+        transform:
+          translateY(11px)
+          rotate(45deg);
+
+      }
+
+
+      .mobile-menu[open]
+      .hamburger span:nth-child(2) {
+
+        opacity: 0;
+
+      }
+
+
+      .mobile-menu[open]
+      .hamburger span:nth-child(3) {
+
+        transform:
+          translateY(-11px)
+          rotate(-45deg);
+
+      }
+
+
+      .mobile-links {
+
+        position: absolute;
+
+        top: 50px;
+
+        right: -6vw;
+
+        width: 100vw;
+
+        background: var(--sky-white);
+
+        border-top:
+          4px solid var(--turquoise);
+
+        border-bottom:
+          1px solid var(--line);
+
+        box-shadow:
+          0 15px 30px rgba(39,95,99,0.16);
+
+      }
+
+
+      .mobile-links a {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 21px 6vw;
+
+        text-align: center;
+
+        font-size: 11px;
+
+        font-weight: 600;
+
+        letter-spacing: 0.15em;
+
+        text-transform: uppercase;
+
+        border-bottom:
+          1px solid var(--line);
+
+      }
+
+
+      .mobile-links a:last-child {
+
+        border-bottom: none;
+
+      }
+
+
+      .mobile-links .mobile-book {
+
+        background: var(--turquoise);
+
+        color: white;
+
+      }
+
+    }
+
+
+
+    /* =========================================================
+       PHONE
+    ========================================================= */
+
+    @media (max-width: 650px) {
+
       .hero {
 
-        padding: 90px 6vw 100px;
+        padding:
+          90px 6vw
+          100px;
 
       }
 
@@ -1042,23 +1376,59 @@
       .lesson-cta {
 
         padding-left: 6vw;
+
         padding-right: 6vw;
+
+      }
+
+
+      .contact-section {
+
+        padding-top: 100px;
+
+        padding-bottom: 100px;
 
       }
 
 
       .form-wrap {
 
-        padding: 40px 25px;
+        padding:
+          35px 15px;
 
       }
 
 
-      .form-row {
+      .google-form-wrap {
 
-        grid-template-columns: 1fr;
+        margin-left: -4px;
 
-        gap: 0;
+        width: calc(100% + 8px);
+
+      }
+
+
+      .google-form-wrap iframe {
+
+        height: 1300px;
+
+      }
+
+
+      .performance-note {
+
+        padding-top: 110px;
+
+        padding-bottom: 110px;
+
+      }
+
+
+      .lesson-cta {
+
+        padding-top: 100px;
+
+        padding-bottom: 100px;
 
       }
 
@@ -1084,7 +1454,9 @@
     @media (prefers-reduced-motion: reduce) {
 
       html {
+
         scroll-behavior: auto;
+
       }
 
 
@@ -1101,224 +1473,7 @@
       }
 
     }
-/* =========================================================
-   UNIVERSAL SITE NAVIGATION
-========================================================= */
 
-.site-nav {
-  width: 100%;
-  height: 82px;
-
-  padding: 0 6vw;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  position: relative;
-  z-index: 9999;
-
-  background: rgba(255, 255, 255, 0.98);
-
-  border-bottom: 1px solid #dfe7e7;
-}
-
-
-.site-logo {
-  font-family: "Allura", cursive;
-
-  font-size: 38px;
-  line-height: 1;
-
-  color: #1f2828;
-
-  white-space: nowrap;
-}
-
-
-/* DESKTOP */
-
-.desktop-menu {
-  display: flex;
-  align-items: center;
-
-  gap: 34px;
-}
-
-
-.desktop-menu a {
-  font-family: "DM Sans", sans-serif;
-
-  font-size: 11px;
-  font-weight: 500;
-
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-
-  color: #1f2828;
-
-  text-decoration: none;
-
-  transition: color 0.25s ease;
-}
-
-
-.desktop-menu a:hover {
-  color: #478f8d;
-}
-
-
-/* MOBILE HIDDEN ON DESKTOP */
-
-.mobile-menu {
-  display: none;
-}
-
-
-/* =========================================================
-   PHONE / TABLET NAV
-========================================================= */
-
-@media (max-width: 850px) {
-
-  .site-nav {
-    height: 76px;
-
-    padding: 0 6vw;
-
-    overflow: visible;
-  }
-
-
-  .site-logo {
-    font-size: 34px;
-  }
-
-
-  .desktop-menu {
-    display: none !important;
-  }
-
-
-  .mobile-menu {
-    display: block !important;
-
-    position: relative;
-
-    z-index: 10000;
-  }
-
-
-  .mobile-menu summary {
-    list-style: none;
-  }
-
-
-  .mobile-menu summary::-webkit-details-marker {
-    display: none;
-  }
-
-
-  .hamburger {
-    width: 32px;
-    height: 24px;
-
-    display: flex;
-
-    flex-direction: column;
-    justify-content: space-between;
-
-    cursor: pointer;
-  }
-
-
-  .hamburger span {
-    display: block;
-
-    width: 32px;
-    height: 2px;
-
-    background: #1f2828;
-
-    transform-origin: center;
-
-    transition:
-      transform 0.25s ease,
-      opacity 0.25s ease;
-  }
-
-
-  /* HAMBURGER BECOMES X */
-
-  .mobile-menu[open] .hamburger span:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
-  }
-
-
-  .mobile-menu[open] .hamburger span:nth-child(2) {
-    opacity: 0;
-  }
-
-
-  .mobile-menu[open] .hamburger span:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
-  }
-
-
-  /* DROPDOWN */
-
-  .mobile-links {
-    position: absolute;
-
-    top: 50px;
-    right: -6vw;
-
-    width: 100vw;
-
-    background: #ffffff;
-
-    border-top: 1px solid #dfe7e7;
-    border-bottom: 1px solid #dfe7e7;
-
-    box-shadow: 0 12px 30px rgba(20, 30, 30, 0.06);
-  }
-
-
-  .mobile-links a {
-    display: block;
-
-    width: 100%;
-
-    padding: 21px 6vw;
-
-    text-align: center;
-
-    font-family: "DM Sans", sans-serif;
-
-    font-size: 11px;
-    font-weight: 500;
-
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-
-    color: #1f2828;
-
-    text-decoration: none;
-
-    border-bottom: 1px solid #e8eeee;
-  }
-
-
-  .mobile-links a:last-child {
-    border-bottom: none;
-  }
-
-
-  .mobile-links a:hover {
-    color: #478f8d;
-  }
-
-}
   </style>
 
 </head>
@@ -1332,47 +1487,87 @@
        NAVIGATION
   ========================================================== -->
 
-<nav class="site-nav">
-
-  <a href="index.html" class="site-logo">
-    Kay Tozawa
-  </a>
-
-  <!-- DESKTOP NAVIGATION -->
-  <div class="desktop-menu">
-
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="booking.html">Book</a>
-    <a href="contact.html">Contact</a>
-
-  </div>
+  <nav class="site-nav">
 
 
-  <!-- MOBILE NAVIGATION -->
-  <details class="mobile-menu">
-
-    <summary
-      class="hamburger"
-      aria-label="Open navigation"
+    <a
+      href="index.html"
+      class="site-logo"
     >
-      <span></span>
-      <span></span>
-      <span></span>
-    </summary>
+      Kay Tozawa
+    </a>
 
-    <div class="mobile-links">
 
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="booking.html">Book</a>
-      <a href="contact.html">Contact</a>
+
+    <div class="desktop-menu">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="portfolio.html">
+        Portfolio
+      </a>
+
+      <a
+        href="booking.html"
+        class="nav-book"
+      >
+        Book
+      </a>
+
+      <a
+        href="contact.html"
+        class="active-nav"
+      >
+        Contact
+      </a>
 
     </div>
 
-  </details>
 
-</nav>
+
+    <details class="mobile-menu">
+
+      <summary
+        class="hamburger"
+        aria-label="Open navigation"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </summary>
+
+
+      <div class="mobile-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="portfolio.html">
+          Portfolio
+        </a>
+
+        <a
+          href="booking.html"
+          class="mobile-book"
+        >
+          Book
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+    </details>
+
+
+  </nav>
 
 
 
@@ -1388,20 +1583,31 @@
 
       <div class="hero-copy reveal-left">
 
+
         <div class="section-label">
           Inquiries & collaborations
         </div>
 
+
         <h1 class="hero-title">
+
           Contact
-          <em>Kay</em>
+
+          <em>
+            Kay
+          </em>
+
         </h1>
 
+
         <p>
+
           For performance bookings, weddings, private events,
           collaborations, media inquiries, or general questions,
-          use the form below to get in touch.
+          use the inquiry form below to get in touch.
+
         </p>
+
 
       </div>
 
@@ -1409,11 +1615,23 @@
 
       <!-- PHOTO_CONTACT_HERO -->
 
-      <div class="hero-photo reveal-right">
+      <div class="hero-photo-wrap reveal-right">
 
-        <div class="photo-placeholder">
-          <span>PHOTO_CONTACT_HERO</span>
+
+        <div class="hero-photo">
+
+
+          <div class="photo-placeholder">
+
+            <span>
+              PHOTO_CONTACT_HERO
+            </span>
+
+          </div>
+
+
         </div>
+
 
       </div>
 
@@ -1423,7 +1641,7 @@
 
 
     <!-- =========================================================
-         CONTACT + FORM
+         CONTACT + GOOGLE FORM
     ========================================================== -->
 
     <section class="contact-section">
@@ -1432,22 +1650,29 @@
       <div class="contact-grid">
 
 
-        <!-- CONTACT INFORMATION -->
+        <!-- =====================================================
+             CONTACT INFORMATION
+        ====================================================== -->
 
         <div class="contact-details reveal-left">
+
 
           <div class="section-label">
             Get in touch
           </div>
 
+
           <h2>
             Start a conversation.
           </h2>
 
+
           <p class="body-copy">
+
             Share a few details about what you’re looking for.
             For events and performances, include the date,
             location, and type of event whenever possible.
+
           </p>
 
 
@@ -1457,9 +1682,11 @@
 
             <div class="detail">
 
+
               <div class="detail-label">
                 Email
               </div>
+
 
               <div class="detail-value">
 
@@ -1469,19 +1696,42 @@
 
               </div>
 
+
             </div>
 
 
 
             <div class="detail">
+
+
+              <div class="detail-label">
+                Based in
+              </div>
+
+
+              <div class="detail-value">
+                Toronto, Ontario
+              </div>
+
+
+            </div>
+
+
+
+            <div class="detail">
+
 
               <div class="detail-label">
                 Performance inquiries
               </div>
 
+
               <div class="detail-value">
+
                 Weddings · Private Events · Celebrations
+
               </div>
+
 
             </div>
 
@@ -1489,9 +1739,11 @@
 
             <div class="detail">
 
+
               <div class="detail-label">
                 Lessons
               </div>
+
 
               <div class="detail-value">
 
@@ -1500,6 +1752,7 @@
                 </a>
 
               </div>
+
 
             </div>
 
@@ -1510,6 +1763,7 @@
 
           <div class="contact-socials">
 
+
             <a
               href="https://www.instagram.com/kays_violin/"
               target="_blank"
@@ -1517,6 +1771,7 @@
             >
               Instagram
             </a>
+
 
             <a
               href="https://www.youtube.com/@kaynicoletozawa4642"
@@ -1526,6 +1781,7 @@
               YouTube
             </a>
 
+
             <a
               href="https://www.facebook.com/kay.tozawa.2025"
               target="_blank"
@@ -1533,6 +1789,7 @@
             >
               Facebook
             </a>
+
 
           </div>
 
@@ -1542,7 +1799,7 @@
 
 
         <!-- =====================================================
-             CONTACT FORM
+             GOOGLE CONTACT / PERFORMANCE FORM
         ====================================================== -->
 
         <div class="form-wrap reveal-right">
@@ -1550,327 +1807,66 @@
 
           <div class="form-heading">
 
+
             <div class="section-label">
               Inquiry form
             </div>
+
 
             <h2>
               Tell me about your inquiry.
             </h2>
 
+
             <p>
+
               Complete the form with as much information as you
-              currently have. Event details can always be finalized
-              later.
+              currently have. Event details can always be
+              finalized later.
+
             </p>
+
 
           </div>
 
 
 
-          <!-- ===================================================
-               IMPORTANT
+          <!-- =================================================
+               GOOGLE FORM EMBED
+          ================================================== -->
 
-               GitHub Pages cannot process contact forms by itself.
+          <div class="google-form-wrap">
 
-               Later, connect this to Formspree or another
-               form service.
 
-               Replace:
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLScA6RZz_rSpJEUNyqSR2tuhny3pbyvTcA8Zx3hft6VjwnF0fA/viewform?embedded=true"
+              width="100%"
+              height="1231"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Kay Tozawa Performance and Contact Inquiry Form">
+              Loading…
+            </iframe>
 
-               YOUR_FORM_ID
 
-               with the ID that Formspree gives you.
-          ==================================================== -->
+          </div>
 
 
-          <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
-            method="POST"
-          >
 
+          <div class="form-note">
 
-            <div class="form-row">
+            Your information will only be used to respond
+            to your inquiry.
 
-
-              <div class="form-group">
-
-                <label for="first-name">
-                  First Name
-                </label>
-
-                <input
-                  type="text"
-                  id="first-name"
-                  name="First Name"
-                  placeholder="First name"
-                  required
-                >
-
-              </div>
-
-
-
-              <div class="form-group">
-
-                <label for="last-name">
-                  Last Name
-                </label>
-
-                <input
-                  type="text"
-                  id="last-name"
-                  name="Last Name"
-                  placeholder="Last name"
-                  required
-                >
-
-              </div>
-
-
-            </div>
-
-
-
-            <div class="form-row">
-
-
-              <div class="form-group">
-
-                <label for="email">
-                  Email
-                </label>
-
-                <input
-                  type="email"
-                  id="email"
-                  name="Email"
-                  placeholder="you@example.com"
-                  required
-                >
-
-              </div>
-
-
-
-              <div class="form-group">
-
-                <label for="phone">
-                  Phone
-                  <span class="optional">optional</span>
-                </label>
-
-                <input
-                  type="tel"
-                  id="phone"
-                  name="Phone"
-                  placeholder="Phone number"
-                >
-
-              </div>
-
-
-            </div>
-
-
-
-            <div class="form-group">
-
-              <label for="inquiry-type">
-                Inquiry Type
-              </label>
-
-              <select
-                id="inquiry-type"
-                name="Inquiry Type"
-                required
-              >
-
-                <option value="">
-                  Select an option
-                </option>
-
-                <option>
-                  Wedding Performance
-                </option>
-
-                <option>
-                  Private Event
-                </option>
-
-                <option>
-                  Party / Celebration
-                </option>
-
-                <option>
-                  Concert / Performance
-                </option>
-
-                <option>
-                  Collaboration
-                </option>
-
-                <option>
-                  Media Inquiry
-                </option>
-
-                <option>
-                  General Inquiry
-                </option>
-
-              </select>
-
-            </div>
-
-
-
-            <div class="form-row">
-
-
-              <div class="form-group">
-
-                <label for="event-date">
-                  Event Date
-                  <span class="optional">if applicable</span>
-                </label>
-
-                <input
-                  type="date"
-                  id="event-date"
-                  name="Event Date"
-                >
-
-              </div>
-
-
-
-              <div class="form-group">
-
-                <label for="city">
-                  City / Location
-                  <span class="optional">if applicable</span>
-                </label>
-
-                <input
-                  type="text"
-                  id="city"
-                  name="City / Location"
-                  placeholder="City or venue"
-                >
-
-              </div>
-
-
-            </div>
-
-
-
-            <div class="form-row">
-
-
-              <div class="form-group">
-
-                <label for="start-time">
-                  Approximate Start Time
-                  <span class="optional">optional</span>
-                </label>
-
-                <input
-                  type="time"
-                  id="start-time"
-                  name="Approximate Start Time"
-                >
-
-              </div>
-
-
-
-              <div class="form-group">
-
-                <label for="length">
-                  Performance Length
-                  <span class="optional">optional</span>
-                </label>
-
-                <select
-                  id="length"
-                  name="Performance Length"
-                >
-
-                  <option value="">
-                    Select
-                  </option>
-
-                  <option>
-                    Under 30 minutes
-                  </option>
-
-                  <option>
-                    30–60 minutes
-                  </option>
-
-                  <option>
-                    1–2 hours
-                  </option>
-
-                  <option>
-                    2+ hours
-                  </option>
-
-                  <option>
-                    Not sure yet
-                  </option>
-
-                </select>
-
-              </div>
-
-
-            </div>
-
-
-
-            <div class="form-group">
-
-              <label for="message">
-                Tell Me About Your Inquiry
-              </label>
-
-              <textarea
-                id="message"
-                name="Message"
-                placeholder="Tell me about your event, performance, collaboration, or inquiry..."
-                required
-              ></textarea>
-
-            </div>
-
-
-
-            <button
-              type="submit"
-              class="submit-button"
-            >
-              Send Inquiry
-            </button>
-
-
-
-            <div class="form-note">
-
-              Your information will only be used to respond
-              to your inquiry.
-
-            </div>
-
-
-          </form>
+          </div>
 
 
         </div>
 
 
       </div>
+
 
     </section>
 
@@ -1885,22 +1881,33 @@
 
       <div class="performance-note-inner reveal">
 
+
         <div class="section-label">
           Performance bookings
         </div>
 
+
         <h2>
+
           Music for your
-          <em>occasion.</em>
+
+          <em>
+            occasion.
+          </em>
+
         </h2>
 
+
         <p>
+
           Performance inquiries are considered individually
           based on date, location, venue, repertoire, and
           performance length. Providing these details in your
           inquiry makes it easier to discuss availability
           and arrangements.
+
         </p>
+
 
       </div>
 
@@ -1918,18 +1925,27 @@
 
       <div class="lesson-cta-inner reveal-left">
 
+
         <div class="section-label">
           Looking for private instruction?
         </div>
 
+
         <h2>
-          Lessons have their own booking calendar.
+
+          Lessons have their own
+          booking calendar.
+
         </h2>
 
+
         <p>
+
           Violin, viola, and cello students can view available
           lesson times directly on the booking page.
+
         </p>
+
 
       </div>
 
@@ -1964,6 +1980,7 @@
 
     <div class="social-links">
 
+
       <a
         href="https://www.youtube.com/@kaynicoletozawa4642"
         target="_blank"
@@ -1971,6 +1988,7 @@
       >
         YouTube
       </a>
+
 
       <a
         href="https://www.instagram.com/kays_violin/"
@@ -1980,6 +1998,7 @@
         Instagram
       </a>
 
+
       <a
         href="https://www.facebook.com/kay.tozawa.2025"
         target="_blank"
@@ -1987,6 +2006,7 @@
       >
         Facebook
       </a>
+
 
     </div>
 
