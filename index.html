@@ -12,13 +12,6 @@
 
   <title>Kay Tozawa | Toronto Violinist</title>
 
-
-  <!-- =========================================================
-       FONTS
-       Tangerine = Kay's name / script accents
-       DM Sans = headings + body
-  ========================================================== -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -33,44 +26,39 @@
   >
 
 
-
   <style>
-
-    /* =========================================================
-       COLOURS
-    ========================================================= */
 
     :root {
 
-      --sky-white: #F7FCFF;
+      --sky-white: #F4FBFD;
 
-      --soft-blue: #EAF6FF;
+      --soft-blue: #DDEFFC;
 
-      --soft-aqua: #DFF6F2;
+      --soft-aqua: #CFEFEB;
 
-      --periwinkle: #ECEEFF;
+      --pink: #F7D6E2;
+
+      --pink-strong: #F1BFD0;
 
       --white: #FFFFFF;
 
-      --turquoise: #57C3BE;
+      --turquoise: #34BBB3;
 
-      --deep-teal: #347F82;
+      --turquoise-dark: #187E7B;
+
+      --deep-teal: #275F63;
+
+      --footer-teal: #226D70;
 
       --text: #243238;
 
-      --muted: #617074;
+      --muted: #5E6C70;
 
-      --line: #CFE1E4;
-
-      --dark: #243238;
+      --line: #A9CED0;
 
     }
 
 
-
-    /* =========================================================
-       RESET
-    ========================================================= */
 
     * {
       margin: 0;
@@ -87,8 +75,6 @@
     body {
 
       font-family: "DM Sans", sans-serif;
-
-      font-weight: 400;
 
       background: var(--sky-white);
 
@@ -121,10 +107,16 @@
 
 
     /* =========================================================
-       GLOBAL TYPOGRAPHY
+       GLOBAL
     ========================================================= */
 
     .section-label {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 11px;
 
       margin-bottom: 18px;
 
@@ -136,7 +128,20 @@
 
       text-transform: uppercase;
 
-      color: var(--deep-teal);
+      color: var(--turquoise-dark);
+
+    }
+
+
+    .section-label::before {
+
+      content: "";
+
+      width: 28px;
+
+      height: 2px;
+
+      background: var(--turquoise);
 
     }
 
@@ -181,7 +186,7 @@
 
       width: 100%;
 
-      height: 82px;
+      height: 84px;
 
       padding: 0 6vw;
 
@@ -195,11 +200,15 @@
 
       z-index: 9999;
 
-      background: rgba(247,252,255,0.96);
+      background: rgba(244,251,253,0.97);
 
       backdrop-filter: blur(12px);
 
-      border-bottom: 1px solid rgba(52,127,130,0.14);
+      border-top: 4px solid var(--turquoise);
+
+      border-bottom: 1px solid var(--line);
+
+      box-shadow: 0 7px 25px rgba(39,95,99,0.08);
 
     }
 
@@ -208,13 +217,13 @@
 
       font-family: "Tangerine", cursive;
 
-      font-size: 46px;
+      font-size: 48px;
 
       font-weight: 700;
 
       line-height: 1;
 
-      white-space: nowrap;
+      color: var(--turquoise-dark);
 
     }
 
@@ -225,7 +234,7 @@
 
       align-items: center;
 
-      gap: 34px;
+      gap: 30px;
 
     }
 
@@ -242,10 +251,12 @@
 
       text-transform: uppercase;
 
+      transition: color 0.25s ease;
+
     }
 
 
-    .desktop-menu a::after {
+    .desktop-menu a:not(.nav-book)::after {
 
       content: "";
 
@@ -253,15 +264,22 @@
 
       left: 0;
 
-      bottom: -7px;
+      bottom: -8px;
 
       width: 0;
 
-      height: 1px;
+      height: 2px;
 
       background: var(--turquoise);
 
       transition: width 0.3s ease;
+
+    }
+
+
+    .desktop-menu a:hover {
+
+      color: var(--turquoise-dark);
 
     }
 
@@ -273,10 +291,48 @@
     }
 
 
+    .desktop-menu .active-nav {
+
+      color: var(--turquoise-dark);
+
+    }
+
+
+    .desktop-menu .active-nav::after {
+
+      width: 100% !important;
+
+    }
+
+
+    .nav-book {
+
+      padding: 10px 18px;
+
+      background: var(--turquoise);
+
+      color: white;
+
+      transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+
+    }
+
+
+    .nav-book:hover {
+
+      background: var(--turquoise-dark);
+
+      color: white !important;
+
+      transform: translateY(-1px);
+
+    }
+
+
     .mobile-menu {
-
       display: none;
-
     }
 
 
@@ -287,9 +343,9 @@
 
     .hero {
 
-      min-height: calc(100vh - 82px);
+      min-height: calc(100vh - 84px);
 
-      padding: 75px 7vw 95px;
+      padding: 80px 7vw 100px;
 
       display: grid;
 
@@ -299,34 +355,18 @@
 
       align-items: center;
 
-      background: var(--sky-white);
+      background:
+        linear-gradient(
+          135deg,
+          #F4FBFD 0%,
+          #E8F6F7 100%
+        );
 
       position: relative;
 
       overflow: hidden;
 
-    }
-
-
-    .hero::before {
-
-      content: "";
-
-      width: 490px;
-
-      height: 490px;
-
-      position: absolute;
-
-      right: -170px;
-
-      top: 50px;
-
-      border-radius: 50%;
-
-      background: var(--soft-aqua);
-
-      opacity: 0.75;
+      border-bottom: 1px solid var(--line);
 
     }
 
@@ -346,7 +386,7 @@
 
     .hero-location {
 
-      margin-bottom: 22px;
+      margin-bottom: 21px;
 
       display: flex;
 
@@ -362,7 +402,7 @@
 
       text-transform: uppercase;
 
-      color: var(--deep-teal);
+      color: var(--turquoise-dark);
 
     }
 
@@ -371,9 +411,9 @@
 
       content: "";
 
-      width: 38px;
+      width: 40px;
 
-      height: 1px;
+      height: 2px;
 
       background: var(--turquoise);
 
@@ -384,13 +424,19 @@
 
       font-family: "Tangerine", cursive;
 
-      font-size: clamp(115px, 14vw, 215px);
+      font-size: clamp(120px, 14vw, 220px);
 
       font-weight: 700;
 
       line-height: 0.74;
 
+      color: var(--turquoise);
+
       letter-spacing: -0.02em;
+
+      text-shadow:
+        0 2px 0 rgba(24,126,123,0.12),
+        0 10px 22px rgba(39,95,99,0.12);
 
     }
 
@@ -403,7 +449,7 @@
 
       font-size: clamp(15px, 1.4vw, 19px);
 
-      font-weight: 500;
+      font-weight: 600;
 
       line-height: 1.65;
 
@@ -416,9 +462,13 @@
 
     .hero-description {
 
-      max-width: 510px;
+      max-width: 520px;
 
-      margin-top: 24px;
+      margin-top: 22px;
+
+      padding-left: 18px;
+
+      border-left: 3px solid var(--turquoise);
 
       font-size: 15px;
 
@@ -437,7 +487,7 @@
 
       align-items: center;
 
-      gap: 24px;
+      gap: 25px;
 
       flex-wrap: wrap;
 
@@ -454,7 +504,7 @@
 
       padding-bottom: 5px;
 
-      border-bottom: 1px solid var(--turquoise);
+      border-bottom: 2px solid var(--turquoise);
 
       font-size: 11px;
 
@@ -497,6 +547,29 @@
     }
 
 
+    .hero-images::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 65%;
+
+      height: 55%;
+
+      right: -25px;
+
+      top: -25px;
+
+      background: var(--pink);
+
+      border: 1px solid var(--pink-strong);
+
+      z-index: -1;
+
+    }
+
+
     .hero-main-photo {
 
       position: absolute;
@@ -512,6 +585,11 @@
       overflow: hidden;
 
       background: var(--soft-blue);
+
+      border: 1px solid rgba(39,95,99,0.22);
+
+      box-shadow:
+        0 22px 50px rgba(39,95,99,0.16);
 
       animation: heroPhotoIn 1.2s ease both;
 
@@ -534,7 +612,10 @@
 
       border: 10px solid var(--sky-white);
 
-      background: var(--periwinkle);
+      background: var(--pink);
+
+      box-shadow:
+        0 18px 35px rgba(39,95,99,0.16);
 
       z-index: 3;
 
@@ -563,7 +644,7 @@
 
       text-transform: uppercase;
 
-      color: var(--deep-teal);
+      color: var(--turquoise-dark);
 
     }
 
@@ -572,7 +653,7 @@
 
       padding-bottom: 6px;
 
-      border-bottom: 1px solid rgba(52,127,130,0.35);
+      border-bottom: 2px solid rgba(24,126,123,0.35);
 
     }
 
@@ -589,6 +670,17 @@
       background: var(--turquoise);
 
       color: white;
+
+      border-top: 1px solid var(--turquoise-dark);
+
+      border-bottom: 1px solid var(--turquoise-dark);
+
+      box-shadow:
+        0 8px 24px rgba(39,95,99,0.15);
+
+      position: relative;
+
+      z-index: 5;
 
     }
 
@@ -608,7 +700,7 @@
 
     .ticker-content {
 
-      padding: 18px 0;
+      padding: 19px 0;
 
       white-space: nowrap;
 
@@ -627,7 +719,7 @@
 
       padding: 0 29px;
 
-      opacity: 0.65;
+      opacity: 0.8;
 
     }
 
@@ -655,6 +747,11 @@
       padding: 160px 7vw 185px;
 
       background: var(--soft-blue);
+
+      border-bottom: 1px solid var(--line);
+
+      box-shadow:
+        inset 0 12px 24px rgba(39,95,99,0.025);
 
     }
 
@@ -697,6 +794,29 @@
     }
 
 
+    .about-photo-wrap::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: -30px;
+
+      top: -30px;
+
+      width: 42%;
+
+      height: 44%;
+
+      background: var(--turquoise);
+
+      opacity: 0.85;
+
+      z-index: 0;
+
+    }
+
+
     .about-photo {
 
       min-height: 690px;
@@ -707,6 +827,11 @@
 
       background: var(--soft-aqua);
 
+      border: 1px solid rgba(39,95,99,0.22);
+
+      box-shadow:
+        0 22px 50px rgba(39,95,99,0.15);
+
       z-index: 2;
 
     }
@@ -716,7 +841,7 @@
 
       position: absolute;
 
-      width: 52%;
+      width: 50%;
 
       height: 180px;
 
@@ -724,21 +849,25 @@
 
       bottom: -70px;
 
-      background: var(--periwinkle);
+      background: var(--pink);
+
+      border: 1px solid var(--pink-strong);
+
+      z-index: 1;
 
     }
 
 
 
     /* =========================================================
-       TRANSITION LINE
+       TRANSITION
     ========================================================= */
 
     .transition-line {
 
       width: 0;
 
-      height: 1px;
+      height: 2px;
 
       margin-top: 38px;
 
@@ -769,6 +898,8 @@
 
       background: var(--white);
 
+      border-bottom: 1px solid var(--line);
+
     }
 
 
@@ -793,6 +924,10 @@
 
       max-width: 370px;
 
+      padding-left: 20px;
+
+      border-left: 3px solid var(--turquoise);
+
       font-size: 14px;
 
       line-height: 1.8;
@@ -813,7 +948,7 @@
 
     .portfolio-item {
 
-      padding: 65px 0;
+      padding: 70px 0;
 
       display: grid;
 
@@ -847,13 +982,10 @@
 
       letter-spacing: 0.15em;
 
-      color: var(--deep-teal);
+      color: var(--turquoise-dark);
 
     }
 
-
-
-    /* YOUTUBE IMAGE */
 
     .video-thumbnail {
 
@@ -862,6 +994,25 @@
       overflow: hidden;
 
       background: var(--soft-blue);
+
+      border: 1px solid rgba(39,95,99,0.22);
+
+      box-shadow:
+        0 18px 38px rgba(39,95,99,0.13);
+
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    }
+
+
+    .video-thumbnail:hover {
+
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 25px 48px rgba(39,95,99,0.18);
 
     }
 
@@ -900,9 +1051,9 @@
 
       transform: translate(-50%, -50%);
 
-      width: 66px;
+      width: 68px;
 
-      height: 66px;
+      height: 68px;
 
       display: flex;
 
@@ -912,24 +1063,27 @@
 
       border-radius: 50%;
 
-      background: rgba(255,255,255,0.92);
+      background: var(--turquoise);
 
-      color: var(--text);
+      color: white;
 
-      font-size: 18px;
+      border: 4px solid rgba(255,255,255,0.88);
 
-      transition:
-        transform 0.3s ease,
-        background 0.3s ease;
+      box-shadow:
+        0 8px 25px rgba(39,95,99,0.3);
+
+      font-size: 17px;
+
+      transition: transform 0.3s ease;
 
     }
 
 
     .video-thumbnail:hover .play-button {
 
-      transform: translate(-50%, -50%) scale(1.08);
-
-      background: white;
+      transform:
+        translate(-50%, -50%)
+        scale(1.08);
 
     }
 
@@ -966,7 +1120,7 @@
 
       text-transform: uppercase;
 
-      color: var(--deep-teal);
+      color: var(--turquoise-dark);
 
     }
 
@@ -988,15 +1142,11 @@
 
       display: inline-flex;
 
-      align-items: center;
-
-      gap: 10px;
-
       margin-top: 27px;
 
       padding-bottom: 5px;
 
-      border-bottom: 1px solid var(--turquoise);
+      border-bottom: 2px solid var(--turquoise);
 
       font-size: 11px;
 
@@ -1031,6 +1181,8 @@
 
       background: var(--soft-aqua);
 
+      border-bottom: 1px solid var(--line);
+
     }
 
 
@@ -1058,9 +1210,7 @@
 
       grid-template-columns: 1fr 1fr;
 
-      border-top: 1px solid rgba(52,127,130,0.25);
-
-      border-left: 1px solid rgba(52,127,130,0.25);
+      gap: 18px;
 
     }
 
@@ -1077,22 +1227,37 @@
 
       justify-content: space-between;
 
-      border-right: 1px solid rgba(52,127,130,0.25);
+      background: rgba(255,255,255,0.55);
 
-      border-bottom: 1px solid rgba(52,127,130,0.25);
+      border: 1px solid rgba(24,126,123,0.28);
+
+      box-shadow:
+        0 8px 22px rgba(39,95,99,0.08);
 
       transition:
         background 0.3s ease,
-        transform 0.3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 
     }
 
 
     .service:hover {
 
-      background: rgba(255,255,255,0.45);
+      background: white;
 
-      transform: translateY(-3px);
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 18px 38px rgba(39,95,99,0.14);
+
+    }
+
+
+    .service:nth-child(2),
+    .service:nth-child(3) {
+
+      border-top: 5px solid var(--turquoise);
 
     }
 
@@ -1116,7 +1281,7 @@
 
       letter-spacing: 0.15em;
 
-      color: var(--deep-teal);
+      color: var(--turquoise-dark);
 
     }
 
@@ -1126,6 +1291,8 @@
       font-size: 13px;
 
       font-weight: 600;
+
+      color: var(--turquoise-dark);
 
     }
 
@@ -1160,7 +1327,7 @@
 
 
     /* =========================================================
-       PERFORMING + TEACHING
+       PRACTICE
     ========================================================= */
 
     .practice {
@@ -1168,6 +1335,8 @@
       padding: 170px 7vw;
 
       background: var(--sky-white);
+
+      border-bottom: 1px solid var(--line);
 
     }
 
@@ -1196,6 +1365,27 @@
     }
 
 
+    .practice-photo-wrap::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 54%;
+
+      height: 42%;
+
+      left: -28px;
+
+      top: -28px;
+
+      background: var(--turquoise);
+
+      z-index: 0;
+
+    }
+
+
     .practice-photo {
 
       min-height: 720px;
@@ -1204,7 +1394,14 @@
 
       overflow: hidden;
 
-      background: var(--periwinkle);
+      background: var(--pink);
+
+      border: 1px solid rgba(39,95,99,0.22);
+
+      box-shadow:
+        0 22px 50px rgba(39,95,99,0.15);
+
+      z-index: 2;
 
     }
 
@@ -1221,11 +1418,16 @@
 
       bottom: -70px;
 
-      border: 10px solid var(--sky-white);
+      border: 9px solid var(--sky-white);
 
       background: var(--soft-aqua);
 
+      box-shadow:
+        0 18px 35px rgba(39,95,99,0.17);
+
       overflow: hidden;
+
+      z-index: 3;
 
     }
 
@@ -1246,7 +1448,9 @@
 
       padding: 145px 7vw;
 
-      background: var(--periwinkle);
+      background: var(--pink);
+
+      border-bottom: 1px solid var(--pink-strong);
 
     }
 
@@ -1275,7 +1479,7 @@
 
       grid-template-columns: repeat(3, 1fr);
 
-      gap: 18px;
+      gap: 20px;
 
     }
 
@@ -1292,9 +1496,18 @@
 
       justify-content: space-between;
 
-      background: rgba(255,255,255,0.38);
+      background: rgba(255,255,255,0.72);
 
-      border: 1px solid rgba(52,127,130,0.15);
+      border-top: 5px solid var(--turquoise);
+
+      border-left: 1px solid rgba(39,95,99,0.18);
+
+      border-right: 1px solid rgba(39,95,99,0.18);
+
+      border-bottom: 1px solid rgba(39,95,99,0.18);
+
+      box-shadow:
+        0 14px 32px rgba(39,95,99,0.11);
 
     }
 
@@ -1307,7 +1520,7 @@
 
       line-height: 0.7;
 
-      color: rgba(52,127,130,0.2);
+      color: var(--turquoise);
 
     }
 
@@ -1337,7 +1550,7 @@
 
       text-transform: uppercase;
 
-      color: var(--deep-teal);
+      color: var(--turquoise-dark);
 
     }
 
@@ -1351,11 +1564,13 @@
 
       padding: 145px 7vw;
 
-      background: var(--dark);
+      background: var(--footer-teal);
 
       color: white;
 
       text-align: center;
+
+      border-top: 8px solid var(--turquoise);
 
     }
 
@@ -1371,7 +1586,16 @@
 
     .final-cta .section-label {
 
-      color: #84DDD8;
+      justify-content: center;
+
+      color: #C9F4F1;
+
+    }
+
+
+    .final-cta .section-label::before {
+
+      background: var(--pink-strong);
 
     }
 
@@ -1399,7 +1623,7 @@
 
       font-style: normal;
 
-      color: #91DDD9;
+      color: #8CE0DA;
 
     }
 
@@ -1414,7 +1638,7 @@
 
       line-height: 1.9;
 
-      color: #C3D0D2;
+      color: #D9EEEE;
 
     }
 
@@ -1449,7 +1673,8 @@
 
       transition:
         background 0.25s ease,
-        color 0.25s ease;
+        color 0.25s ease,
+        transform 0.25s ease;
 
     }
 
@@ -1458,7 +1683,7 @@
 
       background: var(--turquoise);
 
-      color: var(--dark);
+      color: white;
 
       border: 1px solid var(--turquoise);
 
@@ -1467,14 +1692,22 @@
 
     .button-secondary {
 
-      border: 1px solid rgba(255,255,255,0.45);
+      border: 1px solid rgba(255,255,255,0.7);
+
+    }
+
+
+    .button-primary:hover,
+    .button-secondary:hover {
+
+      transform: translateY(-3px);
 
     }
 
 
     .button-primary:hover {
 
-      background: #78D5D0;
+      background: #55CEC6;
 
     }
 
@@ -1483,7 +1716,7 @@
 
       background: white;
 
-      color: var(--dark);
+      color: var(--footer-teal);
 
     }
 
@@ -1503,11 +1736,11 @@
 
       justify-content: space-between;
 
-      background: var(--dark);
+      background: #19585B;
 
-      border-top: 1px solid rgba(255,255,255,0.12);
+      border-top: 1px solid rgba(255,255,255,0.16);
 
-      color: #AEBDBF;
+      color: #C5DEDF;
 
       font-size: 11px;
 
@@ -1532,7 +1765,7 @@
 
 
     /* =========================================================
-       SCROLL MOVEMENT
+       REVEALS
     ========================================================= */
 
     .reveal {
@@ -1586,16 +1819,12 @@
 
 
     .delay-1 {
-
       transition-delay: 0.12s;
-
     }
 
 
     .delay-2 {
-
       transition-delay: 0.24s;
-
     }
 
 
@@ -1607,19 +1836,13 @@
     @keyframes heroTextIn {
 
       from {
-
         opacity: 0;
-
         transform: translateY(24px);
-
       }
 
       to {
-
         opacity: 1;
-
         transform: translateY(0);
-
       }
 
     }
@@ -1628,19 +1851,13 @@
     @keyframes heroPhotoIn {
 
       from {
-
         opacity: 0;
-
         transform: scale(1.04);
-
       }
 
       to {
-
         opacity: 1;
-
         transform: scale(1);
-
       }
 
     }
@@ -1649,19 +1866,13 @@
     @keyframes heroDetailIn {
 
       from {
-
         opacity: 0;
-
         transform: translate(-20px,20px);
-
       }
 
       to {
-
         opacity: 1;
-
         transform: translate(0,0);
-
       }
 
     }
@@ -1739,14 +1950,14 @@
 
 
     /* =========================================================
-       MOBILE NAV
+       MOBILE NAVIGATION
     ========================================================= */
 
     @media (max-width: 850px) {
 
       .site-nav {
 
-        height: 76px;
+        height: 78px;
 
         padding: 0 6vw;
 
@@ -1757,7 +1968,7 @@
 
       .site-logo {
 
-        font-size: 42px;
+        font-size: 44px;
 
       }
 
@@ -1819,7 +2030,7 @@
 
         display: block;
 
-        background: var(--text);
+        background: var(--turquoise-dark);
 
         transition:
           transform 0.25s ease,
@@ -1861,11 +2072,12 @@
 
         background: var(--sky-white);
 
-        border-top: 1px solid var(--line);
+        border-top: 4px solid var(--turquoise);
 
         border-bottom: 1px solid var(--line);
 
-        box-shadow: 0 12px 30px rgba(20,30,30,0.08);
+        box-shadow:
+          0 15px 30px rgba(39,95,99,0.16);
 
       }
 
@@ -1897,6 +2109,10 @@
 
         border-bottom: none;
 
+        background: var(--turquoise);
+
+        color: white;
+
       }
 
     }
@@ -1920,14 +2136,7 @@
 
       .hero-name {
 
-        font-size: clamp(112px, 31vw, 165px);
-
-      }
-
-
-      .hero-title {
-
-        margin-top: 32px;
+        font-size: clamp(115px, 31vw, 170px);
 
       }
 
@@ -2119,32 +2328,22 @@
 
 
 
-    /* =========================================================
-       REDUCED MOTION
-    ========================================================= */
-
     @media (prefers-reduced-motion: reduce) {
 
       html {
-
         scroll-behavior: auto;
-
       }
 
 
       .ticker-track {
-
         animation: none;
-
       }
 
 
       .hero-copy,
       .hero-main-photo,
       .hero-detail-photo {
-
         animation: none;
-
       }
 
 
@@ -2171,10 +2370,6 @@
 <body>
 
 
-  <!-- =========================================================
-       NAVIGATION
-  ========================================================== -->
-
   <nav class="site-nav">
 
 
@@ -2186,10 +2381,12 @@
     </a>
 
 
-
     <div class="desktop-menu">
 
-      <a href="index.html">
+      <a
+        href="index.html"
+        class="active-nav"
+      >
         Home
       </a>
 
@@ -2197,7 +2394,10 @@
         Portfolio
       </a>
 
-      <a href="booking.html">
+      <a
+        href="booking.html"
+        class="nav-book"
+      >
         Book
       </a>
 
@@ -2206,7 +2406,6 @@
       </a>
 
     </div>
-
 
 
     <details class="mobile-menu">
@@ -2233,12 +2432,12 @@
           Portfolio
         </a>
 
-        <a href="booking.html">
-          Book
-        </a>
-
         <a href="contact.html">
           Contact
+        </a>
+
+        <a href="booking.html">
+          Book
         </a>
 
       </div>
@@ -2253,9 +2452,7 @@
   <main>
 
 
-    <!-- =========================================================
-         HERO
-    ========================================================== -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -2356,9 +2553,7 @@
 
 
 
-    <!-- =========================================================
-         MOVING BANNER
-    ========================================================== -->
+    <!-- MOVING BANNER -->
 
     <section class="ticker">
 
@@ -2437,9 +2632,7 @@
 
 
 
-    <!-- =========================================================
-         ABOUT
-    ========================================================== -->
+    <!-- ABOUT -->
 
     <section
       class="about"
@@ -2523,9 +2716,7 @@
 
 
 
-    <!-- =========================================================
-         PORTFOLIO
-    ========================================================== -->
+    <!-- PORTFOLIO -->
 
     <section class="portfolio">
 
@@ -2562,18 +2753,12 @@
       <div class="portfolio-list">
 
 
-        <!-- =====================================================
-             VIDEO 01
-             DVOŘÁK
-        ====================================================== -->
-
         <article class="portfolio-item">
 
 
           <div class="portfolio-number">
             01
           </div>
-
 
 
           <a
@@ -2593,7 +2778,6 @@
             </div>
 
           </a>
-
 
 
           <div class="portfolio-text reveal-right">
@@ -2637,18 +2821,12 @@
 
 
 
-        <!-- =====================================================
-             VIDEO 02
-             SCHULHOFF & BARTÓK
-        ====================================================== -->
-
         <article class="portfolio-item">
 
 
           <div class="portfolio-number">
             02
           </div>
-
 
 
           <a
@@ -2670,7 +2848,6 @@
           </a>
 
 
-
           <div class="portfolio-text reveal-right">
 
 
@@ -2689,8 +2866,7 @@
             <p>
 
               A program featuring Schulhoff’s Sonata No. 2
-              and Bartók’s Romanian Folk Dances, bringing together
-              contrasting rhythm, colour, and musical character.
+              and Bartók’s Romanian Folk Dances.
 
             </p>
 
@@ -2712,17 +2888,12 @@
 
 
 
-        <!-- =====================================================
-             VIDEO 03
-        ====================================================== -->
-
         <article class="portfolio-item">
 
 
           <div class="portfolio-number">
             03
           </div>
-
 
 
           <a
@@ -2742,7 +2913,6 @@
             </div>
 
           </a>
-
 
 
           <div class="portfolio-text reveal-right">
@@ -2805,9 +2975,7 @@
 
 
 
-    <!-- =========================================================
-         SERVICES
-    ========================================================== -->
+    <!-- SERVICES -->
 
     <section class="services">
 
@@ -2836,7 +3004,6 @@
 
 
           <div class="service reveal">
-
 
             <div class="service-top">
 
@@ -2869,7 +3036,6 @@
 
           <div class="service reveal delay-1">
 
-
             <div class="service-top">
 
               <div class="service-number">
@@ -2900,7 +3066,6 @@
 
 
           <div class="service reveal">
-
 
             <div class="service-top">
 
@@ -2933,7 +3098,6 @@
 
           <div class="service reveal delay-1">
 
-
             <div class="service-top">
 
               <div class="service-number">
@@ -2955,8 +3119,8 @@
 
               <p>
 
-                Violin for weddings, parties, private events,
-                celebrations, and special occasions.
+                Violin for weddings, private events,
+                parties, celebrations, and special occasions.
 
               </p>
 
@@ -2975,9 +3139,7 @@
 
 
 
-    <!-- =========================================================
-         PERFORMING & TEACHING
-    ========================================================== -->
+    <!-- PRACTICE -->
 
     <section class="practice">
 
@@ -3034,7 +3196,6 @@
           <h2 class="section-heading">
 
             Performing &<br>
-
             Teaching in Practice
 
           </h2>
@@ -3072,9 +3233,7 @@
 
 
 
-    <!-- =========================================================
-         REVIEWS
-    ========================================================== -->
+    <!-- REVIEWS -->
 
     <section class="reviews">
 
@@ -3102,10 +3261,7 @@
         <div class="review-grid">
 
 
-          <!-- REVIEW 01 -->
-
           <div class="review-card reveal">
-
 
             <div>
 
@@ -3113,11 +3269,8 @@
                 “
               </div>
 
-
               <div class="review-placeholder">
-
                 Student review will be added here.
-
               </div>
 
             </div>
@@ -3127,15 +3280,11 @@
               Student
             </div>
 
-
           </div>
 
 
 
-          <!-- REVIEW 02 -->
-
           <div class="review-card reveal delay-1">
-
 
             <div>
 
@@ -3143,11 +3292,8 @@
                 “
               </div>
 
-
               <div class="review-placeholder">
-
                 Colleague or teacher review will be added here.
-
               </div>
 
             </div>
@@ -3157,15 +3303,11 @@
               Colleague / Teacher
             </div>
 
-
           </div>
 
 
 
-          <!-- REVIEW 03 -->
-
           <div class="review-card reveal delay-2">
-
 
             <div>
 
@@ -3173,11 +3315,8 @@
                 “
               </div>
 
-
               <div class="review-placeholder">
-
                 Client review will be added here.
-
               </div>
 
             </div>
@@ -3186,7 +3325,6 @@
             <div class="review-type">
               Client
             </div>
-
 
           </div>
 
@@ -3201,9 +3339,7 @@
 
 
 
-    <!-- =========================================================
-         FINAL CTA
-    ========================================================== -->
+    <!-- FINAL CTA -->
 
     <section class="final-cta">
 
@@ -3266,10 +3402,6 @@
 
 
 
-  <!-- =========================================================
-       FOOTER
-  ========================================================== -->
-
   <footer>
 
 
@@ -3280,7 +3412,6 @@
 
     <div class="social-links">
 
-
       <a
         href="https://www.youtube.com/@kaynicoletozawa4642"
         target="_blank"
@@ -3288,7 +3419,6 @@
       >
         YouTube
       </a>
-
 
       <a
         href="https://www.instagram.com/kays_violin/"
@@ -3298,7 +3428,6 @@
         Instagram
       </a>
 
-
       <a
         href="https://www.facebook.com/kay.tozawa.2025"
         target="_blank"
@@ -3307,17 +3436,12 @@
         Facebook
       </a>
 
-
     </div>
 
 
   </footer>
 
 
-
-  <!-- =========================================================
-       SCROLL ANIMATION
-  ========================================================== -->
 
   <script>
 
