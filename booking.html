@@ -2,481 +2,789 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Book with Kay | Kay Tozawa</title>
 
-  <!-- Fonts -->
+
+  <!-- =========================================================
+       FONTS
+  ========================================================== -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Tangerine:wght@400;700&display=swap"
     rel="stylesheet"
   >
 
+
+
   <style>
 
+    /* =========================================================
+       COLOURS
+    ========================================================= */
+
     :root {
-      --white: #ffffff;
-      --soft-white: #f8fbfb;
 
-      --text: #1f2828;
-      --muted: #687474;
+      --sky-white: #F4FBFD;
 
-      --turquoise: #66b9b7;
-      --turquoise-dark: #478f8d;
+      --soft-blue: #DDEFFC;
 
-      --line: #dfe7e7;
-      --pale-blue: #eaf5f5;
+      --soft-aqua: #CFEFEB;
+
+      --pink: #F7D6E2;
+
+      --pink-strong: #F1BFD0;
+
+      --white: #FFFFFF;
+
+      --turquoise: #34BBB3;
+
+      --turquoise-dark: #187E7B;
+
+      --deep-teal: #275F63;
+
+      --footer-teal: #226D70;
+
+      --text: #243238;
+
+      --muted: #5E6C70;
+
+      --line: #A9CED0;
+
     }
 
 
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
     * {
+
       margin: 0;
+
       padding: 0;
+
       box-sizing: border-box;
+
     }
 
 
     html {
+
       scroll-behavior: smooth;
+
     }
 
 
     body {
+
       font-family: "DM Sans", sans-serif;
 
-      background: var(--white);
+      background: var(--sky-white);
+
       color: var(--text);
 
       line-height: 1.7;
+
+      overflow-x: hidden;
+
     }
 
 
     a {
+
       color: inherit;
+
       text-decoration: none;
-    }
 
-
-    /* =========================================
-       NAVIGATION
-    ========================================= */
-
-    nav {
-      height: 82px;
-
-      padding: 0 6vw;
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      border-bottom: 1px solid var(--line);
-
-      background: rgba(255,255,255,0.97);
-    }
-
-
-    .nav-logo {
-      font-family: "Allura", cursive;
-
-      font-size: 38px;
-      line-height: 1;
-    }
-
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 34px;
-
-      list-style: none;
-    }
-
-
-    .nav-links a {
-      font-size: 11px;
-      font-weight: 500;
-
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-
-      transition: color 0.2s ease;
-    }
-
-
-    .nav-links a:hover {
-      color: var(--turquoise-dark);
-    }
-
-
-    .active-link {
-      padding-bottom: 4px;
-
-      border-bottom: 1px solid var(--turquoise);
     }
 
 
 
-    /* =========================================
+    /* =========================================================
        GLOBAL TYPOGRAPHY
-    ========================================= */
+    ========================================================= */
 
     .section-label {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 11px;
+
       margin-bottom: 17px;
 
       font-size: 10px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.2em;
+
       text-transform: uppercase;
 
       color: var(--turquoise-dark);
+
+    }
+
+
+    .section-label::before {
+
+      content: "";
+
+      width: 28px;
+
+      height: 2px;
+
+      background: var(--turquoise);
+
     }
 
 
     .section-heading {
+
       font-size: clamp(42px, 5vw, 72px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 1.04;
+
       letter-spacing: -0.04em;
+
     }
 
 
     .body-copy {
+
       font-size: 15px;
 
       line-height: 1.9;
 
       color: var(--muted);
+
     }
 
 
 
-    /* =========================================
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    .site-nav {
+
+      width: 100%;
+
+      height: 84px;
+
+      padding: 0 6vw;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      position: relative;
+
+      z-index: 9999;
+
+      background: rgba(244,251,253,0.97);
+
+      backdrop-filter: blur(12px);
+
+      border-top: 4px solid var(--turquoise);
+
+      border-bottom: 1px solid var(--line);
+
+      box-shadow:
+        0 7px 25px rgba(39,95,99,0.08);
+
+    }
+
+
+    .site-logo {
+
+      font-family: "Tangerine", cursive;
+
+      font-size: 48px;
+
+      font-weight: 700;
+
+      line-height: 1;
+
+      color: var(--turquoise-dark);
+
+      white-space: nowrap;
+
+    }
+
+
+
+    /* DESKTOP MENU */
+
+    .desktop-menu {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 30px;
+
+    }
+
+
+    .desktop-menu a {
+
+      position: relative;
+
+      font-size: 11px;
+
+      font-weight: 600;
+
+      letter-spacing: 0.15em;
+
+      text-transform: uppercase;
+
+      transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+
+    }
+
+
+    .desktop-menu a:not(.nav-book)::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: -8px;
+
+      width: 0;
+
+      height: 2px;
+
+      background: var(--turquoise);
+
+      transition: width 0.3s ease;
+
+    }
+
+
+    .desktop-menu a:hover {
+
+      color: var(--turquoise-dark);
+
+    }
+
+
+    .desktop-menu a:hover::after {
+
+      width: 100%;
+
+    }
+
+
+    .nav-book {
+
+      padding: 10px 18px;
+
+      background: var(--turquoise);
+
+      color: white;
+
+      box-shadow:
+        0 5px 14px rgba(39,95,99,0.12);
+
+    }
+
+
+    .nav-book:hover {
+
+      background: var(--turquoise-dark);
+
+      color: white !important;
+
+      transform: translateY(-1px);
+
+    }
+
+
+    .mobile-menu {
+
+      display: none;
+
+    }
+
+
+
+    /* =========================================================
        HERO
-    ========================================= */
+    ========================================================= */
 
     .booking-hero {
-      padding: 145px 7vw 130px;
+
+      padding: 145px 7vw 135px;
 
       text-align: center;
 
-      background: var(--white);
+      background:
+        linear-gradient(
+          135deg,
+          var(--sky-white) 0%,
+          #E8F6F7 100%
+        );
+
+      border-bottom: 1px solid var(--line);
+
     }
 
 
     .booking-hero-inner {
+
       max-width: 900px;
 
       margin: 0 auto;
+
+    }
+
+
+    .booking-hero .section-label {
+
+      justify-content: center;
+
     }
 
 
     .booking-hero h1 {
+
       font-size: clamp(56px, 8vw, 105px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 1;
+
       letter-spacing: -0.05em;
+
     }
 
 
     .booking-hero h1 em {
-      font-family: "Allura", cursive;
 
-      font-size: 1.25em;
+      font-family: "Tangerine", cursive;
+
+      font-size: 1.35em;
+
       font-style: normal;
-      font-weight: 400;
+
+      font-weight: 700;
+
+      line-height: 0.8;
+
+      color: var(--turquoise-dark);
+
     }
 
 
     .booking-hero p {
+
       max-width: 540px;
 
-      margin: 30px auto 0;
+      margin: 34px auto 0;
+
+      padding-top: 27px;
+
+      border-top: 2px solid var(--turquoise);
 
       font-size: 16px;
 
       line-height: 1.9;
 
       color: var(--muted);
+
     }
 
 
 
-    /* =========================================
+    /* =========================================================
        LESSON OPTIONS
-    ========================================= */
+    ========================================================= */
 
     .lessons {
+
       padding: 130px 7vw;
 
-      background: var(--soft-white);
+      background: var(--soft-blue);
+
+      border-bottom: 1px solid var(--line);
+
     }
 
 
     .lessons-inner {
+
       max-width: 1200px;
 
       margin: 0 auto;
+
     }
 
 
     .lessons-header {
+
       max-width: 650px;
 
       margin-bottom: 65px;
+
     }
 
 
     .lesson-list {
+
       border-top: 1px solid var(--line);
+
+      background: rgba(255,255,255,0.34);
+
+      box-shadow:
+        0 12px 30px rgba(39,95,99,0.06);
+
     }
 
 
     .lesson-row {
-      padding: 33px 0;
+
+      padding: 33px 30px;
 
       display: grid;
+
       grid-template-columns: 1fr 1fr auto;
+
       gap: 30px;
 
       align-items: center;
 
+      border-left: 4px solid transparent;
+
       border-bottom: 1px solid var(--line);
+
+      transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+
+    }
+
+
+    .lesson-row:hover {
+
+      background: rgba(255,255,255,0.78);
+
+      border-left-color: var(--turquoise);
+
+      transform: translateX(4px);
+
     }
 
 
     .lesson-name {
+
       font-size: clamp(24px, 2.6vw, 36px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       letter-spacing: -0.03em;
+
     }
 
 
     .lesson-details {
+
       font-size: 14px;
 
       color: var(--muted);
+
     }
 
 
     .lesson-price {
+
       min-width: 120px;
 
       text-align: right;
 
-      font-size: 13px;
-      font-weight: 500;
+      font-size: 14px;
+
+      font-weight: 600;
+
+      color: var(--turquoise-dark);
+
     }
 
 
 
-    /* =========================================
-       CALENDAR
-    ========================================= */
+    /* =========================================================
+       CALENDAR SECTION
+    ========================================================= */
 
     .calendar-section {
+
       padding: 150px 7vw;
+
+      background: var(--white);
+
     }
 
 
     .calendar-inner {
+
       max-width: 1200px;
 
       margin: 0 auto;
+
     }
 
 
     .calendar-header {
+
       max-width: 700px;
 
       margin-bottom: 60px;
+
     }
 
 
     .calendar-header .body-copy {
+
       margin-top: 25px;
-    }
 
+      padding-left: 18px;
 
-    /*
-    ==========================================================
-    GOOGLE CALENDAR PLACEHOLDER
+      border-left: 3px solid var(--turquoise);
 
-    Later, replace the contents of .calendar-box
-    with the embed code Google Calendar gives you.
-
-    Search:
-    GOOGLE_CALENDAR_EMBED
-    ==========================================================
-    */
-
-
-    .calendar-box {
-      min-height: 620px;
-
-      padding: 70px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      text-align: center;
-
-      background: var(--pale-blue);
-    }
-
-
-    .calendar-box h3 {
-      font-size: clamp(28px, 3vw, 42px);
-
-      font-weight: 300;
-
-      letter-spacing: -0.03em;
-    }
-
-
-    .calendar-box p {
-      max-width: 470px;
-
-      margin-top: 20px;
-
-      font-size: 14px;
-
-      line-height: 1.9;
-
-      color: var(--muted);
-    }
-
-
-    .calendar-button {
-      display: inline-block;
-
-      margin-top: 32px;
-
-      padding: 15px 28px;
-
-      border: 1px solid var(--text);
-
-      font-size: 11px;
-      font-weight: 500;
-
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-
-      transition:
-        background 0.2s ease,
-        color 0.2s ease;
-    }
-
-
-    .calendar-button:hover {
-      background: var(--text);
-      color: var(--white);
     }
 
 
 
-    /* =========================================
+    /* =========================================================
+       REAL GOOGLE CALENDAR
+    ========================================================= */
+
+    .google-calendar-wrap {
+
+      width: 100%;
+
+      margin: 0 auto;
+
+      padding: 12px;
+
+      background: var(--soft-aqua);
+
+      border: 1px solid rgba(24,126,123,0.28);
+
+      border-top: 6px solid var(--turquoise);
+
+      box-shadow:
+        0 20px 45px rgba(39,95,99,0.13);
+
+    }
+
+
+    .google-calendar-inner {
+
+      width: 100%;
+
+      background: white;
+
+      overflow: hidden;
+
+    }
+
+
+    .google-calendar-inner iframe {
+
+      display: block;
+
+      width: 100%;
+
+      height: 650px;
+
+      border: 0;
+
+      background: white;
+
+    }
+
+
+
+    /* =========================================================
        BOOKING NOTES
-    ========================================= */
+    ========================================================= */
 
     .booking-notes {
+
       padding: 0 7vw 150px;
+
+      background: var(--white);
+
     }
 
 
     .notes-inner {
+
       max-width: 1200px;
 
       margin: 0 auto;
 
       display: grid;
+
       grid-template-columns: repeat(3, 1fr);
 
       border-top: 1px solid var(--line);
+
+      border-bottom: 1px solid var(--line);
+
     }
 
 
     .note {
-      padding: 45px 40px 20px 0;
+
+      padding: 45px 40px 40px 0;
+
     }
 
 
     .note + .note {
+
       padding-left: 40px;
 
       border-left: 1px solid var(--line);
+
     }
 
 
     .note-number {
-      margin-bottom: 15px;
+
+      width: 38px;
+
+      height: 38px;
+
+      margin-bottom: 18px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: var(--pink);
+
+      border-top: 3px solid var(--turquoise);
 
       font-size: 10px;
 
-      letter-spacing: 0.18em;
+      font-weight: 600;
+
+      letter-spacing: 0.12em;
 
       color: var(--turquoise-dark);
+
     }
 
 
     .note h3 {
-      font-size: 20px;
-
-      font-weight: 400;
 
       margin-bottom: 10px;
+
+      font-size: 20px;
+
+      font-weight: 500;
+
     }
 
 
     .note p {
+
       font-size: 13px;
 
       line-height: 1.8;
 
       color: var(--muted);
+
     }
 
 
 
-    /* =========================================
+    /* =========================================================
        PERFORMANCE SECTION
-    ========================================= */
+    ========================================================= */
 
     .performance-booking {
+
       padding: 150px 7vw;
 
-      background: var(--soft-white);
+      background: var(--pink);
+
+      border-top: 1px solid var(--pink-strong);
+
+      border-bottom: 1px solid var(--pink-strong);
+
     }
 
 
     .performance-inner {
+
       max-width: 1150px;
 
       margin: 0 auto;
 
       display: grid;
+
       grid-template-columns: 1fr 1fr;
 
       gap: 9vw;
 
       align-items: center;
+
+    }
+
+
+    .performance-copy {
+
+      padding: 38px;
+
+      background: rgba(255,255,255,0.60);
+
+      border: 1px solid rgba(39,95,99,0.17);
+
+      border-top: 5px solid var(--turquoise);
+
+      box-shadow:
+        0 15px 35px rgba(39,95,99,0.10);
+
     }
 
 
     .performance-price {
+
       margin-top: 30px;
 
       font-size: 14px;
@@ -484,79 +792,98 @@
       letter-spacing: 0.06em;
 
       color: var(--text);
+
     }
 
 
     .performance-price strong {
-      font-size: 28px;
 
-      font-weight: 300;
-    }
+      margin-left: 6px;
 
+      font-size: 30px;
 
-    .performance-copy .body-copy {
-      margin-top: 30px;
+      font-weight: 600;
+
+      color: var(--turquoise-dark);
+
     }
 
 
     .performance-button {
+
       display: inline-block;
 
       margin-top: 35px;
 
       padding-bottom: 7px;
 
-      border-bottom: 1px solid var(--turquoise);
+      border-bottom: 2px solid var(--turquoise);
 
       font-size: 11px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.15em;
+
       text-transform: uppercase;
+
     }
 
 
 
-    /* =========================================
+    /* =========================================================
        FINAL CTA
-    ========================================= */
+    ========================================================= */
 
     .final-cta {
+
       padding: 140px 7vw;
 
       text-align: center;
 
-      background: var(--text);
+      background: var(--footer-teal);
 
       color: var(--white);
+
+      border-top: 8px solid var(--turquoise);
+
     }
 
 
     .final-cta h2 {
+
       max-width: 850px;
 
       margin: 0 auto;
 
       font-size: clamp(48px, 7vw, 90px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 1;
 
       letter-spacing: -0.045em;
+
     }
 
 
     .final-cta h2 em {
-      font-family: "Allura", cursive;
 
-      font-size: 1.25em;
+      font-family: "Tangerine", cursive;
+
+      font-size: 1.4em;
+
+      font-weight: 700;
 
       font-style: normal;
+
+      color: #8CE0DA;
+
     }
 
 
     .final-cta p {
+
       max-width: 500px;
 
       margin: 28px auto 0;
@@ -565,490 +892,580 @@
 
       line-height: 1.9;
 
-      color: #b7c3c3;
+      color: #D9EEEE;
+
     }
 
 
 
-    /* =========================================
+    /* =========================================================
        FOOTER
-    ========================================= */
+    ========================================================= */
 
     footer {
+
       padding: 28px 6vw;
 
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
 
-      background: var(--text);
+      background: #19585B;
 
-      border-top: 1px solid rgba(255,255,255,0.12);
+      border-top:
+        1px solid rgba(255,255,255,0.16);
 
-      color: #9ca9a9;
+      color: #C5DEDF;
 
       font-size: 11px;
+
     }
 
 
     .social-links {
+
       display: flex;
 
       gap: 25px;
+
     }
 
 
     .social-links a:hover {
+
       color: white;
+
     }
 
 
 
-    /* =========================================
-       MOBILE
-    ========================================= */
+    /* =========================================================
+       MOBILE NAVIGATION
+    ========================================================= */
 
     @media (max-width: 850px) {
 
-      .nav-links {
-        gap: 18px;
+      .site-nav {
+
+        height: 78px;
+
+        padding: 0 6vw;
+
+        overflow: visible;
+
       }
 
 
-      .nav-links li:nth-child(1),
-      .nav-links li:nth-child(2),
-      .nav-links li:nth-child(3) {
+      .site-logo {
+
+        font-size: 44px;
+
+      }
+
+
+      .desktop-menu {
+
         display: none;
+
       }
 
+
+      .mobile-menu {
+
+        display: block;
+
+        position: relative;
+
+        z-index: 10000;
+
+      }
+
+
+      .mobile-menu summary {
+
+        list-style: none;
+
+      }
+
+
+      .mobile-menu summary::-webkit-details-marker {
+
+        display: none;
+
+      }
+
+
+      .hamburger {
+
+        width: 32px;
+
+        height: 24px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: space-between;
+
+        cursor: pointer;
+
+      }
+
+
+      .hamburger span {
+
+        display: block;
+
+        width: 32px;
+
+        height: 2px;
+
+        background: var(--turquoise-dark);
+
+        transform-origin: center;
+
+        transition:
+          transform 0.25s ease,
+          opacity 0.25s ease;
+
+      }
+
+
+      .mobile-menu[open]
+      .hamburger span:nth-child(1) {
+
+        transform:
+          translateY(11px)
+          rotate(45deg);
+
+      }
+
+
+      .mobile-menu[open]
+      .hamburger span:nth-child(2) {
+
+        opacity: 0;
+
+      }
+
+
+      .mobile-menu[open]
+      .hamburger span:nth-child(3) {
+
+        transform:
+          translateY(-11px)
+          rotate(-45deg);
+
+      }
+
+
+      .mobile-links {
+
+        position: absolute;
+
+        top: 50px;
+
+        right: -6vw;
+
+        width: 100vw;
+
+        background: var(--sky-white);
+
+        border-top:
+          4px solid var(--turquoise);
+
+        border-bottom:
+          1px solid var(--line);
+
+        box-shadow:
+          0 15px 30px rgba(39,95,99,0.16);
+
+      }
+
+
+      .mobile-links a {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 21px 6vw;
+
+        text-align: center;
+
+        font-size: 11px;
+
+        font-weight: 600;
+
+        letter-spacing: 0.15em;
+
+        text-transform: uppercase;
+
+        border-bottom:
+          1px solid var(--line);
+
+      }
+
+
+      .mobile-links a:last-child {
+
+        border-bottom: none;
+
+      }
+
+
+      .mobile-links .mobile-book {
+
+        background: var(--turquoise);
+
+        color: white;
+
+      }
+
+
+
+      /* PAGE */
 
       .booking-hero {
-        padding: 110px 7vw 100px;
+
+        padding:
+          110px 7vw
+          100px;
+
       }
 
 
       .lesson-row {
-        grid-template-columns: 1fr auto;
+
+        grid-template-columns:
+          1fr auto;
+
       }
 
 
       .lesson-details {
+
         grid-column: 1;
+
       }
 
 
       .lesson-price {
+
         grid-column: 2;
+
         grid-row: 1;
+
       }
 
 
-      .calendar-box {
-        min-height: 500px;
+      .google-calendar-wrap {
 
-        padding: 50px 25px;
+        padding: 8px;
+
+      }
+
+
+      .google-calendar-inner iframe {
+
+        height: 680px;
+
       }
 
 
       .notes-inner {
+
         grid-template-columns: 1fr;
+
       }
 
 
       .note {
+
         padding: 35px 0;
+
       }
 
 
       .note + .note {
+
         padding-left: 0;
 
         border-left: none;
-        border-top: 1px solid var(--line);
+
+        border-top:
+          1px solid var(--line);
+
       }
 
 
       .performance-inner {
+
         grid-template-columns: 1fr;
 
         gap: 50px;
+
       }
 
 
       footer {
+
         flex-direction: column;
 
         gap: 18px;
 
         text-align: center;
+
       }
 
     }
 
 
+
+    /* =========================================================
+       SMALL PHONE
+    ========================================================= */
+
     @media (max-width: 600px) {
-
-      nav {
-        padding: 0 5vw;
-      }
-
-
-      .nav-logo {
-        font-size: 34px;
-      }
-
 
       .lessons,
       .calendar-section,
       .performance-booking {
-        padding: 100px 6vw;
+
+        padding:
+          100px 6vw;
+
       }
 
 
       .booking-notes {
-        padding: 0 6vw 100px;
+
+        padding:
+          0 6vw 100px;
+
+      }
+
+
+      .lesson-list {
+
+        box-shadow: none;
+
       }
 
 
       .lesson-row {
+
         display: block;
+
+        padding:
+          28px 22px;
+
       }
 
 
       .lesson-details {
+
         margin-top: 7px;
+
       }
 
 
       .lesson-price {
+
         margin-top: 12px;
 
         text-align: left;
+
+      }
+
+
+      .google-calendar-wrap {
+
+        margin-left: -2vw;
+
+        width: calc(100% + 4vw);
+
+        padding: 5px;
+
+      }
+
+
+      .google-calendar-inner iframe {
+
+        height: 720px;
+
+      }
+
+
+      .performance-copy {
+
+        padding:
+          30px 24px;
+
       }
 
     }
-/* =========================================================
-   UNIVERSAL SITE NAVIGATION
-========================================================= */
 
-.site-nav {
-  width: 100%;
-  height: 82px;
-
-  padding: 0 6vw;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  position: relative;
-  z-index: 9999;
-
-  background: rgba(255, 255, 255, 0.98);
-
-  border-bottom: 1px solid #dfe7e7;
-}
-
-
-.site-logo {
-  font-family: "Allura", cursive;
-
-  font-size: 38px;
-  line-height: 1;
-
-  color: #1f2828;
-
-  white-space: nowrap;
-}
-
-
-/* DESKTOP */
-
-.desktop-menu {
-  display: flex;
-  align-items: center;
-
-  gap: 34px;
-}
-
-
-.desktop-menu a {
-  font-family: "DM Sans", sans-serif;
-
-  font-size: 11px;
-  font-weight: 500;
-
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-
-  color: #1f2828;
-
-  text-decoration: none;
-
-  transition: color 0.25s ease;
-}
-
-
-.desktop-menu a:hover {
-  color: #478f8d;
-}
-
-
-/* MOBILE HIDDEN ON DESKTOP */
-
-.mobile-menu {
-  display: none;
-}
-
-
-/* =========================================================
-   PHONE / TABLET NAV
-========================================================= */
-
-@media (max-width: 850px) {
-
-  .site-nav {
-    height: 76px;
-
-    padding: 0 6vw;
-
-    overflow: visible;
-  }
-
-
-  .site-logo {
-    font-size: 34px;
-  }
-
-
-  .desktop-menu {
-    display: none !important;
-  }
-
-
-  .mobile-menu {
-    display: block !important;
-
-    position: relative;
-
-    z-index: 10000;
-  }
-
-
-  .mobile-menu summary {
-    list-style: none;
-  }
-
-
-  .mobile-menu summary::-webkit-details-marker {
-    display: none;
-  }
-
-
-  .hamburger {
-    width: 32px;
-    height: 24px;
-
-    display: flex;
-
-    flex-direction: column;
-    justify-content: space-between;
-
-    cursor: pointer;
-  }
-
-
-  .hamburger span {
-    display: block;
-
-    width: 32px;
-    height: 2px;
-
-    background: #1f2828;
-
-    transform-origin: center;
-
-    transition:
-      transform 0.25s ease,
-      opacity 0.25s ease;
-  }
-
-
-  /* HAMBURGER BECOMES X */
-
-  .mobile-menu[open] .hamburger span:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
-  }
-
-
-  .mobile-menu[open] .hamburger span:nth-child(2) {
-    opacity: 0;
-  }
-
-
-  .mobile-menu[open] .hamburger span:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
-  }
-
-
-  /* DROPDOWN */
-
-  .mobile-links {
-    position: absolute;
-
-    top: 50px;
-    right: -6vw;
-
-    width: 100vw;
-
-    background: #ffffff;
-
-    border-top: 1px solid #dfe7e7;
-    border-bottom: 1px solid #dfe7e7;
-
-    box-shadow: 0 12px 30px rgba(20, 30, 30, 0.06);
-  }
-
-
-  .mobile-links a {
-    display: block;
-
-    width: 100%;
-
-    padding: 21px 6vw;
-
-    text-align: center;
-
-    font-family: "DM Sans", sans-serif;
-
-    font-size: 11px;
-    font-weight: 500;
-
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-
-    color: #1f2828;
-
-    text-decoration: none;
-
-    border-bottom: 1px solid #e8eeee;
-  }
-
-
-  .mobile-links a:last-child {
-    border-bottom: none;
-  }
-
-
-  .mobile-links a:hover {
-    color: #478f8d;
-  }
-
-}
   </style>
 
 </head>
 
 
+
 <body>
 
 
-  <!-- =========================================
+  <!-- =========================================================
        NAVIGATION
-  ========================================== -->
+  ========================================================== -->
 
-<nav class="site-nav">
-
-  <a href="index.html" class="site-logo">
-    Kay Tozawa
-  </a>
-
-  <!-- DESKTOP NAVIGATION -->
-  <div class="desktop-menu">
-
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="booking.html">Book</a>
-    <a href="contact.html">Contact</a>
-
-  </div>
+  <nav class="site-nav">
 
 
-  <!-- MOBILE NAVIGATION -->
-  <details class="mobile-menu">
-
-    <summary
-      class="hamburger"
-      aria-label="Open navigation"
+    <a
+      href="index.html"
+      class="site-logo"
     >
-      <span></span>
-      <span></span>
-      <span></span>
-    </summary>
+      Kay Tozawa
+    </a>
 
-    <div class="mobile-links">
 
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="booking.html">Book</a>
-      <a href="contact.html">Contact</a>
+
+    <div class="desktop-menu">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="portfolio.html">
+        Portfolio
+      </a>
+
+      <a
+        href="booking.html"
+        class="nav-book"
+      >
+        Book
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
 
     </div>
 
-  </details>
 
-</nav>
+
+    <details class="mobile-menu">
+
+      <summary
+        class="hamburger"
+        aria-label="Open navigation"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </summary>
+
+
+      <div class="mobile-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="portfolio.html">
+          Portfolio
+        </a>
+
+        <a
+          href="booking.html"
+          class="mobile-book"
+        >
+          Book
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+    </details>
+
+
+  </nav>
 
 
 
   <main>
 
 
-    <!-- =========================================
+    <!-- =========================================================
          HERO
-    ========================================== -->
+    ========================================================== -->
 
     <section class="booking-hero">
 
+
       <div class="booking-hero-inner">
+
 
         <div class="section-label">
           Private instruction
         </div>
 
+
         <h1>
-          Book with <em>Kay</em>
+
+          Book with
+
+          <em>Kay</em>
+
         </h1>
 
+
         <p>
+
           Choose your instrument and reserve an available
           time for a private one-hour lesson.
+
         </p>
 
+
       </div>
+
 
     </section>
 
 
 
-    <!-- =========================================
+    <!-- =========================================================
          LESSON OPTIONS
-    ========================================== -->
+    ========================================================== -->
 
     <section class="lessons">
+
 
       <div class="lessons-inner">
 
 
         <div class="lessons-header">
 
+
           <div class="section-label">
             Lesson options
           </div>
 
+
           <h2 class="section-heading">
             Private Lessons
           </h2>
+
 
         </div>
 
@@ -1057,55 +1474,79 @@
         <div class="lesson-list">
 
 
+          <!-- VIOLIN -->
+
           <div class="lesson-row">
+
 
             <div class="lesson-name">
               Violin
             </div>
 
+
             <div class="lesson-details">
+
               Private one-on-one instruction · 60 minutes
+
             </div>
+
 
             <div class="lesson-price">
               $60
             </div>
 
+
           </div>
 
 
 
+          <!-- VIOLA -->
+
           <div class="lesson-row">
+
 
             <div class="lesson-name">
               Viola
             </div>
 
+
             <div class="lesson-details">
+
               Private one-on-one instruction · 60 minutes
+
             </div>
+
 
             <div class="lesson-price">
               $60
             </div>
+
 
           </div>
 
 
 
+          <!-- CELLO -->
+
           <div class="lesson-row">
+
 
             <div class="lesson-name">
               Cello
             </div>
 
+
             <div class="lesson-details">
+
               Private one-on-one instruction · 60 minutes
+
             </div>
+
 
             <div class="lesson-price">
               $60
             </div>
+
 
           </div>
 
@@ -1115,135 +1556,134 @@
 
       </div>
 
+
     </section>
 
 
 
-    <!-- =========================================
-         CALENDAR
-    ========================================== -->
+    <!-- =========================================================
+         REAL GOOGLE BOOKING CALENDAR
+    ========================================================== -->
 
     <section class="calendar-section">
+
 
       <div class="calendar-inner">
 
 
         <div class="calendar-header">
 
+
           <div class="section-label">
             Availability
           </div>
+
 
           <h2 class="section-heading">
             Select a Time
           </h2>
 
+
           <p class="body-copy">
-            Choose an available appointment time from the
-            booking calendar. Availability is updated regularly
-            through Kay’s calendar.
+
+            Choose an available appointment time below.
+            Availability is connected directly to Kay’s
+            calendar and updates automatically.
+
           </p>
+
 
         </div>
 
 
 
         <!-- ==================================================
-             GOOGLE_CALENDAR_EMBED
-
-             WHEN YOU CREATE YOUR GOOGLE APPOINTMENT SCHEDULE:
-
-             Google will give you either:
-             1. a booking link
-             OR
-             2. website embed code.
-
-             You will replace this placeholder later.
-
-             Search this file for:
-             GOOGLE_CALENDAR_EMBED
+             GOOGLE CALENDAR APPOINTMENT SCHEDULING
         =================================================== -->
 
-
-        <div class="calendar-box">
-
-          <h3>
-            Booking Calendar
-          </h3>
-
-          <p>
-            Kay’s available lesson times will appear here.
-            Select a time that works for you to reserve
-            your lesson.
-          </p>
+        <div class="google-calendar-wrap">
 
 
-          <!-- ==================================================
-               GOOGLE_BOOKING_LINK
+          <div class="google-calendar-inner">
 
-               Replace YOUR_GOOGLE_BOOKING_LINK_HERE
-               with the link Google gives you.
-          =================================================== -->
 
-          <a
-            href="YOUR_GOOGLE_BOOKING_LINK_HERE"
-            target="_blank"
-            class="calendar-button"
-          >
-            Open Booking Calendar
-          </a>
+            <iframe
+              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ39qSeTv9pfcIuTRvb6Smpliez5B1rov3P-whr6meAdUBs2eYwS0gv9N5UZb4SdaPyTTJD4m3uj?gv=true"
+              width="100%"
+              height="650"
+              frameborder="0"
+              title="Kay Tozawa Lesson Booking Calendar">
+            </iframe>
+
+
+          </div>
+
 
         </div>
 
 
       </div>
 
+
     </section>
 
 
 
-    <!-- =========================================
+    <!-- =========================================================
          BOOKING INFORMATION
-    ========================================== -->
+    ========================================================== -->
 
     <section class="booking-notes">
+
 
       <div class="notes-inner">
 
 
         <div class="note">
 
+
           <div class="note-number">
             01
           </div>
+
 
           <h3>
             Lesson Length
           </h3>
 
+
           <p>
+
             Private lessons are scheduled for
             60 minutes.
+
           </p>
+
 
         </div>
 
 
 
         <div class="note">
+
 
           <div class="note-number">
             02
           </div>
 
+
           <h3>
             Advance Booking
           </h3>
 
+
           <p>
+
             Please book lessons at least
             24 hours in advance.
+
           </p>
+
 
         </div>
 
@@ -1251,48 +1691,61 @@
 
         <div class="note">
 
+
           <div class="note-number">
             03
           </div>
+
 
           <h3>
             Rescheduling
           </h3>
 
+
           <p>
+
             If you need to change your appointment,
             use the rescheduling option included with
             your booking confirmation.
+
           </p>
+
 
         </div>
 
 
       </div>
 
+
     </section>
 
 
 
-    <!-- =========================================
-         PERFORMANCES
-    ========================================== -->
+    <!-- =========================================================
+         PERFORMANCE BOOKINGS
+    ========================================================== -->
 
     <section class="performance-booking">
+
 
       <div class="performance-inner">
 
 
         <div>
 
+
           <div class="section-label">
             Events & performances
           </div>
 
+
           <h2 class="section-heading">
+
             Looking to book
             a performance?
+
           </h2>
+
 
         </div>
 
@@ -1300,17 +1753,25 @@
 
         <div class="performance-copy">
 
+
           <p class="body-copy">
+
             Kay is available for weddings, private events,
             parties, celebrations, and other special occasions.
             Performance bookings are arranged individually based
             on the date, venue, location, and length of the event.
+
           </p>
 
 
           <div class="performance-price">
+
             Performances from
-            <strong>$300</strong>
+
+            <strong>
+              $300
+            </strong>
+
           </div>
 
 
@@ -1321,30 +1782,40 @@
             Request Performance Availability
           </a>
 
+
         </div>
 
 
       </div>
 
+
     </section>
 
 
 
-    <!-- =========================================
-         FINAL SECTION
-    ========================================== -->
+    <!-- =========================================================
+         FINAL CTA
+    ========================================================== -->
 
     <section class="final-cta">
 
+
       <h2>
+
         Make time for
+
         <em>music.</em>
+
       </h2>
 
+
       <p>
+
         Select an available lesson time and begin
         building technique, confidence, and musicianship.
+
       </p>
+
 
     </section>
 
@@ -1353,11 +1824,12 @@
 
 
 
-  <!-- =========================================
+  <!-- =========================================================
        FOOTER
-  ========================================== -->
+  ========================================================== -->
 
   <footer>
+
 
     <div>
       © 2026 Kay Tozawa
@@ -1365,6 +1837,7 @@
 
 
     <div class="social-links">
+
 
       <a
         href="https://www.youtube.com/@kaynicoletozawa4642"
@@ -1374,6 +1847,7 @@
         YouTube
       </a>
 
+
       <a
         href="https://www.instagram.com/kays_violin/"
         target="_blank"
@@ -1381,6 +1855,7 @@
       >
         Instagram
       </a>
+
 
       <a
         href="https://www.facebook.com/kay.tozawa.2025"
@@ -1390,7 +1865,9 @@
         Facebook
       </a>
 
+
     </div>
+
 
   </footer>
 
