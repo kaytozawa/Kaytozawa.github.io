@@ -13,10 +13,6 @@
   <title>Book with Kay | Kay Tozawa</title>
 
 
-  <!-- =========================================================
-       FONTS
-  ========================================================== -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -26,7 +22,7 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Tangerine:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Ephesis&display=swap"
     rel="stylesheet"
   >
 
@@ -34,21 +30,17 @@
 
   <style>
 
-    /* =========================================================
-       COLOURS
-    ========================================================= */
-
     :root {
 
-      --sky-white: #F4FBFD;
+      --sky-white: #F7FBFD;
 
-      --soft-blue: #DDEFFC;
+      --soft-blue: #E5F2F8;
 
-      --soft-aqua: #CFEFEB;
+      --soft-aqua: #DDF2F0;
 
-      --pink: #F7D6E2;
+      --periwinkle: #ECEEFF;
 
-      --pink-strong: #F1BFD0;
+      --periwinkle-deep: #D9DDF7;
 
       --white: #FFFFFF;
 
@@ -64,15 +56,11 @@
 
       --muted: #5E6C70;
 
-      --line: #A9CED0;
+      --line: #B8CED1;
 
     }
 
 
-
-    /* =========================================================
-       RESET
-    ========================================================= */
 
     * {
 
@@ -118,16 +106,10 @@
 
 
     /* =========================================================
-       GLOBAL TYPOGRAPHY
+       GLOBAL
     ========================================================= */
 
     .section-label {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 11px;
 
       margin-bottom: 17px;
 
@@ -135,24 +117,11 @@
 
       font-weight: 600;
 
-      letter-spacing: 0.2em;
+      letter-spacing: 0.20em;
 
       text-transform: uppercase;
 
       color: var(--turquoise-dark);
-
-    }
-
-
-    .section-label::before {
-
-      content: "";
-
-      width: 28px;
-
-      height: 2px;
-
-      background: var(--turquoise);
 
     }
 
@@ -204,7 +173,7 @@
 
       z-index: 9999;
 
-      background: rgba(244,251,253,0.97);
+      background: rgba(247,251,253,0.97);
 
       backdrop-filter: blur(12px);
 
@@ -213,18 +182,18 @@
       border-bottom: 1px solid var(--line);
 
       box-shadow:
-        0 7px 25px rgba(39,95,99,0.08);
+        0 6px 22px rgba(39,95,99,0.07);
 
     }
 
 
     .site-logo {
 
-      font-family: "Tangerine", cursive;
+      font-family: "Ephesis", cursive;
 
-      font-size: 48px;
+      font-size: 46px;
 
-      font-weight: 700;
+      font-weight: 400;
 
       line-height: 1;
 
@@ -234,9 +203,6 @@
 
     }
 
-
-
-    /* DESKTOP MENU */
 
     .desktop-menu {
 
@@ -312,9 +278,6 @@
 
       color: white;
 
-      box-shadow:
-        0 5px 14px rgba(39,95,99,0.12);
-
     }
 
 
@@ -351,7 +314,7 @@
         linear-gradient(
           135deg,
           var(--sky-white) 0%,
-          #E8F6F7 100%
+          #EDF6F8 100%
         );
 
       border-bottom: 1px solid var(--line);
@@ -364,13 +327,6 @@
       max-width: 900px;
 
       margin: 0 auto;
-
-    }
-
-
-    .booking-hero .section-label {
-
-      justify-content: center;
 
     }
 
@@ -390,13 +346,13 @@
 
     .booking-hero h1 em {
 
-      font-family: "Tangerine", cursive;
+      font-family: "Ephesis", cursive;
 
       font-size: 1.35em;
 
       font-style: normal;
 
-      font-weight: 700;
+      font-weight: 400;
 
       line-height: 0.8;
 
@@ -426,7 +382,7 @@
 
 
     /* =========================================================
-       LESSON OPTIONS
+       LESSONS
     ========================================================= */
 
     .lessons {
@@ -542,7 +498,7 @@
 
 
     /* =========================================================
-       CALENDAR SECTION
+       CALENDAR
     ========================================================= */
 
     .calendar-section {
@@ -578,15 +534,10 @@
 
       padding-left: 18px;
 
-      border-left: 3px solid var(--turquoise);
+      border-left: 2px solid var(--turquoise);
 
     }
 
-
-
-    /* =========================================================
-       REAL GOOGLE CALENDAR
-    ========================================================= */
 
     .google-calendar-wrap {
 
@@ -598,12 +549,12 @@
 
       background: var(--soft-aqua);
 
-      border: 1px solid rgba(24,126,123,0.28);
+      border: 1px solid rgba(24,126,123,0.24);
 
-      border-top: 6px solid var(--turquoise);
+      border-top: 5px solid var(--turquoise);
 
       box-shadow:
-        0 20px 45px rgba(39,95,99,0.13);
+        0 20px 45px rgba(39,95,99,0.11);
 
     }
 
@@ -695,7 +646,7 @@
 
       justify-content: center;
 
-      background: var(--pink);
+      background: var(--periwinkle);
 
       border-top: 3px solid var(--turquoise);
 
@@ -734,18 +685,18 @@
 
 
     /* =========================================================
-       PERFORMANCE SECTION
+       PERFORMANCE
     ========================================================= */
 
     .performance-booking {
 
       padding: 150px 7vw;
 
-      background: var(--pink);
+      background: var(--periwinkle);
 
-      border-top: 1px solid var(--pink-strong);
+      border-top: 1px solid var(--periwinkle-deep);
 
-      border-bottom: 1px solid var(--pink-strong);
+      border-bottom: 1px solid var(--periwinkle-deep);
 
     }
 
@@ -771,14 +722,14 @@
 
       padding: 38px;
 
-      background: rgba(255,255,255,0.60);
+      background: rgba(255,255,255,0.62);
 
-      border: 1px solid rgba(39,95,99,0.17);
+      border: 1px solid rgba(39,95,99,0.15);
 
-      border-top: 5px solid var(--turquoise);
+      border-top: 4px solid var(--turquoise);
 
       box-shadow:
-        0 15px 35px rgba(39,95,99,0.10);
+        0 15px 35px rgba(39,95,99,0.08);
 
     }
 
@@ -845,7 +796,7 @@
 
       color: var(--white);
 
-      border-top: 8px solid var(--turquoise);
+      border-top: 7px solid var(--turquoise);
 
     }
 
@@ -869,15 +820,15 @@
 
     .final-cta h2 em {
 
-      font-family: "Tangerine", cursive;
+      font-family: "Ephesis", cursive;
 
       font-size: 1.4em;
 
-      font-weight: 700;
+      font-weight: 400;
 
       font-style: normal;
 
-      color: #8CE0DA;
+      color: #9CE3DD;
 
     }
 
@@ -897,10 +848,6 @@
     }
 
 
-
-    /* =========================================================
-       FOOTER
-    ========================================================= */
 
     footer {
 
@@ -941,10 +888,6 @@
 
 
 
-    /* =========================================================
-       MOBILE NAVIGATION
-    ========================================================= */
-
     @media (max-width: 850px) {
 
       .site-nav {
@@ -960,7 +903,7 @@
 
       .site-logo {
 
-        font-size: 44px;
+        font-size: 42px;
 
       }
 
@@ -1016,15 +959,13 @@
 
       .hamburger span {
 
-        display: block;
-
         width: 32px;
 
         height: 2px;
 
-        background: var(--turquoise-dark);
+        display: block;
 
-        transform-origin: center;
+        background: var(--turquoise-dark);
 
         transition:
           transform 0.25s ease,
@@ -1033,30 +974,23 @@
       }
 
 
-      .mobile-menu[open]
-      .hamburger span:nth-child(1) {
+      .mobile-menu[open] .hamburger span:nth-child(1) {
 
-        transform:
-          translateY(11px)
-          rotate(45deg);
+        transform: translateY(11px) rotate(45deg);
 
       }
 
 
-      .mobile-menu[open]
-      .hamburger span:nth-child(2) {
+      .mobile-menu[open] .hamburger span:nth-child(2) {
 
         opacity: 0;
 
       }
 
 
-      .mobile-menu[open]
-      .hamburger span:nth-child(3) {
+      .mobile-menu[open] .hamburger span:nth-child(3) {
 
-        transform:
-          translateY(-11px)
-          rotate(-45deg);
+        transform: translateY(-11px) rotate(-45deg);
 
       }
 
@@ -1073,14 +1007,12 @@
 
         background: var(--sky-white);
 
-        border-top:
-          4px solid var(--turquoise);
+        border-top: 4px solid var(--turquoise);
 
-        border-bottom:
-          1px solid var(--line);
+        border-bottom: 1px solid var(--line);
 
         box-shadow:
-          0 15px 30px rgba(39,95,99,0.16);
+          0 15px 30px rgba(39,95,99,0.14);
 
       }
 
@@ -1103,8 +1035,7 @@
 
         text-transform: uppercase;
 
-        border-bottom:
-          1px solid var(--line);
+        border-bottom: 1px solid var(--line);
 
       }
 
@@ -1125,22 +1056,16 @@
       }
 
 
-
-      /* PAGE */
-
       .booking-hero {
 
-        padding:
-          110px 7vw
-          100px;
+        padding: 110px 7vw 100px;
 
       }
 
 
       .lesson-row {
 
-        grid-template-columns:
-          1fr auto;
+        grid-template-columns: 1fr auto;
 
       }
 
@@ -1155,15 +1080,7 @@
       .lesson-price {
 
         grid-column: 2;
-
         grid-row: 1;
-
-      }
-
-
-      .google-calendar-wrap {
-
-        padding: 8px;
 
       }
 
@@ -1195,8 +1112,7 @@
 
         border-left: none;
 
-        border-top:
-          1px solid var(--line);
+        border-top: 1px solid var(--line);
 
       }
 
@@ -1224,33 +1140,20 @@
 
 
 
-    /* =========================================================
-       SMALL PHONE
-    ========================================================= */
-
     @media (max-width: 600px) {
 
       .lessons,
       .calendar-section,
       .performance-booking {
 
-        padding:
-          100px 6vw;
+        padding: 100px 6vw;
 
       }
 
 
       .booking-notes {
 
-        padding:
-          0 6vw 100px;
-
-      }
-
-
-      .lesson-list {
-
-        box-shadow: none;
+        padding: 0 6vw 100px;
 
       }
 
@@ -1259,8 +1162,7 @@
 
         display: block;
 
-        padding:
-          28px 22px;
+        padding: 28px 22px;
 
       }
 
@@ -1301,8 +1203,7 @@
 
       .performance-copy {
 
-        padding:
-          30px 24px;
+        padding: 30px 24px;
 
       }
 
@@ -1317,20 +1218,12 @@
 <body>
 
 
-  <!-- =========================================================
-       NAVIGATION
-  ========================================================== -->
-
   <nav class="site-nav">
 
 
-    <a
-      href="index.html"
-      class="site-logo"
-    >
+    <a href="index.html" class="site-logo">
       Kay Tozawa
     </a>
-
 
 
     <div class="desktop-menu">
@@ -1343,10 +1236,7 @@
         Portfolio
       </a>
 
-      <a
-        href="booking.html"
-        class="nav-book"
-      >
+      <a href="booking.html" class="nav-book">
         Book
       </a>
 
@@ -1355,7 +1245,6 @@
       </a>
 
     </div>
-
 
 
     <details class="mobile-menu">
@@ -1405,10 +1294,6 @@
   <main>
 
 
-    <!-- =========================================================
-         HERO
-    ========================================================== -->
-
     <section class="booking-hero">
 
 
@@ -1444,10 +1329,6 @@
 
 
 
-    <!-- =========================================================
-         LESSON OPTIONS
-    ========================================================== -->
-
     <section class="lessons">
 
 
@@ -1456,16 +1337,13 @@
 
         <div class="lessons-header">
 
-
           <div class="section-label">
             Lesson options
           </div>
 
-
           <h2 class="section-heading">
             Private Lessons
           </h2>
-
 
         </div>
 
@@ -1474,79 +1352,55 @@
         <div class="lesson-list">
 
 
-          <!-- VIOLIN -->
-
           <div class="lesson-row">
-
 
             <div class="lesson-name">
               Violin
             </div>
 
-
             <div class="lesson-details">
-
               Private one-on-one instruction · 60 minutes
-
             </div>
-
 
             <div class="lesson-price">
               $60
             </div>
 
-
           </div>
 
 
 
-          <!-- VIOLA -->
-
           <div class="lesson-row">
-
 
             <div class="lesson-name">
               Viola
             </div>
 
-
             <div class="lesson-details">
-
               Private one-on-one instruction · 60 minutes
-
             </div>
-
 
             <div class="lesson-price">
               $60
             </div>
-
 
           </div>
 
 
 
-          <!-- CELLO -->
-
           <div class="lesson-row">
-
 
             <div class="lesson-name">
               Cello
             </div>
 
-
             <div class="lesson-details">
-
               Private one-on-one instruction · 60 minutes
-
             </div>
-
 
             <div class="lesson-price">
               $60
             </div>
-
 
           </div>
 
@@ -1561,9 +1415,7 @@
 
 
 
-    <!-- =========================================================
-         REAL GOOGLE BOOKING CALENDAR
-    ========================================================== -->
+    <!-- REAL GOOGLE BOOKING CALENDAR -->
 
     <section class="calendar-section">
 
@@ -1573,16 +1425,13 @@
 
         <div class="calendar-header">
 
-
           <div class="section-label">
             Availability
           </div>
 
-
           <h2 class="section-heading">
             Select a Time
           </h2>
-
 
           <p class="body-copy">
 
@@ -1592,14 +1441,9 @@
 
           </p>
 
-
         </div>
 
 
-
-        <!-- ==================================================
-             GOOGLE CALENDAR APPOINTMENT SCHEDULING
-        =================================================== -->
 
         <div class="google-calendar-wrap">
 
@@ -1629,10 +1473,6 @@
 
 
 
-    <!-- =========================================================
-         BOOKING INFORMATION
-    ========================================================== -->
-
     <section class="booking-notes">
 
 
@@ -1641,49 +1481,37 @@
 
         <div class="note">
 
-
           <div class="note-number">
             01
           </div>
-
 
           <h3>
             Lesson Length
           </h3>
 
-
           <p>
-
             Private lessons are scheduled for
             60 minutes.
-
           </p>
-
 
         </div>
 
 
 
         <div class="note">
-
 
           <div class="note-number">
             02
           </div>
 
-
           <h3>
             Advance Booking
           </h3>
 
-
           <p>
-
             Please book lessons at least
             24 hours in advance.
-
           </p>
-
 
         </div>
 
@@ -1691,25 +1519,19 @@
 
         <div class="note">
 
-
           <div class="note-number">
             03
           </div>
-
 
           <h3>
             Rescheduling
           </h3>
 
-
           <p>
-
             If you need to change your appointment,
             use the rescheduling option included with
             your booking confirmation.
-
           </p>
-
 
         </div>
 
@@ -1721,10 +1543,6 @@
 
 
 
-    <!-- =========================================================
-         PERFORMANCE BOOKINGS
-    ========================================================== -->
-
     <section class="performance-booking">
 
 
@@ -1733,11 +1551,9 @@
 
         <div>
 
-
           <div class="section-label">
             Events & performances
           </div>
-
 
           <h2 class="section-heading">
 
@@ -1745,7 +1561,6 @@
             a performance?
 
           </h2>
-
 
         </div>
 
@@ -1793,10 +1608,6 @@
 
 
 
-    <!-- =========================================================
-         FINAL CTA
-    ========================================================== -->
-
     <section class="final-cta">
 
 
@@ -1824,10 +1635,6 @@
 
 
 
-  <!-- =========================================================
-       FOOTER
-  ========================================================== -->
-
   <footer>
 
 
@@ -1838,7 +1645,6 @@
 
     <div class="social-links">
 
-
       <a
         href="https://www.youtube.com/@kaynicoletozawa4642"
         target="_blank"
@@ -1846,7 +1652,6 @@
       >
         YouTube
       </a>
-
 
       <a
         href="https://www.instagram.com/kays_violin/"
@@ -1856,7 +1661,6 @@
         Instagram
       </a>
 
-
       <a
         href="https://www.facebook.com/kay.tozawa.2025"
         target="_blank"
@@ -1865,7 +1669,6 @@
         Facebook
       </a>
 
-
     </div>
 
 
@@ -1873,5 +1676,4 @@
 
 
 </body>
-
 </html>
