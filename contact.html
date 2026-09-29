@@ -13,10 +13,6 @@
   <title>Contact | Kay Tozawa</title>
 
 
-  <!-- =========================================================
-       FONTS
-  ========================================================== -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
@@ -26,7 +22,7 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Tangerine:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Ephesis&display=swap"
     rel="stylesheet"
   >
 
@@ -34,21 +30,17 @@
 
   <style>
 
-    /* =========================================================
-       COLOURS
-    ========================================================= */
-
     :root {
 
-      --sky-white: #F4FBFD;
+      --sky-white: #F7FBFD;
 
-      --soft-blue: #DDEFFC;
+      --soft-blue: #E5F2F8;
 
-      --soft-aqua: #CFEFEB;
+      --soft-aqua: #DDF2F0;
 
-      --pink: #F7D6E2;
+      --periwinkle: #ECEEFF;
 
-      --pink-strong: #F1BFD0;
+      --periwinkle-deep: #D9DDF7;
 
       --white: #FFFFFF;
 
@@ -64,15 +56,11 @@
 
       --muted: #5E6C70;
 
-      --line: #A9CED0;
+      --line: #B8CED1;
 
     }
 
 
-
-    /* =========================================================
-       RESET
-    ========================================================= */
 
     * {
 
@@ -118,16 +106,10 @@
 
 
     /* =========================================================
-       GLOBAL TYPOGRAPHY
+       GLOBAL
     ========================================================= */
 
     .section-label {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 11px;
 
       margin-bottom: 18px;
 
@@ -135,24 +117,11 @@
 
       font-weight: 600;
 
-      letter-spacing: 0.2em;
+      letter-spacing: 0.20em;
 
       text-transform: uppercase;
 
       color: var(--turquoise-dark);
-
-    }
-
-
-    .section-label::before {
-
-      content: "";
-
-      width: 28px;
-
-      height: 2px;
-
-      background: var(--turquoise);
 
     }
 
@@ -183,7 +152,7 @@
 
 
     /* =========================================================
-       NAVIGATION
+       NAV
     ========================================================= */
 
     .site-nav {
@@ -204,7 +173,7 @@
 
       z-index: 9999;
 
-      background: rgba(244,251,253,0.97);
+      background: rgba(247,251,253,0.97);
 
       backdrop-filter: blur(12px);
 
@@ -213,18 +182,18 @@
       border-bottom: 1px solid var(--line);
 
       box-shadow:
-        0 7px 25px rgba(39,95,99,0.08);
+        0 6px 22px rgba(39,95,99,0.07);
 
     }
 
 
     .site-logo {
 
-      font-family: "Tangerine", cursive;
+      font-family: "Ephesis", cursive;
 
-      font-size: 48px;
+      font-size: 46px;
 
-      font-weight: 700;
+      font-weight: 400;
 
       line-height: 1;
 
@@ -234,9 +203,6 @@
 
     }
 
-
-
-    /* DESKTOP MENU */
 
     .desktop-menu {
 
@@ -261,10 +227,7 @@
 
       text-transform: uppercase;
 
-      transition:
-        color 0.25s ease,
-        background 0.25s ease,
-        transform 0.25s ease;
+      transition: color 0.25s ease;
 
     }
 
@@ -326,9 +289,6 @@
 
       color: white;
 
-      box-shadow:
-        0 5px 14px rgba(39,95,99,0.12);
-
     }
 
 
@@ -373,7 +333,7 @@
         linear-gradient(
           135deg,
           var(--sky-white) 0%,
-          #E8F6F7 100%
+          #EDF6F8 100%
         );
 
       border-bottom: 1px solid var(--line);
@@ -405,13 +365,13 @@
 
       display: block;
 
-      font-family: "Tangerine", cursive;
+      font-family: "Ephesis", cursive;
 
       font-size: 1.28em;
 
       font-style: normal;
 
-      font-weight: 700;
+      font-weight: 400;
 
       line-height: 0.8;
 
@@ -428,7 +388,7 @@
 
       padding-left: 18px;
 
-      border-left: 3px solid var(--turquoise);
+      border-left: 2px solid var(--turquoise);
 
       font-size: 16px;
 
@@ -442,37 +402,8 @@
 
     /* =========================================================
        HERO PHOTO
+       No coloured block behind it
     ========================================================= */
-
-    .hero-photo-wrap {
-
-      position: relative;
-
-    }
-
-
-    .hero-photo-wrap::before {
-
-      content: "";
-
-      position: absolute;
-
-      width: 52%;
-
-      height: 42%;
-
-      right: -28px;
-
-      top: -28px;
-
-      background: var(--pink);
-
-      border: 1px solid var(--pink-strong);
-
-      z-index: 0;
-
-    }
-
 
     .hero-photo {
 
@@ -482,33 +413,12 @@
 
       overflow: hidden;
 
-      background: var(--soft-blue);
+      background: #EAF1F3;
 
-      border: 1px solid rgba(39,95,99,0.22);
+      border: 1px solid rgba(39,95,99,0.18);
 
       box-shadow:
-        0 22px 50px rgba(39,95,99,0.15);
-
-      z-index: 2;
-
-    }
-
-
-    .hero-photo::after {
-
-      content: "";
-
-      position: absolute;
-
-      width: 150px;
-
-      height: 12px;
-
-      left: 0;
-
-      bottom: 0;
-
-      background: var(--turquoise);
+        0 22px 50px rgba(39,95,99,0.13);
 
     }
 
@@ -543,14 +453,14 @@
       padding-bottom: 7px;
 
       border-bottom:
-        2px solid rgba(24,126,123,0.28);
+        1px solid rgba(24,126,123,0.28);
 
     }
 
 
 
     /* =========================================================
-       CONTACT / FORM SECTION
+       CONTACT SECTION
     ========================================================= */
 
     .contact-section {
@@ -580,11 +490,6 @@
 
     }
 
-
-
-    /* =========================================================
-       CONTACT DETAILS
-    ========================================================= */
 
     .contact-details {
 
@@ -694,7 +599,7 @@
 
       background: rgba(255,255,255,0.55);
 
-      border: 1px solid rgba(24,126,123,0.20);
+      border: 1px solid rgba(24,126,123,0.18);
 
       font-size: 10px;
 
@@ -725,21 +630,21 @@
 
 
     /* =========================================================
-       GOOGLE FORM AREA
+       FORM AREA
     ========================================================= */
 
     .form-wrap {
 
-      background: rgba(255,255,255,0.68);
+      background: rgba(255,255,255,0.70);
 
       padding: 50px;
 
-      border: 1px solid rgba(39,95,99,0.18);
+      border: 1px solid rgba(39,95,99,0.16);
 
-      border-top: 6px solid var(--turquoise);
+      border-top: 5px solid var(--turquoise);
 
       box-shadow:
-        0 20px 45px rgba(39,95,99,0.12);
+        0 20px 45px rgba(39,95,99,0.10);
 
     }
 
@@ -779,11 +684,6 @@
     }
 
 
-
-    /* =========================================================
-       GOOGLE FORM EMBED
-    ========================================================= */
-
     .google-form-wrap {
 
       width: 100%;
@@ -794,10 +694,10 @@
 
       background: var(--white);
 
-      border: 1px solid rgba(24,126,123,0.18);
+      border: 1px solid rgba(24,126,123,0.16);
 
       box-shadow:
-        0 12px 30px rgba(39,95,99,0.08);
+        0 12px 30px rgba(39,95,99,0.07);
 
     }
 
@@ -820,10 +720,6 @@
     .form-note {
 
       margin-top: 22px;
-
-      padding-left: 15px;
-
-      border-left: 3px solid var(--pink-strong);
 
       max-width: 550px;
 
@@ -863,13 +759,6 @@
     }
 
 
-    .performance-note-inner .section-label {
-
-      justify-content: center;
-
-    }
-
-
     .performance-note h2 {
 
       font-size: clamp(44px, 6vw, 82px);
@@ -885,11 +774,11 @@
 
     .performance-note h2 em {
 
-      font-family: "Tangerine", cursive;
+      font-family: "Ephesis", cursive;
 
       font-style: normal;
 
-      font-weight: 700;
+      font-weight: 400;
 
       font-size: 1.28em;
 
@@ -934,11 +823,11 @@
 
       align-items: center;
 
-      background: var(--pink);
+      background: var(--periwinkle);
 
-      border-top: 1px solid var(--pink-strong);
+      border-top: 1px solid var(--periwinkle-deep);
 
-      border-bottom: 1px solid var(--pink-strong);
+      border-bottom: 1px solid var(--periwinkle-deep);
 
     }
 
@@ -987,7 +876,7 @@
       border: 1px solid var(--turquoise);
 
       box-shadow:
-        0 10px 25px rgba(39,95,99,0.14);
+        0 10px 25px rgba(39,95,99,0.12);
 
       color: white;
 
@@ -1018,10 +907,6 @@
 
 
 
-    /* =========================================================
-       FOOTER
-    ========================================================= */
-
     footer {
 
       padding: 28px 6vw;
@@ -1036,8 +921,7 @@
 
       color: #C5DEDF;
 
-      border-top:
-        8px solid var(--turquoise);
+      border-top: 7px solid var(--turquoise);
 
       font-size: 11px;
 
@@ -1062,7 +946,7 @@
 
 
     /* =========================================================
-       SCROLL ANIMATIONS
+       ANIMATION
     ========================================================= */
 
     .reveal {
@@ -1116,10 +1000,6 @@
 
 
 
-    /* =========================================================
-       TABLET
-    ========================================================= */
-
     @media (max-width: 950px) {
 
       .hero {
@@ -1162,10 +1042,6 @@
 
 
 
-    /* =========================================================
-       MOBILE NAVIGATION
-    ========================================================= */
-
     @media (max-width: 850px) {
 
       .site-nav {
@@ -1181,7 +1057,7 @@
 
       .site-logo {
 
-        font-size: 44px;
+        font-size: 42px;
 
       }
 
@@ -1237,15 +1113,13 @@
 
       .hamburger span {
 
-        display: block;
-
         width: 32px;
 
         height: 2px;
 
-        background: var(--turquoise-dark);
+        display: block;
 
-        transform-origin: center;
+        background: var(--turquoise-dark);
 
         transition:
           transform 0.25s ease,
@@ -1254,30 +1128,23 @@
       }
 
 
-      .mobile-menu[open]
-      .hamburger span:nth-child(1) {
+      .mobile-menu[open] .hamburger span:nth-child(1) {
 
-        transform:
-          translateY(11px)
-          rotate(45deg);
+        transform: translateY(11px) rotate(45deg);
 
       }
 
 
-      .mobile-menu[open]
-      .hamburger span:nth-child(2) {
+      .mobile-menu[open] .hamburger span:nth-child(2) {
 
         opacity: 0;
 
       }
 
 
-      .mobile-menu[open]
-      .hamburger span:nth-child(3) {
+      .mobile-menu[open] .hamburger span:nth-child(3) {
 
-        transform:
-          translateY(-11px)
-          rotate(-45deg);
+        transform: translateY(-11px) rotate(-45deg);
 
       }
 
@@ -1294,14 +1161,12 @@
 
         background: var(--sky-white);
 
-        border-top:
-          4px solid var(--turquoise);
+        border-top: 4px solid var(--turquoise);
 
-        border-bottom:
-          1px solid var(--line);
+        border-bottom: 1px solid var(--line);
 
         box-shadow:
-          0 15px 30px rgba(39,95,99,0.16);
+          0 15px 30px rgba(39,95,99,0.14);
 
       }
 
@@ -1324,8 +1189,7 @@
 
         text-transform: uppercase;
 
-        border-bottom:
-          1px solid var(--line);
+        border-bottom: 1px solid var(--line);
 
       }
 
@@ -1349,17 +1213,11 @@
 
 
 
-    /* =========================================================
-       PHONE
-    ========================================================= */
-
     @media (max-width: 650px) {
 
       .hero {
 
-        padding:
-          90px 6vw
-          100px;
+        padding: 90px 6vw 100px;
 
       }
 
@@ -1393,8 +1251,7 @@
 
       .form-wrap {
 
-        padding:
-          35px 15px;
+        padding: 35px 15px;
 
       }
 
@@ -1415,24 +1272,6 @@
       }
 
 
-      .performance-note {
-
-        padding-top: 110px;
-
-        padding-bottom: 110px;
-
-      }
-
-
-      .lesson-cta {
-
-        padding-top: 100px;
-
-        padding-bottom: 100px;
-
-      }
-
-
       footer {
 
         flex-direction: column;
@@ -1446,10 +1285,6 @@
     }
 
 
-
-    /* =========================================================
-       REDUCED MOTION
-    ========================================================= */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -1482,10 +1317,6 @@
 
 <body>
 
-
-  <!-- =========================================================
-       NAVIGATION
-  ========================================================== -->
 
   <nav class="site-nav">
 
@@ -1574,9 +1405,7 @@
   <main>
 
 
-    <!-- =========================================================
-         HERO
-    ========================================================== -->
+    <!-- HERO -->
 
     <section class="hero">
 
@@ -1613,22 +1442,14 @@
 
 
 
-      <!-- PHOTO_CONTACT_HERO -->
-
-      <div class="hero-photo-wrap reveal-right">
+      <div class="hero-photo reveal-right">
 
 
-        <div class="hero-photo">
+        <div class="photo-placeholder">
 
-
-          <div class="photo-placeholder">
-
-            <span>
-              PHOTO_CONTACT_HERO
-            </span>
-
-          </div>
-
+          <span>
+            PHOTO_CONTACT_HERO
+          </span>
 
         </div>
 
@@ -1640,19 +1461,13 @@
 
 
 
-    <!-- =========================================================
-         CONTACT + GOOGLE FORM
-    ========================================================== -->
+    <!-- CONTACT -->
 
     <section class="contact-section">
 
 
       <div class="contact-grid">
 
-
-        <!-- =====================================================
-             CONTACT INFORMATION
-        ====================================================== -->
 
         <div class="contact-details reveal-left">
 
@@ -1682,11 +1497,9 @@
 
             <div class="detail">
 
-
               <div class="detail-label">
                 Email
               </div>
-
 
               <div class="detail-value">
 
@@ -1696,42 +1509,33 @@
 
               </div>
 
-
             </div>
 
 
 
             <div class="detail">
-
 
               <div class="detail-label">
                 Based in
               </div>
 
-
               <div class="detail-value">
                 Toronto, Ontario
               </div>
-
 
             </div>
 
 
 
             <div class="detail">
-
 
               <div class="detail-label">
                 Performance inquiries
               </div>
 
-
               <div class="detail-value">
-
                 Weddings · Private Events · Celebrations
-
               </div>
-
 
             </div>
 
@@ -1739,11 +1543,9 @@
 
             <div class="detail">
 
-
               <div class="detail-label">
                 Lessons
               </div>
-
 
               <div class="detail-value">
 
@@ -1752,7 +1554,6 @@
                 </a>
 
               </div>
-
 
             </div>
 
@@ -1763,7 +1564,6 @@
 
           <div class="contact-socials">
 
-
             <a
               href="https://www.instagram.com/kays_violin/"
               target="_blank"
@@ -1771,7 +1571,6 @@
             >
               Instagram
             </a>
-
 
             <a
               href="https://www.youtube.com/@kaynicoletozawa4642"
@@ -1781,7 +1580,6 @@
               YouTube
             </a>
 
-
             <a
               href="https://www.facebook.com/kay.tozawa.2025"
               target="_blank"
@@ -1790,7 +1588,6 @@
               Facebook
             </a>
 
-
           </div>
 
 
@@ -1798,9 +1595,7 @@
 
 
 
-        <!-- =====================================================
-             GOOGLE CONTACT / PERFORMANCE FORM
-        ====================================================== -->
+        <!-- GOOGLE FORM -->
 
         <div class="form-wrap reveal-right">
 
@@ -1831,10 +1626,6 @@
 
 
 
-          <!-- =================================================
-               GOOGLE FORM EMBED
-          ================================================== -->
-
           <div class="google-form-wrap">
 
 
@@ -1851,7 +1642,6 @@
 
 
           </div>
-
 
 
           <div class="form-note">
@@ -1872,9 +1662,7 @@
 
 
 
-    <!-- =========================================================
-         PERFORMANCE NOTE
-    ========================================================== -->
+    <!-- PERFORMANCE NOTE -->
 
     <section class="performance-note">
 
@@ -1916,9 +1704,7 @@
 
 
 
-    <!-- =========================================================
-         LESSON CTA
-    ========================================================== -->
+    <!-- LESSON CTA -->
 
     <section class="lesson-cta">
 
@@ -1966,10 +1752,6 @@
 
 
 
-  <!-- =========================================================
-       FOOTER
-  ========================================================== -->
-
   <footer>
 
 
@@ -1980,7 +1762,6 @@
 
     <div class="social-links">
 
-
       <a
         href="https://www.youtube.com/@kaynicoletozawa4642"
         target="_blank"
@@ -1988,7 +1769,6 @@
       >
         YouTube
       </a>
-
 
       <a
         href="https://www.instagram.com/kays_violin/"
@@ -1998,7 +1778,6 @@
         Instagram
       </a>
 
-
       <a
         href="https://www.facebook.com/kay.tozawa.2025"
         target="_blank"
@@ -2007,17 +1786,12 @@
         Facebook
       </a>
 
-
     </div>
 
 
   </footer>
 
 
-
-  <!-- =========================================================
-       SCROLL ANIMATION
-  ========================================================== -->
 
   <script>
 
@@ -2061,5 +1835,4 @@
 
 
 </body>
-
 </html>
