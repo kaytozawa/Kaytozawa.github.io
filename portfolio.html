@@ -8,34 +8,62 @@
 
   <title>Portfolio | Kay Tozawa</title>
 
-  <!-- Fonts -->
+
+  <!-- =========================================================
+       FONTS
+       Tangerine = Kay Tozawa / script accents
+       DM Sans = headings + body
+  ========================================================== -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Tangerine:wght@400;700&display=swap"
     rel="stylesheet"
   >
+
+
 
   <style>
 
     /* =========================================================
        COLOURS
+       Matches the updated homepage
     ========================================================= */
 
     :root {
 
-      --white: #ffffff;
-      --soft-white: #f8fbfb;
+      --sky-white: #F4FBFD;
 
-      --text: #1f2828;
-      --muted: #687474;
+      --soft-blue: #DDEFFC;
 
-      --turquoise: #66b9b7;
-      --turquoise-dark: #478f8d;
+      --soft-aqua: #CFEFEB;
 
-      --pale-blue: #e9f4f4;
-      --line: #dfe7e7;
+      --pink: #F7D6E2;
+
+      --pink-strong: #F1BFD0;
+
+      --white: #FFFFFF;
+
+      --turquoise: #34BBB3;
+
+      --turquoise-dark: #187E7B;
+
+      --deep-teal: #275F63;
+
+      --footer-teal: #226D70;
+
+      --text: #243238;
+
+      --muted: #5E6C70;
+
+      --line: #A9CED0;
 
     }
 
@@ -61,7 +89,8 @@
 
       font-family: "DM Sans", sans-serif;
 
-      background: var(--white);
+      background: var(--sky-white);
+
       color: var(--text);
 
       line-height: 1.7;
@@ -72,14 +101,20 @@
 
 
     img {
+
       width: 100%;
+
       display: block;
+
     }
 
 
     a {
+
       text-decoration: none;
+
       color: inherit;
+
     }
 
 
@@ -90,15 +125,36 @@
 
     .section-label {
 
+      display: flex;
+
+      align-items: center;
+
+      gap: 11px;
+
       margin-bottom: 18px;
 
       font-size: 10px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.2em;
+
       text-transform: uppercase;
 
       color: var(--turquoise-dark);
+
+    }
+
+
+    .section-label::before {
+
+      content: "";
+
+      width: 28px;
+
+      height: 2px;
+
+      background: var(--turquoise);
 
     }
 
@@ -107,9 +163,10 @@
 
       font-size: clamp(42px, 5vw, 76px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 1.03;
+
       letter-spacing: -0.045em;
 
     }
@@ -131,55 +188,79 @@
        NAVIGATION
     ========================================================= */
 
-    nav {
+    .site-nav {
 
-      height: 82px;
+      width: 100%;
+
+      height: 84px;
 
       padding: 0 6vw;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
+      position: relative;
+
+      z-index: 9999;
+
+      background: rgba(244,251,253,0.97);
+
+      backdrop-filter: blur(12px);
+
+      border-top: 4px solid var(--turquoise);
 
       border-bottom: 1px solid var(--line);
 
-      background: rgba(255,255,255,0.97);
-
-      position: relative;
-      z-index: 50;
+      box-shadow:
+        0 7px 25px rgba(39,95,99,0.08);
 
     }
 
 
-    .nav-logo {
+    .site-logo {
 
-      font-family: "Allura", cursive;
+      font-family: "Tangerine", cursive;
 
-      font-size: 38px;
+      font-size: 48px;
+
+      font-weight: 700;
 
       line-height: 1;
 
+      color: var(--turquoise-dark);
+
+      white-space: nowrap;
+
     }
 
 
-    .nav-links {
 
-      list-style: none;
+    /* DESKTOP */
+
+    .desktop-menu {
 
       display: flex;
+
       align-items: center;
 
-      gap: 34px;
+      gap: 30px;
 
     }
 
 
-    .nav-links a {
+    .desktop-menu a {
+
+      position: relative;
 
       font-size: 11px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.15em;
+
       text-transform: uppercase;
 
       transition: color 0.25s ease;
@@ -187,16 +268,84 @@
     }
 
 
-    .nav-links a:hover {
-      color: var(--turquoise-dark);
+    .desktop-menu a:not(.nav-book)::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: -8px;
+
+      width: 0;
+
+      height: 2px;
+
+      background: var(--turquoise);
+
+      transition: width 0.3s ease;
+
     }
 
 
-    .active-link {
+    .desktop-menu a:hover {
 
-      padding-bottom: 4px;
+      color: var(--turquoise-dark);
 
-      border-bottom: 1px solid var(--turquoise);
+    }
+
+
+    .desktop-menu a:hover::after {
+
+      width: 100%;
+
+    }
+
+
+    .desktop-menu .active-nav {
+
+      color: var(--turquoise-dark);
+
+    }
+
+
+    .desktop-menu .active-nav::after {
+
+      width: 100% !important;
+
+    }
+
+
+    .nav-book {
+
+      padding: 10px 18px;
+
+      background: var(--turquoise);
+
+      color: white;
+
+      transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+
+    }
+
+
+    .nav-book:hover {
+
+      background: var(--turquoise-dark);
+
+      color: white !important;
+
+      transform: translateY(-1px);
+
+    }
+
+
+    .mobile-menu {
+
+      display: none;
 
     }
 
@@ -213,11 +362,21 @@
       min-height: 850px;
 
       display: grid;
+
       grid-template-columns: 0.8fr 1.2fr;
 
       gap: 7vw;
 
       align-items: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--sky-white) 0%,
+          #E8F6F7 100%
+        );
+
+      border-bottom: 1px solid var(--line);
 
     }
 
@@ -233,9 +392,10 @@
 
       font-size: clamp(65px, 9vw, 130px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 0.92;
+
       letter-spacing: -0.055em;
 
     }
@@ -245,11 +405,17 @@
 
       display: block;
 
-      font-family: "Allura", cursive;
+      margin-top: 8px;
 
-      font-size: 1.15em;
-      font-weight: 400;
+      font-family: "Tangerine", cursive;
+
+      font-size: 1.25em;
+
+      font-weight: 700;
+
       font-style: normal;
+
+      line-height: 0.8;
 
       color: var(--turquoise-dark);
 
@@ -260,7 +426,11 @@
 
       max-width: 440px;
 
-      margin-top: 35px;
+      margin-top: 40px;
+
+      padding-left: 18px;
+
+      border-left: 3px solid var(--turquoise);
 
       font-size: 15px;
 
@@ -272,7 +442,9 @@
 
 
 
-    /* HERO IMAGE COMPOSITION */
+    /* =========================================================
+       HERO IMAGE COMPOSITION
+    ========================================================= */
 
     .hero-images {
 
@@ -281,6 +453,7 @@
       display: grid;
 
       grid-template-columns: 1.3fr 0.7fr;
+
       grid-template-rows: 1fr 1fr;
 
       gap: 18px;
@@ -294,12 +467,31 @@
 
       overflow: hidden;
 
-      background:
-        linear-gradient(
-          145deg,
-          #edf7f7,
-          #d5eaea
-        );
+      border: 1px solid rgba(39,95,99,0.18);
+
+      box-shadow:
+        0 18px 40px rgba(39,95,99,0.10);
+
+    }
+
+
+    .hero-image:nth-child(1) {
+
+      background: var(--soft-blue);
+
+    }
+
+
+    .hero-image:nth-child(2) {
+
+      background: var(--pink);
+
+    }
+
+
+    .hero-image:nth-child(3) {
+
+      background: var(--soft-aqua);
 
     }
 
@@ -314,19 +506,24 @@
     .photo-placeholder {
 
       position: absolute;
+
       inset: 0;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       font-size: 10px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.18em;
+
       text-transform: uppercase;
 
-      color: #708d8c;
+      color: var(--turquoise-dark);
 
     }
 
@@ -335,7 +532,8 @@
 
       padding-bottom: 7px;
 
-      border-bottom: 1px solid rgba(73,116,114,0.3);
+      border-bottom:
+        2px solid rgba(24,126,123,0.28);
 
     }
 
@@ -349,7 +547,9 @@
 
       padding: 110px 7vw;
 
-      background: var(--soft-white);
+      background: var(--soft-blue);
+
+      border-bottom: 1px solid var(--line);
 
     }
 
@@ -361,6 +561,7 @@
       margin: 0 auto;
 
       display: grid;
+
       grid-template-columns: 0.7fr 1.3fr;
 
       gap: 7vw;
@@ -372,11 +573,16 @@
 
     .portfolio-intro-text {
 
+      padding-left: 25px;
+
+      border-left: 3px solid var(--turquoise);
+
       font-size: clamp(28px, 3vw, 44px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 1.3;
+
       letter-spacing: -0.025em;
 
     }
@@ -390,6 +596,10 @@
     .featured {
 
       padding: 160px 7vw;
+
+      background: var(--white);
+
+      border-bottom: 1px solid var(--line);
 
     }
 
@@ -412,6 +622,7 @@
       padding: 110px 0;
 
       display: grid;
+
       grid-template-columns: 1.15fr 0.85fr;
 
       gap: 8vw;
@@ -452,22 +663,45 @@
 
 
 
-    /* PROJECT IMAGE */
+    /* =========================================================
+       PROJECT VIDEO IMAGE
+    ========================================================= */
 
     .project-image {
+
+      display: block;
 
       position: relative;
 
       overflow: hidden;
 
-      background: var(--pale-blue);
+      background: var(--soft-blue);
+
+      border: 1px solid rgba(39,95,99,0.22);
+
+      box-shadow:
+        0 18px 38px rgba(39,95,99,0.13);
+
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    }
+
+
+    .project-image:hover {
+
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 25px 48px rgba(39,95,99,0.18);
 
     }
 
 
     .project-image img {
 
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 16 / 9;
 
       object-fit: cover;
 
@@ -482,6 +716,8 @@
 
       transform: scale(1.035);
 
+      filter: brightness(0.88);
+
     }
 
 
@@ -490,27 +726,94 @@
       position: absolute;
 
       top: 20px;
+
       left: 20px;
 
       width: 44px;
+
       height: 44px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.94);
+
+      border-top: 3px solid var(--turquoise);
+
+      box-shadow:
+        0 5px 15px rgba(39,95,99,0.15);
 
       font-size: 10px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.08em;
+
+      z-index: 4;
+
+    }
+
+
+    .play-button {
+
+      position: absolute;
+
+      left: 50%;
+
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+
+      width: 70px;
+
+      height: 70px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: var(--turquoise);
+
+      border: 4px solid rgba(255,255,255,0.9);
+
+      color: white;
+
+      box-shadow:
+        0 8px 25px rgba(39,95,99,0.30);
+
+      font-size: 18px;
+
+      z-index: 3;
+
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+
+    }
+
+
+    .project-image:hover .play-button {
+
+      transform:
+        translate(-50%, -50%)
+        scale(1.08);
+
+      background: var(--turquoise-dark);
 
     }
 
 
 
-    /* PROJECT TEXT */
+    /* =========================================================
+       PROJECT TEXT
+    ========================================================= */
 
     .project-copy {
 
@@ -523,9 +826,10 @@
 
       font-size: clamp(36px, 4vw, 60px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 1.06;
+
       letter-spacing: -0.04em;
 
     }
@@ -537,7 +841,10 @@
 
       font-size: 11px;
 
+      font-weight: 600;
+
       letter-spacing: 0.13em;
+
       text-transform: uppercase;
 
       color: var(--turquoise-dark);
@@ -563,18 +870,21 @@
       display: inline-flex;
 
       align-items: center;
+
       gap: 12px;
 
       margin-top: 30px;
 
       padding-bottom: 6px;
 
-      border-bottom: 1px solid var(--turquoise);
+      border-bottom: 2px solid var(--turquoise);
 
       font-size: 11px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.14em;
+
       text-transform: uppercase;
 
     }
@@ -607,7 +917,9 @@
 
       padding: 150px 7vw;
 
-      background: var(--soft-white);
+      background: var(--soft-aqua);
+
+      border-bottom: 1px solid var(--line);
 
     }
 
@@ -621,6 +933,7 @@
       display: flex;
 
       align-items: end;
+
       justify-content: space-between;
 
       gap: 40px;
@@ -631,6 +944,10 @@
     .gallery-header p {
 
       max-width: 430px;
+
+      padding-left: 20px;
+
+      border-left: 3px solid var(--turquoise);
 
       font-size: 14px;
 
@@ -664,12 +981,31 @@
 
       overflow: hidden;
 
-      background:
-        linear-gradient(
-          145deg,
-          #edf7f7,
-          #d4e9e9
-        );
+      border: 1px solid rgba(39,95,99,0.18);
+
+      box-shadow:
+        0 10px 25px rgba(39,95,99,0.08);
+
+    }
+
+
+    .gallery-item:nth-child(3n + 1) {
+
+      background: var(--soft-blue);
+
+    }
+
+
+    .gallery-item:nth-child(3n + 2) {
+
+      background: var(--pink);
+
+    }
+
+
+    .gallery-item:nth-child(3n + 3) {
+
+      background: var(--sky-white);
 
     }
 
@@ -677,6 +1013,7 @@
     .gallery-item:nth-child(1) {
 
       grid-column: span 7;
+
       grid-row: span 5;
 
     }
@@ -685,6 +1022,7 @@
     .gallery-item:nth-child(2) {
 
       grid-column: span 5;
+
       grid-row: span 4;
 
     }
@@ -693,6 +1031,7 @@
     .gallery-item:nth-child(3) {
 
       grid-column: span 5;
+
       grid-row: span 5;
 
     }
@@ -701,6 +1040,7 @@
     .gallery-item:nth-child(4) {
 
       grid-column: span 7;
+
       grid-row: span 6;
 
     }
@@ -709,6 +1049,7 @@
     .gallery-item:nth-child(5) {
 
       grid-column: span 4;
+
       grid-row: span 4;
 
     }
@@ -717,6 +1058,7 @@
     .gallery-item:nth-child(6) {
 
       grid-column: span 4;
+
       grid-row: span 4;
 
     }
@@ -725,6 +1067,7 @@
     .gallery-item:nth-child(7) {
 
       grid-column: span 4;
+
       grid-row: span 4;
 
     }
@@ -733,6 +1076,7 @@
     .gallery-item:nth-child(8) {
 
       grid-column: span 8;
+
       grid-row: span 5;
 
     }
@@ -741,17 +1085,21 @@
     .gallery-item:nth-child(9) {
 
       grid-column: span 4;
+
       grid-row: span 5;
 
     }
 
 
 
-    /* GALLERY HOVER */
+    /* =========================================================
+       GALLERY HOVER
+    ========================================================= */
 
     .gallery-overlay {
 
       position: absolute;
+
       inset: 0;
 
       display: flex;
@@ -763,8 +1111,8 @@
       background:
         linear-gradient(
           to top,
-          rgba(21,31,31,0.62),
-          rgba(21,31,31,0) 55%
+          rgba(24,126,123,0.68),
+          rgba(24,126,123,0) 58%
         );
 
       opacity: 0;
@@ -787,7 +1135,10 @@
 
       font-size: 11px;
 
+      font-weight: 600;
+
       letter-spacing: 0.14em;
+
       text-transform: uppercase;
 
       transform: translateY(8px);
@@ -813,6 +1164,10 @@
 
       padding: 160px 7vw;
 
+      background: var(--sky-white);
+
+      border-bottom: 1px solid var(--line);
+
     }
 
 
@@ -827,13 +1182,24 @@
     }
 
 
+    .artist-note-inner .section-label {
+
+      justify-content: center;
+
+    }
+
+
     .artist-note p {
 
       margin-top: 30px;
 
+      padding-top: 30px;
+
+      border-top: 2px solid var(--turquoise);
+
       font-size: clamp(22px, 2.4vw, 34px);
 
-      font-weight: 300;
+      font-weight: 400;
 
       line-height: 1.55;
 
@@ -846,7 +1212,7 @@
 
 
     /* =========================================================
-       CTA
+       FINAL CTA
     ========================================================= */
 
     .portfolio-cta {
@@ -855,15 +1221,27 @@
 
       text-align: center;
 
-      background: var(--text);
+      background: var(--footer-teal);
+
       color: white;
+
+      border-top: 8px solid var(--turquoise);
 
     }
 
 
     .portfolio-cta .section-label {
 
-      color: #87cbc8;
+      justify-content: center;
+
+      color: #C9F4F1;
+
+    }
+
+
+    .portfolio-cta .section-label::before {
+
+      background: var(--pink-strong);
 
     }
 
@@ -876,7 +1254,7 @@
 
       font-size: clamp(48px, 7vw, 92px);
 
-      font-weight: 300;
+      font-weight: 500;
 
       line-height: 1;
 
@@ -887,11 +1265,15 @@
 
     .portfolio-cta h2 em {
 
-      font-family: "Allura", cursive;
+      font-family: "Tangerine", cursive;
 
-      font-size: 1.2em;
+      font-size: 1.35em;
+
+      font-weight: 700;
 
       font-style: normal;
+
+      color: #8CE0DA;
 
     }
 
@@ -906,7 +1288,7 @@
 
       line-height: 1.9;
 
-      color: #b7c3c3;
+      color: #D9EEEE;
 
     }
 
@@ -918,6 +1300,7 @@
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       gap: 16px;
@@ -933,45 +1316,58 @@
       padding: 15px 29px;
 
       font-size: 11px;
-      font-weight: 500;
+
+      font-weight: 600;
 
       letter-spacing: 0.14em;
+
       text-transform: uppercase;
 
       transition:
         background 0.25s ease,
         color 0.25s ease,
-        border 0.25s ease;
+        border 0.25s ease,
+        transform 0.25s ease;
 
     }
 
 
     .cta-primary {
 
-      border: 1px solid #83c9c6;
+      background: var(--turquoise);
+
+      border: 1px solid var(--turquoise);
+
+      color: white;
 
     }
 
 
     .cta-primary:hover {
 
-      background: #83c9c6;
+      background: #55CEC6;
 
-      color: var(--text);
+      border-color: #55CEC6;
+
+      transform: translateY(-3px);
 
     }
 
 
     .cta-secondary {
 
-      border: 1px solid rgba(255,255,255,0.3);
+      border: 1px solid rgba(255,255,255,0.7);
 
     }
 
 
     .cta-secondary:hover {
 
-      border-color: white;
+      background: white;
+
+      color: var(--footer-teal);
+
+      transform: translateY(-3px);
 
     }
 
@@ -986,14 +1382,16 @@
       padding: 28px 6vw;
 
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
 
-      background: var(--text);
+      background: #19585B;
 
-      border-top: 1px solid rgba(255,255,255,0.12);
+      border-top: 1px solid rgba(255,255,255,0.16);
 
-      color: #9ca9a9;
+      color: #C5DEDF;
 
       font-size: 11px;
 
@@ -1019,6 +1417,7 @@
 
     /* =========================================================
        SCROLL REVEAL ANIMATION
+       Same movement system as original
     ========================================================= */
 
     .reveal {
@@ -1071,33 +1470,33 @@
     }
 
 
-
-    /* DELAYS */
-
     .delay-1 {
+
       transition-delay: 0.1s;
+
     }
+
 
     .delay-2 {
+
       transition-delay: 0.2s;
+
     }
 
+
     .delay-3 {
+
       transition-delay: 0.3s;
+
     }
 
 
 
     /* =========================================================
-       MOBILE
+       TABLET
     ========================================================= */
 
     @media (max-width: 950px) {
-
-      .nav-links {
-        gap: 20px;
-      }
-
 
       .hero {
 
@@ -1161,6 +1560,7 @@
       .gallery-item:nth-child(n) {
 
         grid-column: span 1;
+
         grid-row: span 1;
 
       }
@@ -1178,29 +1578,187 @@
 
 
 
-    @media (max-width: 650px) {
+    /* =========================================================
+       MOBILE NAVIGATION
+    ========================================================= */
 
-      nav {
+    @media (max-width: 850px) {
 
-        padding: 0 5vw;
+      .site-nav {
+
+        height: 78px;
+
+        padding: 0 6vw;
+
+        overflow: visible;
 
       }
 
 
-      .nav-logo {
+      .site-logo {
 
-        font-size: 34px;
+        font-size: 44px;
 
       }
 
 
-      .nav-links li:nth-child(1),
-      .nav-links li:nth-child(4) {
+      .desktop-menu {
 
         display: none;
 
       }
 
+
+      .mobile-menu {
+
+        display: block;
+
+        position: relative;
+
+        z-index: 10000;
+
+      }
+
+
+      .mobile-menu summary {
+
+        list-style: none;
+
+      }
+
+
+      .mobile-menu summary::-webkit-details-marker {
+
+        display: none;
+
+      }
+
+
+      .hamburger {
+
+        width: 32px;
+
+        height: 24px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: space-between;
+
+        cursor: pointer;
+
+      }
+
+
+      .hamburger span {
+
+        display: block;
+
+        width: 32px;
+
+        height: 2px;
+
+        background: var(--turquoise-dark);
+
+        transform-origin: center;
+
+        transition:
+          transform 0.25s ease,
+          opacity 0.25s ease;
+
+      }
+
+
+      .mobile-menu[open] .hamburger span:nth-child(1) {
+
+        transform:
+          translateY(11px)
+          rotate(45deg);
+
+      }
+
+
+      .mobile-menu[open] .hamburger span:nth-child(2) {
+
+        opacity: 0;
+
+      }
+
+
+      .mobile-menu[open] .hamburger span:nth-child(3) {
+
+        transform:
+          translateY(-11px)
+          rotate(-45deg);
+
+      }
+
+
+      .mobile-links {
+
+        position: absolute;
+
+        top: 50px;
+
+        right: -6vw;
+
+        width: 100vw;
+
+        background: var(--sky-white);
+
+        border-top: 4px solid var(--turquoise);
+
+        border-bottom: 1px solid var(--line);
+
+        box-shadow:
+          0 15px 30px rgba(39,95,99,0.16);
+
+      }
+
+
+      .mobile-links a {
+
+        display: block;
+
+        width: 100%;
+
+        padding: 21px 6vw;
+
+        text-align: center;
+
+        font-size: 11px;
+
+        font-weight: 600;
+
+        letter-spacing: 0.15em;
+
+        text-transform: uppercase;
+
+        border-bottom: 1px solid var(--line);
+
+      }
+
+
+      .mobile-links a:last-child {
+
+        border-bottom: none;
+
+        background: var(--turquoise);
+
+        color: white;
+
+      }
+
+    }
+
+
+
+    /* =========================================================
+       PHONE
+    ========================================================= */
+
+    @media (max-width: 650px) {
 
       .hero {
 
@@ -1216,6 +1774,7 @@
         display: grid;
 
         grid-template-columns: 1fr 1fr;
+
         grid-template-rows: 420px 240px;
 
       }
@@ -1224,6 +1783,7 @@
       .hero-image-large {
 
         grid-column: 1 / 3;
+
         grid-row: 1;
 
       }
@@ -1236,7 +1796,15 @@
       .portfolio-cta {
 
         padding-left: 6vw;
+
         padding-right: 6vw;
+
+      }
+
+
+      .portfolio-intro-text {
+
+        padding-left: 18px;
 
       }
 
@@ -1274,6 +1842,7 @@
       .gallery-item:nth-child(n) {
 
         grid-column: 1;
+
         grid-row: span 1;
 
       }
@@ -1294,14 +1863,15 @@
 
 
     /* =========================================================
-       ACCESSIBILITY:
        REDUCED MOTION
     ========================================================= */
 
     @media (prefers-reduced-motion: reduce) {
 
       html {
+
         scroll-behavior: auto;
+
       }
 
 
@@ -1325,224 +1895,7 @@
       }
 
     }
-/* =========================================================
-   UNIVERSAL SITE NAVIGATION
-========================================================= */
 
-.site-nav {
-  width: 100%;
-  height: 82px;
-
-  padding: 0 6vw;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  position: relative;
-  z-index: 9999;
-
-  background: rgba(255, 255, 255, 0.98);
-
-  border-bottom: 1px solid #dfe7e7;
-}
-
-
-.site-logo {
-  font-family: "Allura", cursive;
-
-  font-size: 38px;
-  line-height: 1;
-
-  color: #1f2828;
-
-  white-space: nowrap;
-}
-
-
-/* DESKTOP */
-
-.desktop-menu {
-  display: flex;
-  align-items: center;
-
-  gap: 34px;
-}
-
-
-.desktop-menu a {
-  font-family: "DM Sans", sans-serif;
-
-  font-size: 11px;
-  font-weight: 500;
-
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-
-  color: #1f2828;
-
-  text-decoration: none;
-
-  transition: color 0.25s ease;
-}
-
-
-.desktop-menu a:hover {
-  color: #478f8d;
-}
-
-
-/* MOBILE HIDDEN ON DESKTOP */
-
-.mobile-menu {
-  display: none;
-}
-
-
-/* =========================================================
-   PHONE / TABLET NAV
-========================================================= */
-
-@media (max-width: 850px) {
-
-  .site-nav {
-    height: 76px;
-
-    padding: 0 6vw;
-
-    overflow: visible;
-  }
-
-
-  .site-logo {
-    font-size: 34px;
-  }
-
-
-  .desktop-menu {
-    display: none !important;
-  }
-
-
-  .mobile-menu {
-    display: block !important;
-
-    position: relative;
-
-    z-index: 10000;
-  }
-
-
-  .mobile-menu summary {
-    list-style: none;
-  }
-
-
-  .mobile-menu summary::-webkit-details-marker {
-    display: none;
-  }
-
-
-  .hamburger {
-    width: 32px;
-    height: 24px;
-
-    display: flex;
-
-    flex-direction: column;
-    justify-content: space-between;
-
-    cursor: pointer;
-  }
-
-
-  .hamburger span {
-    display: block;
-
-    width: 32px;
-    height: 2px;
-
-    background: #1f2828;
-
-    transform-origin: center;
-
-    transition:
-      transform 0.25s ease,
-      opacity 0.25s ease;
-  }
-
-
-  /* HAMBURGER BECOMES X */
-
-  .mobile-menu[open] .hamburger span:nth-child(1) {
-    transform: translateY(11px) rotate(45deg);
-  }
-
-
-  .mobile-menu[open] .hamburger span:nth-child(2) {
-    opacity: 0;
-  }
-
-
-  .mobile-menu[open] .hamburger span:nth-child(3) {
-    transform: translateY(-11px) rotate(-45deg);
-  }
-
-
-  /* DROPDOWN */
-
-  .mobile-links {
-    position: absolute;
-
-    top: 50px;
-    right: -6vw;
-
-    width: 100vw;
-
-    background: #ffffff;
-
-    border-top: 1px solid #dfe7e7;
-    border-bottom: 1px solid #dfe7e7;
-
-    box-shadow: 0 12px 30px rgba(20, 30, 30, 0.06);
-  }
-
-
-  .mobile-links a {
-    display: block;
-
-    width: 100%;
-
-    padding: 21px 6vw;
-
-    text-align: center;
-
-    font-family: "DM Sans", sans-serif;
-
-    font-size: 11px;
-    font-weight: 500;
-
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-
-    color: #1f2828;
-
-    text-decoration: none;
-
-    border-bottom: 1px solid #e8eeee;
-  }
-
-
-  .mobile-links a:last-child {
-    border-bottom: none;
-  }
-
-
-  .mobile-links a:hover {
-    color: #478f8d;
-  }
-
-}
   </style>
 
 </head>
@@ -1556,47 +1909,84 @@
        NAVIGATION
   ========================================================== -->
 
-<nav class="site-nav">
-
-  <a href="index.html" class="site-logo">
-    Kay Tozawa
-  </a>
-
-  <!-- DESKTOP NAVIGATION -->
-  <div class="desktop-menu">
-
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="booking.html">Book</a>
-    <a href="contact.html">Contact</a>
-
-  </div>
+  <nav class="site-nav">
 
 
-  <!-- MOBILE NAVIGATION -->
-  <details class="mobile-menu">
-
-    <summary
-      class="hamburger"
-      aria-label="Open navigation"
+    <a
+      href="index.html"
+      class="site-logo"
     >
-      <span></span>
-      <span></span>
-      <span></span>
-    </summary>
+      Kay Tozawa
+    </a>
 
-    <div class="mobile-links">
 
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="booking.html">Book</a>
-      <a href="contact.html">Contact</a>
+
+    <div class="desktop-menu">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a
+        href="portfolio.html"
+        class="active-nav"
+      >
+        Portfolio
+      </a>
+
+      <a
+        href="booking.html"
+        class="nav-book"
+      >
+        Book
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
 
     </div>
 
-  </details>
 
-</nav>
+
+    <details class="mobile-menu">
+
+      <summary
+        class="hamburger"
+        aria-label="Open navigation"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </summary>
+
+
+      <div class="mobile-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="portfolio.html">
+          Portfolio
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="booking.html">
+          Book
+        </a>
+
+      </div>
+
+    </details>
+
+
+  </nav>
 
 
 
@@ -1612,20 +2002,31 @@
 
       <div class="hero-copy reveal-left">
 
+
         <div class="section-label">
           Selected work
         </div>
 
+
         <h1 class="hero-title">
+
           Portfolio
-          <em>in performance</em>
+
+          <em>
+            in performance
+          </em>
+
         </h1>
 
+
         <p>
+
           Selected performances, repertoire, rehearsals,
           and moments from Kay Tozawa’s work as a classical
           violinist.
+
         </p>
+
 
       </div>
 
@@ -1639,7 +2040,11 @@
         <div class="hero-image hero-image-large reveal delay-1">
 
           <div class="photo-placeholder">
-            <span>PHOTO_PORTFOLIO_HERO_01</span>
+
+            <span>
+              PHOTO_PORTFOLIO_HERO_01
+            </span>
+
           </div>
 
         </div>
@@ -1651,7 +2056,11 @@
         <div class="hero-image reveal delay-2">
 
           <div class="photo-placeholder">
-            <span>PHOTO_PORTFOLIO_HERO_02</span>
+
+            <span>
+              PHOTO_PORTFOLIO_HERO_02
+            </span>
+
           </div>
 
         </div>
@@ -1663,13 +2072,18 @@
         <div class="hero-image reveal delay-3">
 
           <div class="photo-placeholder">
-            <span>PHOTO_PORTFOLIO_HERO_03</span>
+
+            <span>
+              PHOTO_PORTFOLIO_HERO_03
+            </span>
+
           </div>
 
         </div>
 
 
       </div>
+
 
     </section>
 
@@ -1680,6 +2094,7 @@
     ========================================================== -->
 
     <section class="portfolio-intro">
+
 
       <div class="portfolio-intro-inner reveal">
 
@@ -1704,6 +2119,7 @@
 
       </div>
 
+
     </section>
 
 
@@ -1717,78 +2133,104 @@
 
       <div class="featured-header reveal">
 
+
         <div class="section-label">
           Featured performances
         </div>
+
 
         <h2 class="section-heading">
           Selected Work
         </h2>
 
+
       </div>
 
 
 
-      <!-- =======================================================
+      <!-- =====================================================
            PROJECT 01
            DVOŘÁK
-      ======================================================== -->
+      ====================================================== -->
 
       <article class="project">
 
 
-        <div class="project-image reveal-left">
+        <a
+          class="project-image reveal-left"
+          href="https://youtu.be/nFL0FWmfCrU?si=qNOsek4kV0qZhXOA"
+          target="_blank"
+          rel="noopener"
+        >
+
 
           <img
-            src="https://static.wixstatic.com/media/c746eb_2d831196a2164fec995f7d0dc7acd4ad~mv2.webp/v1/fill/w_1200,h_750,al_c,q_90/Dvorak%20violin%20concerto%201st%20movement.webp"
-            alt="Kay Tozawa performing Dvorak Violin Concerto"
+            src="https://img.youtube.com/vi/nFL0FWmfCrU/maxresdefault.jpg"
+            alt="Dvorak Violin Concerto performance by Kay Tozawa"
           >
+
 
           <div class="project-number">
             01
           </div>
 
-        </div>
+
+          <div class="play-button">
+            ▶
+          </div>
+
+
+        </a>
 
 
 
         <div class="project-copy reveal-right">
+
 
           <div class="section-label">
             Concerto performance
           </div>
 
+
           <h3>
             Dvořák Violin Concerto
           </h3>
 
+
           <div class="project-meta">
+
             First Movement · February 13, 2025
+
           </div>
 
+
           <p>
+
             A performance of the first movement of
             Antonín Dvořák’s Violin Concerto with the
             York University Symphony Orchestra.
+
           </p>
 
+
           <p>
+
             The performance reflects Kay’s ongoing focus
             on classical repertoire, orchestral collaboration,
             and the relationship between soloist and ensemble.
+
           </p>
 
 
-          <!-- YOUTUBE_LINK_DVORAK -->
-
           <a
-            href="https://www.youtube.com/@kaynicoletozawa4642"
+            href="https://youtu.be/nFL0FWmfCrU?si=qNOsek4kV0qZhXOA"
             target="_blank"
             rel="noopener"
             class="project-link"
           >
             Watch Performance
           </a>
+
 
         </div>
 
@@ -1797,66 +2239,89 @@
 
 
 
-      <!-- =======================================================
+      <!-- =====================================================
            PROJECT 02
            SCHULHOFF & BARTÓK
-      ======================================================== -->
+      ====================================================== -->
 
       <article class="project reverse">
 
 
-        <div class="project-image reveal-right">
+        <a
+          class="project-image reveal-right"
+          href="https://youtu.be/BPAKFSQt2pc?si=EblUdB_6rMCACd0F"
+          target="_blank"
+          rel="noopener"
+        >
+
 
           <img
-            src="https://static.wixstatic.com/media/c746eb_63d003ac22674dad9c2bb4575dacfbe6~mv2.webp/v1/fill/w_1200,h_750,al_c,q_90/Schulhoff%20%26%20Bartok.webp"
-            alt="Kay Tozawa performing Schulhoff and Bartok"
+            src="https://img.youtube.com/vi/BPAKFSQt2pc/maxresdefault.jpg"
+            alt="Schulhoff and Bartok performance by Kay Tozawa"
           >
+
 
           <div class="project-number">
             02
           </div>
 
-        </div>
+
+          <div class="play-button">
+            ▶
+          </div>
+
+
+        </a>
 
 
 
         <div class="project-copy reveal-left">
 
+
           <div class="section-label">
             Recital repertoire
           </div>
+
 
           <h3>
             Schulhoff & Bartók
           </h3>
 
+
           <div class="project-meta">
+
             Sonata No. 2 · Romanian Folk Dances
+
           </div>
 
+
           <p>
+
             A program featuring Erwin Schulhoff’s
             Sonata No. 2 and Béla Bartók’s
             Romanian Folk Dances.
+
           </p>
 
+
           <p>
+
             The pairing brings together two distinctive
             twentieth-century musical voices and contrasting
             approaches to rhythm, colour, and character.
+
           </p>
 
 
-          <!-- YOUTUBE_LINK_SCHULHOFF_BARTOK -->
-
           <a
-            href="https://www.youtube.com/@kaynicoletozawa4642"
+            href="https://youtu.be/BPAKFSQt2pc?si=EblUdB_6rMCACd0F"
             target="_blank"
             rel="noopener"
             class="project-link"
           >
             Watch Performance
           </a>
+
 
         </div>
 
@@ -1865,64 +2330,88 @@
 
 
 
-      <!-- =======================================================
+      <!-- =====================================================
            PROJECT 03
-           ARCT
-      ======================================================== -->
+           NEW YOUTUBE PERFORMANCE
+      ====================================================== -->
 
       <article class="project">
 
 
-        <div class="project-image reveal-left">
+        <a
+          class="project-image reveal-left"
+          href="https://youtu.be/_RBr-TyGh5s?si=-UqmfR4jX-q6hs-g"
+          target="_blank"
+          rel="noopener"
+        >
+
 
           <img
-            src="https://static.wixstatic.com/media/c746eb_9e2c8d5db778468894ac1505a756549a~mv2.webp/v1/fill/w_1200,h_750,al_c,q_90/ARCT%20Exam.webp"
-            alt="Kay Tozawa ARCT performance"
+            src="https://img.youtube.com/vi/_RBr-TyGh5s/maxresdefault.jpg"
+            alt="Selected violin performance by Kay Tozawa"
           >
+
 
           <div class="project-number">
             03
           </div>
 
-        </div>
+
+          <div class="play-button">
+            ▶
+          </div>
+
+
+        </a>
 
 
 
         <div class="project-copy reveal-right">
 
+
           <div class="section-label">
-            Examination repertoire
+            Selected performance
           </div>
+
 
           <h3>
-            ARCT Exam
+            Selected Performance
           </h3>
 
+
           <div class="project-meta">
-            Selected repertoire
+
+            Violin · Live Performance
+
           </div>
 
-          <p>
-            Selected performance material from Kay’s
-            ARCT examination repertoire.
-          </p>
 
           <p>
-            The program represents years of technical work,
-            repertoire study, and musical preparation.
+
+            A selected performance highlighting Kay’s
+            continuing work in classical violin repertoire
+            and live performance.
+
           </p>
 
 
-          <!-- YOUTUBE_LINK_ARCT -->
+          <p>
+
+            Part of Kay’s growing performance portfolio
+            and ongoing exploration of classical repertoire.
+
+          </p>
+
 
           <a
-            href="https://www.youtube.com/@kaynicoletozawa4642"
+            href="https://youtu.be/_RBr-TyGh5s?si=-UqmfR4jX-q6hs-g"
             target="_blank"
             rel="noopener"
             class="project-link"
           >
             Watch Performance
           </a>
+
 
         </div>
 
@@ -1943,23 +2432,30 @@
 
       <div class="gallery-header reveal">
 
+
         <div>
+
 
           <div class="section-label">
             On stage & behind the scenes
           </div>
 
+
           <h2 class="section-heading">
             Performance Gallery
           </h2>
+
 
         </div>
 
 
         <p>
+
           A collection of performance, rehearsal,
           recital, and studio moments.
+
         </p>
+
 
       </div>
 
@@ -1973,11 +2469,20 @@
         <div class="gallery-item reveal">
 
           <div class="photo-placeholder">
-            <span>PHOTO_GALLERY_01</span>
+
+            <span>
+              PHOTO_GALLERY_01
+            </span>
+
           </div>
 
+
           <div class="gallery-overlay">
-            <span>Performance</span>
+
+            <span>
+              Performance
+            </span>
+
           </div>
 
         </div>
@@ -1989,11 +2494,20 @@
         <div class="gallery-item reveal delay-1">
 
           <div class="photo-placeholder">
-            <span>PHOTO_GALLERY_02</span>
+
+            <span>
+              PHOTO_GALLERY_02
+            </span>
+
           </div>
 
+
           <div class="gallery-overlay">
-            <span>On Stage</span>
+
+            <span>
+              On Stage
+            </span>
+
           </div>
 
         </div>
@@ -2005,11 +2519,20 @@
         <div class="gallery-item reveal">
 
           <div class="photo-placeholder">
-            <span>PHOTO_GALLERY_03</span>
+
+            <span>
+              PHOTO_GALLERY_03
+            </span>
+
           </div>
 
+
           <div class="gallery-overlay">
-            <span>Rehearsal</span>
+
+            <span>
+              Rehearsal
+            </span>
+
           </div>
 
         </div>
@@ -2021,11 +2544,20 @@
         <div class="gallery-item reveal delay-1">
 
           <div class="photo-placeholder">
-            <span>PHOTO_GALLERY_04</span>
+
+            <span>
+              PHOTO_GALLERY_04
+            </span>
+
           </div>
 
+
           <div class="gallery-overlay">
-            <span>Performance</span>
+
+            <span>
+              Performance
+            </span>
+
           </div>
 
         </div>
@@ -2037,11 +2569,20 @@
         <div class="gallery-item reveal">
 
           <div class="photo-placeholder">
-            <span>PHOTO_GALLERY_05</span>
+
+            <span>
+              PHOTO_GALLERY_05
+            </span>
+
           </div>
 
+
           <div class="gallery-overlay">
-            <span>Recital</span>
+
+            <span>
+              Recital
+            </span>
+
           </div>
 
         </div>
@@ -2053,11 +2594,20 @@
         <div class="gallery-item reveal delay-1">
 
           <div class="photo-placeholder">
-            <span>PHOTO_GALLERY_06</span>
+
+            <span>
+              PHOTO_GALLERY_06
+            </span>
+
           </div>
 
+
           <div class="gallery-overlay">
-            <span>Studio</span>
+
+            <span>
+              Studio
+            </span>
+
           </div>
 
         </div>
@@ -2069,11 +2619,20 @@
         <div class="gallery-item reveal delay-2">
 
           <div class="photo-placeholder">
-            <span>PHOTO_GALLERY_07</span>
+
+            <span>
+              PHOTO_GALLERY_07
+            </span>
+
           </div>
 
+
           <div class="gallery-overlay">
-            <span>Backstage</span>
+
+            <span>
+              Backstage
+            </span>
+
           </div>
 
         </div>
@@ -2085,11 +2644,20 @@
         <div class="gallery-item reveal">
 
           <div class="photo-placeholder">
-            <span>PHOTO_GALLERY_08</span>
+
+            <span>
+              PHOTO_GALLERY_08
+            </span>
+
           </div>
 
+
           <div class="gallery-overlay">
-            <span>Live Performance</span>
+
+            <span>
+              Live Performance
+            </span>
+
           </div>
 
         </div>
@@ -2101,17 +2669,27 @@
         <div class="gallery-item reveal delay-1">
 
           <div class="photo-placeholder">
-            <span>PHOTO_GALLERY_09</span>
+
+            <span>
+              PHOTO_GALLERY_09
+            </span>
+
           </div>
 
+
           <div class="gallery-overlay">
-            <span>In Rehearsal</span>
+
+            <span>
+              In Rehearsal
+            </span>
+
           </div>
 
         </div>
 
 
       </div>
+
 
     </section>
 
@@ -2126,20 +2704,26 @@
 
       <div class="artist-note-inner reveal">
 
+
         <div class="section-label">
           Continuing work
         </div>
+
 
         <h2 class="section-heading">
           Repertoire in progress
         </h2>
 
+
         <p>
+
           Kay continues to expand her repertoire through
           performance, study, collaboration, and teaching —
           approaching each new work with curiosity,
           discipline, and respect for the music.
+
         </p>
+
 
       </div>
 
@@ -2159,18 +2743,25 @@
         Work with Kay
       </div>
 
+
       <h2>
+
         Performance,
         teaching & <em>music.</em>
+
       </h2>
 
+
       <p>
+
         For private lessons, performance bookings,
         collaborations, or general inquiries.
+
       </p>
 
 
       <div class="cta-links">
+
 
         <a
           href="booking.html"
@@ -2179,12 +2770,14 @@
           Book a Lesson
         </a>
 
+
         <a
           href="contact.html"
           class="cta-secondary"
         >
           Contact Kay
         </a>
+
 
       </div>
 
@@ -2210,6 +2803,7 @@
 
     <div class="social-links">
 
+
       <a
         href="https://www.youtube.com/@kaynicoletozawa4642"
         target="_blank"
@@ -2217,6 +2811,7 @@
       >
         YouTube
       </a>
+
 
       <a
         href="https://www.instagram.com/kays_violin/"
@@ -2226,6 +2821,7 @@
         Instagram
       </a>
 
+
       <a
         href="https://www.facebook.com/kay.tozawa.2025"
         target="_blank"
@@ -2233,6 +2829,7 @@
       >
         Facebook
       </a>
+
 
     </div>
 
